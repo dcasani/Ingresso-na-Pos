@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100420210311) do
+ActiveRecord::Schema.define(:version => 20100511183247) do
 
   create_table "courses", :force => true do |t|
     t.string   "area"
@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(:version => 20100420210311) do
     t.string   "estado_civil"
     t.integer  "identidade"
     t.string   "tipo"
-    t.integer  "cpf"
     t.string   "nacionalidade"
     t.string   "logradouro_permanente"
     t.integer  "numero_permanente"
@@ -77,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20100420210311) do
     t.text     "empregos_atuais"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cpf"
   end
 
 end

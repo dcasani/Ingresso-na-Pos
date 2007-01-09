@@ -75,6 +75,27 @@ describe User do
       @user.should have(:no).errors_on(:cpf)
     end
 
+    it "Deve validar um CPF válido" do
+      @user = User.new(:cpf => "02953076840")
+      print "User::cpf" + @user.cpf.to_s
+      @user.should have(:no).errors_on(:cpf)
+    end
+
+    it "Deve validar um CPF válido com pontos e traço" do
+      @user = User.new(:cpf => "111.111.111-11")
+      @user.should have(:no).errors_on(:cpf)
+    end
+
+    it "Não deve validar um CPF sem dígito verificador" do
+      @user = User.new(:cpf => "111.111.111")
+      @user.should have_at_least(1).errors_on(:cpf)
+    end
+
+    it "Não deve validar um CPF inválido" do
+      @user = User.new(:cpf => "111.111.111-12")
+      @user.should have_at_least(1).errors_on(:cpf)
+    end
+
   end
 
   context "Validaçoes de endereço:" do
