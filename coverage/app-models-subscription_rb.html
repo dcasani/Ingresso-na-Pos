@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-models-subscription_rb.html">app/models/subscription.rb</a></td>
-            <td class='right_align'><tt>21</tt></td>
-            <td class='right_align'><tt>12</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>14.29%</tt></div>
+            <td class='right_align'><tt>24</tt></td>
+            <td class='right_align'><tt>14</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:14px"></div>
-            <div class="uncovered" style="width:86px"></div>
+            <div class="covered" style="width:100px"></div>
+            <div class="uncovered" style="width:0px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>25.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:25px"></div>
-            <div class="uncovered" style="width:75px"></div>
+            <div class="covered" style="width:100px"></div>
+            <div class="uncovered" style="width:0px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -69,121 +69,139 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line3">3</a>   require 'paperclip'</pre></td>
+            <td><pre><a name="line3">3</a>   has_many :reference_teachers</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line4">4</a>   has_attached_file :diploma, :url =&gt; &quot;/arquivos/diploma/:id/:basename.:extension&quot;</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line4">4</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line5">5</a>   has_attached_file :historico, :url =&gt; &quot;/arquivos/historico/:id/:basename.:extension&quot;</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line5">5</a>   require 'paperclip'</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line6">6</a>   has_attached_file :poscomp, :url =&gt; &quot;/arquivos/poscomp/:id/:basename.:extension&quot;</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line6">6</a>   has_attached_file :diploma, :url =&gt; &quot;/arquivos/diploma/:id/:basename.:extension&quot;</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line7">7</a> </pre></td>
+          <tr class="marked">
+            <td><pre><a name="line7">7</a>   has_attached_file :historico, :url =&gt; &quot;/arquivos/historico/:id/:basename.:extension&quot;</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line8">8</a>   validates_presence_of :inicio_pretendido, :propositos</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line8">8</a>   has_attached_file :poscomp, :url =&gt; &quot;/arquivos/poscomp/:id/:basename.:extension&quot;</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line9">9</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line10">10</a>   validates_format_of :inicio_pretendido,</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line10">10</a>   validates_presence_of :propositos, :inicio_pretendido,</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line11">11</a>                       :with =&gt; /\A.+\Z/i , :message =&gt; &quot;O inicio do mestrado deve ser em março ou agosto&quot;</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line11">11</a>                         :message =&gt; &quot;: Preencher campo obrigatório&quot;</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line12">12</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line13">13</a>   validates_format_of :orientador,</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line13">13</a>   validates_format_of :inicio_pretendido,</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line14">14</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ\.-]*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line14">14</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ]*\Z/ , :message =&gt; &quot;: Usar somente letras&quot;</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line15">15</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line16">16</a> </pre></td>
+          <tr class="marked">
+            <td><pre><a name="line16">16</a>   validates_format_of :orientador,</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line17">17</a> </pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line17">17</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ\.-]*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line18">18</a>   #validates_format_of :bolsa_fomento, :bolsas_anteriores,</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line18">18</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line19">19</a>   #                    :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ-]+( [a-zA-Zá-úÁ-ÚçÇ-]+)*\Z+\A\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line19">19</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line20">20</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line21">21</a> end</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line21">21</a>   #validates_format_of :bolsa_fomento, :bolsas_anteriores,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line22">22</a>   #                    :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ-]+( [a-zA-Zá-úÁ-ÚçÇ-]+)*\Z+\A\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line23">23</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line24">24</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue Apr 27 16:33:04 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue May 11 16:28:59 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

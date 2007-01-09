@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(:version => 20100511183247) do
     t.datetime "updated_at"
   end
 
+  create_table "reference_teachers", :force => true do |t|
+    t.string   "nome"
+    t.string   "instituicao"
+    t.string   "email"
+    t.integer  "subscription_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "subscriptions", :force => true do |t|
     t.string   "inicio_pretendido"
     t.text     "outros_programas"
