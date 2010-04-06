@@ -2,52 +2,40 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions
   # GET /subscriptions.xml
   def index
-    @subscriptions = Subscription.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @subscriptions }
-    end
+    @user = User.find(params[:user_id])
+    @subscriptions = @user.subscriptions
   end
 
   # GET /subscriptions/1
   # GET /subscriptions/1.xml
   def show
-    @subscription = Subscription.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @subscription }
-    end
+     @user = User.find(params[:user_id])
+     @subscription = @user.subscriptions.find(params[:id])
   end
 
   # GET /subscriptions/new
   # GET /subscriptions/new.xml
   def new
-    @user = params[:user_id]
-    @subscription = @user.subscription.build
+    @user = User.find(params[:user_id])
+    @subscription = @user.subscriptions.build
 
   end
 
   # GET /subscriptions/1/edit
   def edit
-    @subscription = Subscription.find(params[:id])
+    @user = User.find(params[:user_id])
+    @subscription = @user.subscriptions.find(params[:id])
   end
 
   # POST /subscriptions
   # POST /subscriptions.xml
   def create
-    @subscription = Subscription.new(params[:subscription])
-
-    respond_to do |format|
-      if @subscription.save
-        flash[:notice] = 'Subscription was successfully created.'
-        format.html { redirect_to(@subscription) }
-        format.xml  { render :xml => @subscription, :status => :created, :location => @subscription }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @subscription.errors, :status => :unprocessable_entity }
-      end
+    @user = User.find(params[:user_id])
+    @subscription = @user.subscriptions.build(params[:subscription])
+    if @subscription.save
+      redirect_to user_subscription_url(@user, @subscription)
+    else
+      render :action => "new"  
     end
   end
 
@@ -71,11 +59,12 @@ class SubscriptionsController < ApplicationController
   # DELETE /subscriptions/1
   # DELETE /subscriptions/1.xml
   def destroy
-    @subscription = Subscription.find(params[:id])
-    @subscription.destroy
+     @user = User.find(params[:user_id])
+     @subscription = @user.subscriptions.find(params[:id])
+     @subscription.destroy
 
     respond_to do |format|
-      format.html { redirect_to(subscriptions_url) }
+      format.html { redirect_to(user_subscriptions_url(@user)) }
       format.xml  { head :ok }
     end
   end

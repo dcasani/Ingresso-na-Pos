@@ -14,7 +14,6 @@
     <th>Propositos</th>
     <th>Observacoes</th>
     <th>Curso</th>
-    <th>User</th>
   </tr>
 
 <% @subscriptions.each do |subscription| %>
@@ -31,14 +30,13 @@
     <td><%=h subscription.propositos %></td>
     <td><%=h subscription.observacoes %></td>
     <td><%=h subscription.curso_id %></td>
-    <td><%=h subscription.user %></td>
-    <td><%= link_to 'Show', subscription %></td>
-    <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
-    <td><%= link_to 'Destroy', subscription, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', user_subscription_path(@user,subscription) %></td>
+    <td><%= link_to 'Edit', edit_user_subscription_path(@user,subscription) %></td>
+    <td><%= link_to 'Destroy', user_subscription_path(@user,subscription), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New subscription', new_subscription_path %>
+<%= link_to 'New subscription', new_user_subscription_path(@user) %>
