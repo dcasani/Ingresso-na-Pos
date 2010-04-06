@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  area: MyString
+  nivel: MyString
+  subarea: MyString
+
+two:
+  area: MyString
+  nivel: MyString
+  subarea: MyString

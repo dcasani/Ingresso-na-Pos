@@ -1,0 +1,24 @@
+<h1>Listing courses</h1>
+
+<table>
+  <tr>
+    <th>Area</th>
+    <th>Nivel</th>
+    <th>Subarea</th>
+  </tr>
+
+<% @courses.each do |course| %>
+  <tr>
+    <td><%=h course.area %></td>
+    <td><%=h course.nivel %></td>
+    <td><%=h course.subarea %></td>
+    <td><%= link_to 'Show', course %></td>
+    <td><%= link_to 'Edit', edit_course_path(course) %></td>
+    <td><%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New course', new_course_path %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Area:</b>
+  <%=h @course.area %>
+</p>
+
+<p>
+  <b>Nivel:</b>
+  <%=h @course.nivel %>
+</p>
+
+<p>
+  <b>Subarea:</b>
+  <%=h @course.subarea %>
+</p>
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

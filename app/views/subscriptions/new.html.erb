@@ -1,0 +1,63 @@
+<h1>New subscription</h1>
+
+<% form_for([@user,@subscription]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :inicio_pretendido %><br />
+    <%= f.text_field :inicio_pretendido %>
+  </p>
+  <p>
+    <%= f.label :outros_programas %><br />
+    <%= f.text_area :outros_programas %>
+  </p>
+  <p>
+    <%= f.label :orientador %><br />
+    <%= f.text_field :orientador %>
+  </p>
+  <p>
+    <%= f.label :bolsa_fomento %><br />
+    <%= f.text_field :bolsa_fomento %>
+  </p>
+  <p>
+    <%= f.label :bolsa_ime %><br />
+    <%= f.check_box :bolsa_ime %>
+  </p>
+  <p>
+    <%= f.label :bolsas_anteriores %><br />
+    <%= f.text_area :bolsas_anteriores %>
+  </p>
+  <p>
+    <%= f.label :dados_carta_recomendacao %><br />
+    <%= f.text_area :dados_carta_recomendacao %>
+  </p>
+  <p>
+    <%= f.label :trabalhar_se_aceito %><br />
+    <%= f.check_box :trabalhar_se_aceito %>
+  </p>
+  <p>
+    <%= f.label :resumo_dissertacao_mestrado %><br />
+    <%= f.text_area :resumo_dissertacao_mestrado %>
+  </p>
+  <p>
+    <%= f.label :propositos %><br />
+    <%= f.text_area :propositos %>
+  </p>
+  <p>
+    <%= f.label :observacoes %><br />
+    <%= f.text_area :observacoes %>
+  </p>
+  <p>
+    <%= f.label :curso_id %><br />
+    <%= f.text_field :curso_id %>
+  </p>
+  <p>
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', subscriptions_path %>

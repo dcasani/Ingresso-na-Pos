@@ -1,0 +1,44 @@
+<h1>Listing subscriptions</h1>
+
+<table>
+  <tr>
+    <th>Inicio pretendido</th>
+    <th>Outros programas</th>
+    <th>Orientador</th>
+    <th>Bolsa fomento</th>
+    <th>Bolsa ime</th>
+    <th>Bolsas anteriores</th>
+    <th>Dados carta recomendacao</th>
+    <th>Trabalhar se aceito</th>
+    <th>Resumo dissertacao mestrado</th>
+    <th>Propositos</th>
+    <th>Observacoes</th>
+    <th>Curso</th>
+    <th>User</th>
+  </tr>
+
+<% @subscriptions.each do |subscription| %>
+  <tr>
+    <td><%=h subscription.inicio_pretendido %></td>
+    <td><%=h subscription.outros_programas %></td>
+    <td><%=h subscription.orientador %></td>
+    <td><%=h subscription.bolsa_fomento %></td>
+    <td><%=h subscription.bolsa_ime %></td>
+    <td><%=h subscription.bolsas_anteriores %></td>
+    <td><%=h subscription.dados_carta_recomendacao %></td>
+    <td><%=h subscription.trabalhar_se_aceito %></td>
+    <td><%=h subscription.resumo_dissertacao_mestrado %></td>
+    <td><%=h subscription.propositos %></td>
+    <td><%=h subscription.observacoes %></td>
+    <td><%=h subscription.curso_id %></td>
+    <td><%=h subscription.user %></td>
+    <td><%= link_to 'Show', subscription %></td>
+    <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
+    <td><%= link_to 'Destroy', subscription, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New subscription', new_subscription_path %>

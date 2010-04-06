@@ -1,0 +1,61 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome_completo: MyString
+  data_de_nascimento: 2010-04-06
+  estado_civil: MyString
+  identidade: 1
+  tipo: MyString
+  cpf: 1
+  nacionalidade: MyString
+  logradouro_permanente: MyString
+  numero_permanente: 1
+  cidade_permanente: MyString
+  estado_permanente: MyString
+  pais_permanente: MyString
+  cep_permanente: 1
+  telefone_permanente: 1
+  logradouro_correspondencia: MyString
+  numero_correspondencia: 1
+  cidade_correspondencia: MyString
+  estado_correspondencia: MyString
+  pais_correspondencia: MyString
+  cep_correspondencia: 1
+  telefone_correspondencia: 1
+  celular_correspondencia: 1
+  email: MyString
+  formacao_superior_graduacao: MyText
+  formacao_superior_pos: MyText
+  outras_academicas: MyText
+  empregos_passados: MyText
+  empregos_atuais: MyText
+
+two:
+  nome_completo: MyString
+  data_de_nascimento: 2010-04-06
+  estado_civil: MyString
+  identidade: 1
+  tipo: MyString
+  cpf: 1
+  nacionalidade: MyString
+  logradouro_permanente: MyString
+  numero_permanente: 1
+  cidade_permanente: MyString
+  estado_permanente: MyString
+  pais_permanente: MyString
+  cep_permanente: 1
+  telefone_permanente: 1
+  logradouro_correspondencia: MyString
+  numero_correspondencia: 1
+  cidade_correspondencia: MyString
+  estado_correspondencia: MyString
+  pais_correspondencia: MyString
+  cep_correspondencia: 1
+  telefone_correspondencia: 1
+  celular_correspondencia: 1
+  email: MyString
+  formacao_superior_graduacao: MyText
+  formacao_superior_pos: MyText
+  outras_academicas: MyText
+  empregos_passados: MyText
+  empregos_atuais: MyText

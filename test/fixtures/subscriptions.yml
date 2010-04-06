@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  inicio_pretendido: MyString
+  outros_programas: MyText
+  orientador: MyString
+  bolsa_fomento: MyString
+  bolsa_ime: false
+  bolsas_anteriores: MyText
+  dados_carta_recomendacao: MyText
+  trabalhar_se_aceito: false
+  resumo_dissertacao_mestrado: MyText
+  propositos: MyText
+  observacoes: MyText
+  curso_id: 1
+  user: 
+
+two:
+  inicio_pretendido: MyString
+  outros_programas: MyText
+  orientador: MyString
+  bolsa_fomento: MyString
+  bolsa_ime: false
+  bolsas_anteriores: MyText
+  dados_carta_recomendacao: MyText
+  trabalhar_se_aceito: false
+  resumo_dissertacao_mestrado: MyText
+  propositos: MyText
+  observacoes: MyText
+  curso_id: 1
+  user: 
