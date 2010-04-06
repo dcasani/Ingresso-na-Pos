@@ -4,6 +4,7 @@ class SubscriptionsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @subscriptions = @user.subscriptions
+
   end
 
   # GET /subscriptions/1
@@ -18,6 +19,16 @@ class SubscriptionsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @subscription = @user.subscriptions.build
+    @course_areas = Course.find(:all, :group => 'area')
+    @course = Course.first;
+    @course_subareas = Course.find(:all, :conditions => { :area => @course.area } )
+
+  end
+  
+  def find_course_subareas
+
+    @course_subareas = Course.find(:all, :conditions => { :area => params[:area]} )
+     @bla = "BLA!"
 
   end
 

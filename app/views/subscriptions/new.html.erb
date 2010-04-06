@@ -2,7 +2,26 @@
 
 <% form_for([@user,@subscription]) do |f| %>
   <%= f.error_messages %>
+  <p>
+    <%= f.label "Cursos" %><br />
 
+
+    <select name="area_select" id="area_select">
+    <%  @course_areas.each do |course| %>
+      <option><%= course.area %></option>
+    <%  end %>
+    </select>
+
+   <!-- <select name="subarea_select" id="subarea_select">
+    <%  @course_subareas.each do |course| %>
+      <option><%= course.subarea %></option>
+    <%  end %>
+    </select>
+
+
+    <%= observe_field("area_select", :frequency => 1, :url => { :action => :find_course_subareas }, :update => "subarea_select", :with => "+Form.Element.serialize('area_select')" ) %>
+    -->
+  </p>
   <p>
     <%= f.label :inicio_pretendido %><br />
     <%= f.text_field :inicio_pretendido %>
