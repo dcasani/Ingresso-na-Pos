@@ -1045,3 +1045,340 @@ Processing CoursesController#index (for 127.0.0.1 at 2010-04-06 16:13:38) [GET]
 Rendering template within layouts/courses
 Rendering courses/index
 Completed in 188ms (View: 88, DB: 57) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (8.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100406172104)
+Migrating to CreateCourses (20100406172742)
+Migrating to CreateSubscriptions (20100406173914)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (3.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (3.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("subscriptions")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100406172104)
+Migrating to CreateCourses (20100406172742)
+Migrating to CreateSubscriptions (20100406173914)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("subscriptions")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-06 19:56:43) [GET]
+
+ActionController::RoutingError (No route matches "/Ingresso-na-Pos" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-06 19:56:48) [GET]
+
+ActionController::RoutingError (No route matches "/Ingresso-na-Pos/users" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-06 19:57:12) [GET]
+
+ActionController::RoutingError (No route matches "/Ingresso-na-Pos/users" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-06 19:57:25) [GET]
+  [4;36;1mUser Load (14.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 297ms (View: 225, DB: 14) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-06 19:58:45) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 393ms (View: 359, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 19:58:53) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 543ms (View: 483, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:02:41) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 384ms (View: 301, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-06 20:14:17) [GET]
+  [4;35;1mUser Load (14.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 180ms (View: 123, DB: 15) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-06 20:14:20) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 127ms (View: 87, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:14:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"daniel 44", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"viudo", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 422ms (View: 367, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:18:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"555", "pais_correspondencia"=>"hgfhfg5", "numero_correspondencia"=>"rrr", "tipo"=>"23ddsdsd", "nome_completo"=>"daniel 44", "logradouro_correspondencia"=>"ttttttttt", "telefone_permanente"=>"4444444", "cpf"=>"4234234", "empregos_atuais"=>"fghfghf", "outras_academicas"=>"fghfghfg", "celular_correspondencia"=>"576777756", "numero_permanente"=>"vvvvvv", "logradouro_permanente"=>"vvvv", "identidade"=>"123123", "formacao_superior_pos"=>"fghfgh", "nacionalidade"=>"perunaa", "empregos_passados"=>"gfhfghg", "formacao_superior_graduacao"=>"ghghfgh", "pais_permanente"=>"5gg", "estado_permanente"=>"vvvvvvv6", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"rtert", "estado_civil"=>"viudo", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"45454545", "cidade_permanente"=>"vvvvvvv", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani@hotmail.com", "estado_correspondencia"=>"64564", "cep_permanente"=>"4fdf"}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 187ms (View: 134, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:18:37) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"555", "pais_correspondencia"=>"hgfhfg5", "numero_correspondencia"=>"rrr", "tipo"=>"23ddsdsd", "nome_completo"=>"", "logradouro_correspondencia"=>"ttttttttt", "telefone_permanente"=>"4444444", "cpf"=>"4234234", "empregos_atuais"=>"fghfghf", "outras_academicas"=>"fghfghfg", "celular_correspondencia"=>"576777756", "numero_permanente"=>"vvvvvv", "logradouro_permanente"=>"vvvv", "identidade"=>"123123", "formacao_superior_pos"=>"fghfgh", "nacionalidade"=>"perunaa", "empregos_passados"=>"gfhfghg", "formacao_superior_graduacao"=>"ghghfgh", "pais_permanente"=>"5gg", "estado_permanente"=>"vvvvvvv6", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"rtert", "estado_civil"=>"viudo", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"45454545", "cidade_permanente"=>"vvvvvvv", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani@hotmail.com", "estado_correspondencia"=>"64564", "cep_permanente"=>"4fdf"}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 421ms (View: 366, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-06 20:20:35) [GET]
+  [4;36;1mUser Load (14.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 186ms (View: 131, DB: 15) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-06 20:20:37) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 241ms (View: 204, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:21:13) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"5dfdf", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"daniel@casani", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 358ms (View: 295, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:23:38) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"5dfdf", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"daniel@casani", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 416ms (View: 356, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:24:31) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"5dfdf", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"daniel@casani", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 786ms (View: 605, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:25:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"5dfdf", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"daniel@casani", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 419ms (View: 319, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-06 20:26:13) [GET]
+  [4;35;1mUser Load (13.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 186ms (View: 121, DB: 14) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-06 20:26:15) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 367ms (View: 332, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:26:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani6@gmail.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 444ms (View: 382, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:27:04) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani6@gmail.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 641ms (View: 503, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:32:23) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani6@gmail.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 519ms (View: 344, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:32:33) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani6@gmail.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 578ms (View: 481, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:32:42) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani6@gmail.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 431ms (View: 305, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:36:02) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani6@gmail.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 412ms (View: 336, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:36:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani6@gmail.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 627ms (View: 499, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-06 20:36:37) [GET]
+  [4;36;1mUser Load (16.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 160ms (View: 122, DB: 17) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:36:41) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani6@gmail.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 448ms (View: 334, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-06 20:36:53) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 322ms (View: 282, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-06 20:37:04) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 131ms (View: 97, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:37:13) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani6@3rwefsdfsd", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 504ms (View: 425, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:37:33) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"dcasani6@3rwefsdfsd", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 641ms (View: 540, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-06 20:37:56) [GET]
+  [4;35;1mUser Load (13.6ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 192ms (View: 133, DB: 14) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-06 20:37:58) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 183ms (View: 115, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:38:09) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"@cosa.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 598ms (View: 546, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-06 20:38:28) [GET]
+  [4;36;1mUser Load (15.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 190ms (View: 132, DB: 15) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-06 20:38:29) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 159ms (View: 116, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:38:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"daniel@cosa.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 663ms (View: 611, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-06 20:40:44) [GET]
+  [4;35;1mUser Load (14.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 173ms (View: 126, DB: 14) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-06 20:40:46) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 183ms (View: 137, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:41:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"878@teste.com", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 719ms (View: 624, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-06 20:41:43) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"DHQIgSD8ju3hxQ5v6SkfZNJgx2NHNdXJQSLXgtD4SWg=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"2010", "cidade_correspondencia"=>"", "estado_civil"=>"", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"6", "email"=>"878@teste", "estado_correspondencia"=>"", "cep_permanente"=>""}}
+Rendering template within layouts/users
+Rendering users/new
+Completed in 514ms (View: 398, DB: 0) | 200 OK [http://localhost/users]
