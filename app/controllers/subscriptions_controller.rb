@@ -25,10 +25,14 @@ class SubscriptionsController < ApplicationController
 
   end
   
-  def find_course_subareas
-
-    @course_subareas = Course.find(:all, :conditions => { :area => params[:area]} )
-     @bla = "BLA!"
+  def course_subareas
+    @area = params[:area].sub("area_select=","")
+    @render = ""
+    @subareas = Course.find(:all, :conditions => { :area => @area} )
+    @subareas.each do |course|
+      @render += "<option>"+course.subarea+"</option>"
+    end
+    render :inline => "<%= @render %>"
 
   end
 

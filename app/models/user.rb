@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   #validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i , :message => ": Formato de email inválido"
   validates_format_of :email, :with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i , :message => ": Formato de email inválido"
 
-  validate_length_of :nome_completo, :in => 2..150
+  #validate_length_of :nome_completo, :in => 2..150
 
   validates_uniqueness_of :identidade
 
