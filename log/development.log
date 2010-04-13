@@ -6007,3 +6007,365 @@ ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:me
   /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#index (for 127.0.0.1 at 2010-04-13 17:56:39) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (12.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering subscriptions/index
+  [4;36;1mSubscription Load (13.9ms)[0m   [0;1mSELECT * FROM "subscriptions" WHERE ("subscriptions".user_id = 8) [0m
+Completed in 224ms (View: 58, DB: 27) | 200 OK [http://localhost/users/8/subscriptions/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 17:56:39) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-13 17:56:49) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (14.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (5.4ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (3.2ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (9.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 287ms (View: 74, DB: 32) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 17:56:49) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#create (for 127.0.0.1 at 2010-04-13 17:56:55) [POST]
+  Parameters: {"commit"=>"Finalizar", "authenticity_token"=>"ngIECCFZ4K1f8eN4ZVWVfT12r46NCB+OXmE8l0lSi0M=", "user_id"=>"8", "area_select"=>"Ciência da Computação", "subarea_select"=>"Banco de Dados", "subscription"=>{"outros_programas"=>"\r\n", "propositos"=>"", "orientador"=>"", "dados_carta_recomendacao"=>"", "bolsa_ime"=>"0", "bolsa_fomento"=>"", "inicio_pretendido"=>"Março", "observacoes"=>"", "bolsas_anteriores"=>"", "resumo_dissertacao_mestrado"=>"", "trabalhar_se_aceito"=>"0"}}
+  [4;35;1mUser Load (5.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mSubscription Create (60.3ms)[0m   [0;1mINSERT INTO "subscriptions" ("outros_programas", "created_at", "orientador", "propositos", "updated_at", "bolsa_fomento", "bolsa_ime", "dados_carta_recomendacao", "inicio_pretendido", "user_id", "observacoes", "bolsas_anteriores", "trabalhar_se_aceito", "resumo_dissertacao_mestrado", "curso_id") VALUES('
+', '2010-04-13 20:56:55', '', '', '2010-04-13 20:56:55', '', 'f', '', 'Março', 8, '', '', 'f', '', NULL)[0m
+Redirected to http://localhost:3000/users/8/subscriptions/8
+Completed in 215ms (DB: 66) | 302 Found [http://localhost/users/8/subscriptions]
+
+
+Processing SubscriptionsController#show (for 127.0.0.1 at 2010-04-13 17:56:55) [GET]
+  Parameters: {"id"=>"8", "user_id"=>"8"}
+  [4;35;1mUser Load (4.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mSubscription Load (5.0ms)[0m   [0;1mSELECT * FROM "subscriptions" WHERE ("subscriptions"."id" = 8 AND ("subscriptions".user_id = 8)) [0m
+Rendering template within layouts/application
+Rendering subscriptions/show
+Completed in 153ms (View: 55, DB: 10) | 200 OK [http://localhost/users/8/subscriptions/8]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 17:56:56) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-13 18:02:34) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (9.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (6.1ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (3.4ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (26.7ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+
+ActionView::TemplateError (undefined method `[]' for :options=:Symbol) on line #64 of app/views/subscriptions/new.html.erb:
+61:             <tr><td colspan="2"><br/><h2>Trabalho</h2></td></tr>
+62:             <tr>
+63:               <td><label for="subscription_trabalhar_se_aceito">Sendo aceito para o programa, pretende continuar exercendo as atividades exercidas atualmente?</label></td>
+64:               <td><%= f.check_box :trabalhar_se_aceito, :options=['Sim', 'Não']%></td>
+65:             </tr>
+66:             <tr><td colspan="2"><br/><h2>Dissertação de Mestrado</h2></td></tr>
+67:             <tr>
+
+    app/views/subscriptions/new.html.erb:64
+    app/views/subscriptions/new.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (158.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-13 18:03:55) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (3.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (4.3ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (2.6ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (6.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 128ms (View: 45, DB: 17) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 18:03:55) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-13 18:25:29) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 256ms (View: 189, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 18:25:30) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-13 18:28:01) [GET]
+  [4;35;1mCourse Load (28.5ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 644ms (View: 565, DB: 28) | 200 OK [http://localhost/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 18:28:03) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-13 18:32:54) [POST]
+  Parameters: {"commit"=>"Continuar", "authenticity_token"=>"ngIECCFZ4K1f8eN4ZVWVfT12r46NCB+OXmE8l0lSi0M=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"Outro", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"6666mole6dura", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"123", "estado_permanente"=>"SP", "data_de_nascimento(1i)"=>"1994", "cidade_correspondencia"=>"", "estado_civil"=>"Casado", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"13", "estado_correspondencia"=>"", "cep_permanente"=>"popcorn", "email"=>""}}
+  [4;36;1mUser Load (2.9ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identidade" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 377ms (View: 299, DB: 3) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 18:32:54) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-13 17:12:45) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 289ms (View: 246, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 17:12:46) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-13 17:13:25) [POST]
+  Parameters: {"commit"=>"Continuar", "authenticity_token"=>"XlPcXm+NGpTXsUevUHVQPkOsrdc6K9ANOcasrrPiWyI=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"CNH", "nome_completo"=>"", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"1994", "cidade_correspondencia"=>"", "estado_civil"=>"Casado", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"13", "estado_correspondencia"=>"", "cep_permanente"=>"", "email"=>""}}
+  [4;36;1mUser Load (2.8ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identidade" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 620ms (View: 546, DB: 3) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-13 17:24:16) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 191ms (View: 143, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-13 17:24:18) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 101ms (View: 76, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 17:24:19) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 17:24:20) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-13 17:30:20) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 294ms (View: 251, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 17:30:22) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-13 17:30:39) [GET]
+  [4;36;1mUser Load (50.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 415ms (View: 336, DB: 51) | 200 OK [http://localhost/Users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-13 17:46:20) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 205ms (View: 169, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-13 17:46:21) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-13 17:46:26) [GET]
+  [4;35;1mUser Load (16.6ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 195ms (View: 151, DB: 17) | 200 OK [http://localhost/users]

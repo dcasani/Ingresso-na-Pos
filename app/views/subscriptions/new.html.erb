@@ -38,12 +38,12 @@ instituição(ões) e do(s) respectivo(s) programa(s).)</label></td>
     <tr>
       <td><label for="subscription_orientador">Já entrou em contato com algum docente deste Instituto com vistas à sua orientação? (Caso sim, indicar o
 nome do docente.)</label></td>
-            <td><%= f.text_field :orientador %></td>
+            <td><%= f.text_field :orientador, :onkeypress => "return event.keyCode!=13" %></td>
             </tr>
             <tr><td colspan="2"><br/><h2>Bolsas</h2></td></tr>
             <tr>
               <td><label for="subscription_bolsa_fomento">Está solicitando a concessão de uma bolsa a alguma agência de fomento (FAPESP,...)? Caso sim, qual?</label></td>
-              <td><%= f.text_field :bolsa_fomento, :rows => "10" , :cols => "70" %></td>
+              <td><%= f.text_field :bolsa_fomento, :rows => "10" , :cols => "70", :onkeypress => "return event.keyCode!=13" %></td>
             </tr>
             <tr>
               <td><label for="subscription_bolsa_ime">Está solicitando a concessão de uma bolsa do IME-USP?</label></td>
@@ -61,7 +61,7 @@ nome do docente.)</label></td>
             <tr><td colspan="2"><br/><h2>Trabalho</h2></td></tr>
             <tr>
               <td><label for="subscription_trabalhar_se_aceito">Sendo aceito para o programa, pretende continuar exercendo as atividades exercidas atualmente?</label></td>
-              <td><%= f.check_box :trabalhar_se_aceito %></td>
+              <td><%= f.check_box :trabalhar_se_aceito%></td> 
             </tr>
             <tr><td colspan="2"><br/><h2>Dissertação de Mestrado</h2></td></tr>
             <tr>
