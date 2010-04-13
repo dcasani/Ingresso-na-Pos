@@ -1,5 +1,7 @@
 <h1>Inscrição na Pós-Graduação</h1>
 
+Recomenda-se ao candidato que leia atentamente este formulário antes de começar a preenchê-lo.
+
 <% form_for(@user) do |f| %></td>
   <%= f.error_messages %></td>
 
@@ -7,7 +9,7 @@
     <tr><td colspan="2"><br/><h2>Dados Pessoais</h2></td></tr>
     <tr>
       <td><%= f.label :nome_completo %></td>
-      <td><%= f.text_field :nome_completo, :size => "50" %></td>
+      <td><%= f.text_field :nome_completo, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label :data_de_nascimento %></td>
@@ -15,7 +17,7 @@
     </tr>
     <tr>
       <td><%= f.label "E-mail" %></td>
-      <td><%= f.text_field :email, :size => "50" %></td>
+      <td><%= f.text_field :email, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label :estado_civil %></td>
@@ -23,7 +25,7 @@
     </tr>
     <tr>
       <td><%= f.label "Documento de identidade" %></td>
-      <td><%= f.text_field :identidade %></td>
+      <td><%= f.text_field :identidade, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label :tipo %></td>
@@ -31,78 +33,78 @@
     </tr>
     <tr>
       <td><label for="user_CPF">CPF</label></td>
-      <td><%= f.text_field :cpf %></td>
+      <td><%= f.text_field :cpf, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label :nacionalidade %></td>
-      <td><%= f.text_field :nacionalidade %></td>
+      <td><%= f.text_field :nacionalidade, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr><td colspan="2"><br/><h2>Endereço Permanente</h2></td></tr>
     <tr>
       <td><%= f.label "Logradouro" %></td>
-      <td><%= f.text_field :logradouro_permanente, :size => "50" %></td>
+      <td><%= f.text_field :logradouro_permanente, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "Número" %></td>
-      <td><%= f.text_field :numero_permanente, :size => "10" %></td>
+      <td><%= f.text_field :numero_permanente, :size => "10", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "Cidade" %></td>
-      <td><%= f.text_field :cidade_permanente %></td>
+      <td><%= f.text_field :cidade_permanente, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "Estado" %></td>
-      <td><%= f.text_field :estado_permanente %></td>
+      <td><%= f.text_field :estado_permanente, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "País" %></td>
-      <td><%= f.text_field :pais_permanente %></td>
+      <td><%= f.text_field :pais_permanente, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><label for="user_CEP">CEP</label></td>
-      <td><%= f.text_field :cep_permanente, :size => "15" %></td>
+      <td><%= f.text_field :cep_permanente, :size => "15", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "Telefone" %></td>
-      <td><%= f.text_field :telefone_permanente %></td>
+      <td><%= f.text_field :telefone_permanente, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr><td colspan="2"><br/><h2>Endereço de Correspondência</h2></td></tr>
     <tr>
       <td><%= f.label "Logradouro" %></td>
-      <td><%= f.text_field :logradouro_correspondencia, :size => "50" %></td>
+      <td><%= f.text_field :logradouro_correspondencia, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "Número" %></td>
-      <td><%= f.text_field :numero_correspondencia, :size => "10" %></td>
+      <td><%= f.text_field :numero_correspondencia, :size => "10", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "Cidade" %></td>
-      <td><%= f.text_field :cidade_correspondencia %></td>
+      <td><%= f.text_field :cidade_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "Estado" %></td>
-      <td><%= f.text_field :estado_correspondencia %></td>
+      <td><%= f.text_field :estado_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "País" %></td>
-      <td><%= f.text_field :pais_correspondencia, :size => "15" %></td>
+      <td><%= f.text_field :pais_correspondencia, :size => "15", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><label for="user_CEP">CEP</label></td>
-      <td><%= f.text_field :cep_correspondencia %></td>
+      <td><%= f.text_field :cep_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "Telefone" %></td>
-      <td><%= f.text_field :telefone_correspondencia %></td>
+      <td><%= f.text_field :telefone_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
       <td><%= f.label "Celular" %></td>
-      <td><%= f.text_field :celular_correspondencia %></td>
+      <td><%= f.text_field :celular_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr><td colspan="2"><br/><h2>Formação Acadêmica</h2></td></tr>
     <tr>
       <td><%= f.label "Formação superior - graduação: instituição, início e término (mês e ano), título obtido" %></td>
-      <td><%= f.text_area :formacao_superior_graduacao, :rows => "10" , :cols => "70"  %></td>
+      <td><%= f.text_area :formacao_superior_graduacao, :rows => "10" , :cols => "70" %></td>
     </tr>
     <tr>
       <td><%= f.label "Formação superior - pós-graduação (mestrado): instituição, início e término (mês e ano), título obtido, título
