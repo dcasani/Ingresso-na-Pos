@@ -1,0 +1,15 @@
+#content{
+    padding: 20px;
+    font-family: geneva, arial;
+    font-size: 14px;
+}
+
+#content table tr td{
+    vertical-align: top;
+        font-size: 14px;
+}
+
+#content table input, #content table textarea{
+    border: 1px solid #000;
+}
+
