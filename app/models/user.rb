@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_format_of :nome_completo, :tipo, :nacionalidade, :cidade_permanente,
                       :estado_permanente, :pais_permanente, :cidade_correspondencia,
                       :estado_correspondencia, :pais_correspondencia, :formacao_superior_graduacao,
-                      :with => /\A[a-zA-Z]+\z/, :message => ": Usar somente letras"
+                      :with => /\A[a-zA-Z][a-zA-Z\s]+[a-zA-Z]\z/, :message => ": Usar somente letras e espaços"
 
   #validates_format_of :email, :with => /^[-_a-z0-9]+(\\.[-_a-z0-9]+)*\\@([-a-z0-9]+\\.)*([a-z]{2,4})$/, :message => ": Formato de email inválido"
   #validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i , :message => ": Formato de email inválido"

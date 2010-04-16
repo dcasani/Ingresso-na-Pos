@@ -1,3 +1,7 @@
+cucumber=Alias for cucumber:ok
+cucumber\:all=Run all features
+cucumber\:ok=Run features that should pass
+cucumber\:wip=Run features that are being worked on
 db\:abort_if_pending_migrations=Raises an error if there are pending migrations
 db\:charset=Retrieves the charset for the current environment's database
 db\:collation=Retrieves the collation for the current environment's database
@@ -45,6 +49,7 @@ doc\:rails=Build the RDOC HTML Files
 doc\:reapp=Force a rebuild of the RDOC files
 doc\:rerails=Force a rebuild of the RDOC files
 environment=
+features=
 gems=List the gems that this rails application depends on
 gems\:base=
 gems\:build=Build any native extensions for unpacked gems
@@ -55,6 +60,7 @@ gems\:unpack=Unpacks all required gems into vendor/gems.
 gems\:unpack\:dependencies=Unpacks all required gems and their dependencies into vendor/gems.
 log\:clear=Truncates all *.log files in log/ to zero bytes
 middleware=Prints out your Rack middleware stack
+noop=
 notes=Enumerate all annotations
 notes\:custom=Enumerate a custom annotation, specify with ANNOTATION=WTFHAX
 notes\:fixme=Enumerate all FIXME annotations
@@ -73,6 +79,22 @@ rails\:update\:scripts=Add new scripts to the application script/ directory
 rails_env=
 routes=Print out all defined routes in match order, with names. Target specific controller with CONTROLLER=x.
 secret=Generate a crytographically secure secret key. This is typically used to generate a secret for cookie sessions.
+spec=Run all specs in spec directory (excluding plugin specs)
+spec\:clobber=
+spec\:clobber_rcov=Remove rcov products for rcov
+spec\:controllers=Run the code examples in spec/controllers
+spec\:db\:fixtures\:load=Load fixtures (from spec/fixtures) into the current environment's database.  Load specific fixtures using FIXTURES=x,y. Load from subdirectory in test/fixtures using FIXTURES_DIR=z.
+spec\:doc=Print Specdoc for all specs (excluding plugin specs)
+spec\:helpers=Run the code examples in spec/helpers
+spec\:integration=Run the code examples in spec/integration
+spec\:lib=Run the code examples in spec/lib
+spec\:models=Run the code examples in spec/models
+spec\:plugin_doc=Print Specdoc for all plugin examples
+spec\:plugins=Run the code examples in vendor/plugins (except RSpec's own)
+spec\:plugins\:rspec_on_rails=Runs the examples for rspec_on_rails
+spec\:rcov=Run all specs in spec directory with RCov (excluding plugin specs)
+spec\:statsetup=
+spec\:views=Run the code examples in spec/views
 stats=Report code statistics (KLOCs, etc) from the application
 test=Run all unit, functional and integration tests
 test\:benchmark=Run tests for benchmarkdb:test:prepare / Benchmark the performance tests
