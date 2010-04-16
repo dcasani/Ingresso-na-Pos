@@ -15,9 +15,8 @@ describe User do
     end
 
     it "Deve validar um nome com acentos" do
-      pending 
-      @user = User.naew(:nome_completo => 'Cássia Garcia Ferreira')
-      @user.should have(:no).erros_on(:nome_completo)
+      @user = User.new(:nome_completo => 'Álvaro Cássia João Cauê Cabeçada')
+      @user.should have(:no).errors_on(:nome_completo)
     end
 
     it "Não deve validar um nome real com espaço no começo" do
