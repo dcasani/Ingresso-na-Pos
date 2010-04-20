@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100406173914) do
+ActiveRecord::Schema.define(:version => 20100420210311) do
 
   create_table "courses", :force => true do |t|
     t.string   "area"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(:version => 20100406173914) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "diploma_file_name"
+    t.string   "diploma_content_type"
+    t.integer  "diploma_file_size"
+    t.string   "historico_file_name"
+    t.string   "historico_content_type"
+    t.integer  "historico_file_size"
+    t.string   "poscomp_file_name"
+    t.string   "poscomp_content_type"
+    t.integer  "poscomp_file_size"
   end
 
   create_table "users", :force => true do |t|

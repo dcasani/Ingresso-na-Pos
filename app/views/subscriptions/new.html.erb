@@ -1,6 +1,6 @@
 <h1>Inscrição na Pós-Graduação</h1>
 
-<% form_for([@user,@subscription]) do |f| %>
+<% form_for [@user,@subscription], :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
 
   <table>
@@ -58,6 +58,20 @@ nome do docente.)</label></td>
               <td><%= f.label "Nomes e instituições de (pelo menos 2) professores a quem pediu cartas de recomendação" %></td>
               <td><%= f.text_area :dados_carta_recomendacao, :rows => "10" , :cols => "70" %></td>
             </tr>
+            <tr>
+              <td><%= f.label "Diploma" %></td>
+              <td><%= f.file_field :diploma  %></td>
+            </tr>
+            <tr>
+              <td><%= f.label "Histórico escolar" %></td>
+              <td><%= f.file_field :historico  %></td>
+            </tr>
+            <tr>
+              <td><%= f.label "Resultado do Poscomp" %></td>
+              <td><%= f.file_field :poscomp  %></td>
+            </tr>
+
+
             <tr><td colspan="2"><br/><h2>Trabalho</h2></td></tr>
             <tr>
               <td><label for="subscription_trabalhar_se_aceito">Sendo aceito para o programa, pretende continuar exercendo as atividades exercidas atualmente?</label></td>

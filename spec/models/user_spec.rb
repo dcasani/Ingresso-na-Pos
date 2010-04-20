@@ -14,13 +14,13 @@ describe User do
       @user.should have(1).errors_on(:nome_completo)
     end
 
-    it "Deve validar um nome com acentos" do
+    it "Deve validar um nome com acentos e caracteres latinos" do
       @user = User.new(:nome_completo => 'Álvaro Cássia João Cauê Cabeçada')
       @user.should have(:no).errors_on(:nome_completo)
     end
 
     it "Não deve validar um nome real com espaço no começo" do
-     # pending "Nomes com espaços nao estão passando"
+     # pending "Nomes com espaços nao estão passando" - esse teste parece estranho.
       @user = User.new(:nome_completo => '   George Daniel Casanbi delgado')
       @user.should have(1).errors_on(:nome_completo)
     end
