@@ -12,11 +12,11 @@ class User < ActiveRecord::Base
   validates_format_of :nome_completo, :tipo, :nacionalidade, :cidade_permanente,
                       :estado_permanente, :pais_permanente, :cidade_correspondencia,
                       :estado_correspondencia, :pais_correspondencia, :formacao_superior_graduacao,
-                      :with => /\A[A-Za-zãàáâäèéêëìíîïõòóôöùúûüçÃÀÁÂÄÈÉÊËÌÍÎÏÖÒÓÔÙÚÛÜÇ]+( [A-Za-zãàáâäèéêëìíîïõòóôöùúûüçÃÀÁÂÄÈÉÊËÌÍÎÏÖÒÓÔÙÚÛÜÇ]+)*\Z/, :message => ": Usar somente letras e espaços"
+                      :with => /\A[a-zA-Zá-úÁ-Ú.]+[a-zA-Zá-úÁ-Ú.\s]+[a-zA-Zá-úÁ-Ú.]+\z/, :message => ": Usar somente letras e espaços"
 
                       # Campos formados por palavras e sinais de pontuação (.,-)
   validates_format_of :logradouro_permanente, :logradouro_correspondencia,
-                      :with => /\A[A-Za-zãàáâäèéêëìíîïõòóôöùúûüçÃÀÁÂÄÈÉÊËÌÍÎÏÖÒÓÔÙÚÛÜÇ]+( [-,.]? ?[A-Za-zãàáâäèéêëìíîïõòóôöùúûüçÃÀÁÂÄÈÉÊËÌÍÎÏÖÒÓÔÙÚÛÜÇ]+)*\Z/, :message => ": Usar somente letras, espaços, vírgulas e traços"
+                       :with => /\A[a-zA-Zá-úÁ-Ú.]+[a-zA-Zá-úÁ-Ú.\s]+[a-zA-Zá-úÁ-Ú.]+\z/, :message => ": Usar somente letras e espaços"
 
   validates_format_of :numero_permanente, :numero_correspondencia,
                       :with => /\A[A-Za-z0-9]+\Z/, :message => ": Usar somente números e letras, sem espaços."
