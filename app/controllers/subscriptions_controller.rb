@@ -21,13 +21,13 @@ class SubscriptionsController < ApplicationController
     @subscription = @user.subscriptions.build
     @course_areas = Course.find(:all, :group => 'area')
     @course = Course.first;
-    @course_subareas = Course.find(:all, :conditions => { :area => @course.area } )
+    @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
   end
   
   def course_subareas
     @area = params[:area].sub("area_select=","")
     @render = ""
-    @subareas = Course.find(:all, :conditions => { :area => @area} )
+    @subareas = Course.find(:all, :conditions => { :area => @area}, :group => 'subarea' )
     @subareas.each do |course|
       @render += "<option>"+course.subarea+"</option>"
     end
@@ -46,6 +46,9 @@ class SubscriptionsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @subscription = @user.subscriptions.build(params[:subscription])
+    @course = Course.find(:first, :conditions => {:nivel => params[:nivel_select],
+        :area => params[:area_select], :subarea => params[:subarea_select]})
+    @subscription.curso_id = @course.id
     if @subscription.save
       redirect_to user_subscription_url(@user, @subscription)
     else

@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Area</th>
     <th>Nivel</th>
     <th>Subarea</th>
@@ -9,6 +10,7 @@
 
 <% @courses.each do |course| %>
   <tr>
+    <td><%=h course.id %></td>
     <td><%=h course.area %></td>
     <td><%=h course.nivel %></td>
     <td><%=h course.subarea %></td>
