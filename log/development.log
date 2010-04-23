@@ -1394,3 +1394,586 @@ ActionController::RoutingError (No route matches "/users/2/tour/espacador.gif" w
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-23 16:54:32) [GET]
+  [4;36;1mCourse Load (35.9ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 569ms (View: 511, DB: 36) | 200 OK [http://localhost/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:54:33) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 16:58:57) [POST]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "area"=>"area_select=Matemática Aplicada"}
+  [4;35;1mCourse Load (13.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Matemática Aplicada') [0m
+Completed in 77ms (View: 19, DB: 13) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 16:58:58) [POST]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "area"=>"area_select=Matemática"}
+  [4;36;1mCourse Load (9.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Matemática') [0m
+Completed in 35ms (View: 3, DB: 10) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 16:59:02) [POST]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "area"=>"area_select=Ciência da Computação"}
+  [4;35;1mCourse Load (26.1ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Completed in 68ms (View: 6, DB: 26) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 17:12:08) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 151ms (View: 100, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:12:09) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#index (for 127.0.0.1 at 2010-04-23 17:12:35) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering subscriptions/index
+  [4;35;1mSubscription Load (7.1ms)[0m   [0mSELECT * FROM "subscriptions" WHERE ("subscriptions".user_id = 2) [0m
+Completed in 178ms (View: 79, DB: 12) | 200 OK [http://localhost/users/2/subscriptions]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:12:35) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:12:38) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (8.0ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.1ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (18.9ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 381ms (View: 212, DB: 34) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:12:39) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:12:43) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Estatística"}
+  [4;36;1mCourse Load (9.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Estatística') [0m
+Completed in 34ms (View: 3, DB: 10) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:12:44) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Ciência da Computação"}
+  [4;35;1mCourse Load (18.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Completed in 47ms (View: 3, DB: 19) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:14:25) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (5.8ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (4.4ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (9.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 182ms (View: 52, DB: 24) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:14:26) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:14:29) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (5.7ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.6ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (9.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 175ms (View: 48, DB: 23) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:14:30) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:14:34) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Estatística"}
+  [4;36;1mCourse Load (9.9ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Estatística') [0m
+Completed in 34ms (View: 4, DB: 10) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:14:35) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Ciência da Computação"}
+  [4;35;1mCourse Load (28.8ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Completed in 84ms (View: 3, DB: 29) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:17:38) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (3.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (4.3ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (2.4ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (6.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 103ms (View: 26, DB: 17) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:17:38) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:17:40) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (3.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (4.3ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (2.4ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (8.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 107ms (View: 25, DB: 18) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:17:40) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:17:49) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (5.8ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.1ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (11.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 196ms (View: 65, DB: 24) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:17:50) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:19:56) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (5.7ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.1ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (9.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 216ms (View: 47, DB: 23) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:19:57) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:20:18) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (5.8ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.3ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (11.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 370ms (View: 93, DB: 25) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:20:19) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:20:31) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Estatística"}
+  [4;36;1mCourse Load (10.2ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Estatística') [0m
+Completed in 39ms (View: 6, DB: 10) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:20:36) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Ciência da Computação"}
+  [4;35;1mCourse Load (21.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Completed in 52ms (View: 3, DB: 21) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:21:10) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (36.5ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.2ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (9.8ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 317ms (View: 48, DB: 54) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:21:11) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:21:15) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (5.7ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.1ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (13.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 174ms (View: 44, DB: 27) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:21:16) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:21:18) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (5.9ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.1ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (13.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 168ms (View: 43, DB: 27) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:21:19) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:22:52) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (22.8ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (18.9ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (30.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 344ms (View: 92, DB: 87) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:22:53) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:23:02) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Estatística"}
+  [4;36;1mCourse Load (9.7ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Estatística') GROUP BY subarea[0m
+Completed in 35ms (View: 4, DB: 10) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:23:05) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Ciência da Computação"}
+  [4;35;1mCourse Load (17.9ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Completed in 47ms (View: 4, DB: 18) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:32:04) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (3.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (4.9ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (2.3ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (8.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 101ms (View: 25, DB: 19) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:32:04) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#create (for 127.0.0.1 at 2010-04-23 17:32:26) [POST]
+  Parameters: {"commit"=>"Finalizar", "authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "nivel_select"=>"Mestrado", "user_id"=>"2", "area_select"=>"Ciência da Computação", "subarea_select"=>"Computação Musical", "subscription"=>{"outros_programas"=>"osdjasdioad", "propositos"=>"", "orientador"=>"", "dados_carta_recomendacao"=>"asdadasd", "bolsa_ime"=>"0", "bolsa_fomento"=>"", "inicio_pretendido"=>"Março", "observacoes"=>"", "bolsas_anteriores"=>"", "resumo_dissertacao_mestrado"=>"asdas", "trabalhar_se_aceito"=>"1"}}
+  [4;36;1mUser Load (4.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (4.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."nivel" = 'Mestrado' AND "courses"."subarea" = 'Computação Musical' AND "courses"."area" = 'Ciência da Computação') LIMIT 1[0m
+
+NoMethodError (undefined method `course_id=' for #<Subscription:0xb56ca54c>):
+  app/controllers/subscriptions_controller.rb:51:in `create'
+
+Rendered rescues/_trace (249.4ms)
+Rendered rescues/_request_and_response (5.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SubscriptionsController#index (for 127.0.0.1 at 2010-04-23 17:34:17) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering subscriptions/index
+  [4;35;1mSubscription Load (7.7ms)[0m   [0mSELECT * FROM "subscriptions" WHERE ("subscriptions".user_id = 2) [0m
+Completed in 167ms (View: 98, DB: 12) | 200 OK [http://localhost/users/2/subscriptions]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:34:18) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:34:20) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (6.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCourse Load (5.7ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.1ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (9.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 192ms (View: 49, DB: 25) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:34:20) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:34:22) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Estatística"}
+  [4;36;1mCourse Load (57.8ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Estatística') GROUP BY subarea[0m
+Completed in 90ms (View: 12, DB: 58) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#create (for 127.0.0.1 at 2010-04-23 17:34:28) [POST]
+  Parameters: {"commit"=>"Finalizar", "authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "nivel_select"=>"Mestrado", "user_id"=>"2", "area_select"=>"Estatística", "subarea_select"=>"Assassinos em Séries", "subscription"=>{"outros_programas"=>"asd", "propositos"=>"", "orientador"=>"", "dados_carta_recomendacao"=>"", "bolsa_ime"=>"0", "bolsa_fomento"=>"", "inicio_pretendido"=>"Março", "observacoes"=>"", "bolsas_anteriores"=>"", "resumo_dissertacao_mestrado"=>"", "trabalhar_se_aceito"=>"0"}}
+  [4;35;1mUser Load (4.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCourse Load (4.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."nivel" = 'Mestrado' AND "courses"."subarea" = 'Assassinos em Séries' AND "courses"."area" = 'Estatística') LIMIT 1[0m
+  [4;35;1mSubscription Create (5.7ms)[0m   [0mINSERT INTO "subscriptions" ("outros_programas", "diploma_content_type", "historico_file_name", "created_at", "historico_file_size", "orientador", "propositos", "updated_at", "bolsa_fomento", "bolsa_ime", "dados_carta_recomendacao", "inicio_pretendido", "user_id", "diploma_file_name", "historico_content_type", "observacoes", "diploma_file_size", "poscomp_file_name", "poscomp_content_type", "poscomp_file_size", "bolsas_anteriores", "trabalhar_se_aceito", "resumo_dissertacao_mestrado", "curso_id") VALUES('asd', NULL, NULL, '2010-04-23 20:34:28', NULL, '', '', '2010-04-23 20:34:28', '', 'f', '', 'Março', 2, NULL, NULL, '', NULL, NULL, NULL, NULL, '', 'f', '', 24)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://localhost:3003/users/2/subscriptions/11
+Completed in 134ms (DB: 15) | 302 Found [http://localhost/users/2/subscriptions]
+
+
+Processing SubscriptionsController#show (for 127.0.0.1 at 2010-04-23 17:34:28) [GET]
+  Parameters: {"id"=>"11", "user_id"=>"2"}
+  [4;36;1mUser Load (4.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mSubscription Load (5.3ms)[0m   [0mSELECT * FROM "subscriptions" WHERE ("subscriptions"."id" = 11 AND ("subscriptions".user_id = 2)) [0m
+Rendering template within layouts/application
+Rendering subscriptions/show
+Completed in 115ms (View: 34, DB: 10) | 200 OK [http://localhost/users/2/subscriptions/11]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:34:29) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-23 17:35:39) [GET]
+  [4;36;1mCourse Load (21.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 529ms (View: 486, DB: 21) | 200 OK [http://localhost/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:35:40) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:35:53) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Matemática"}
+  [4;35;1mCourse Load (9.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Matemática') GROUP BY subarea[0m
+Completed in 42ms (View: 4, DB: 10) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 17:35:56) [POST]
+  Parameters: {"authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "area"=>"area_select=Ciência da Computação"}
+  [4;36;1mCourse Load (15.1ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Completed in 42ms (View: 4, DB: 15) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#create (for 127.0.0.1 at 2010-04-23 17:36:09) [POST]
+  Parameters: {"commit"=>"Finalizar", "authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "nivel_select"=>"Mestrado", "user_id"=>"2", "area_select"=>"Ciência da Computação", "subarea_select"=>"Inteligência Artificial", "subscription"=>{"outros_programas"=>"asdsdasdasdadasd", "propositos"=>"asdadasd", "orientador"=>"", "dados_carta_recomendacao"=>"", "bolsa_ime"=>"0", "bolsa_fomento"=>"asdasd", "inicio_pretendido"=>"Agosto", "observacoes"=>"asdadasd", "bolsas_anteriores"=>"asd", "resumo_dissertacao_mestrado"=>"asdadadasd", "trabalhar_se_aceito"=>"1"}}
+  [4;35;1mUser Load (6.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCourse Load (9.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."nivel" = 'Mestrado' AND "courses"."subarea" = 'Inteligência Artificial' AND "courses"."area" = 'Ciência da Computação') LIMIT 1[0m
+  [4;35;1mSubscription Create (7.2ms)[0m   [0mINSERT INTO "subscriptions" ("outros_programas", "diploma_content_type", "historico_file_name", "created_at", "historico_file_size", "orientador", "propositos", "updated_at", "bolsa_fomento", "bolsa_ime", "dados_carta_recomendacao", "inicio_pretendido", "user_id", "diploma_file_name", "historico_content_type", "observacoes", "diploma_file_size", "poscomp_file_name", "poscomp_content_type", "poscomp_file_size", "bolsas_anteriores", "trabalhar_se_aceito", "resumo_dissertacao_mestrado", "curso_id") VALUES('asdsdasdasdadasd', NULL, NULL, '2010-04-23 20:36:09', NULL, '', 'asdadasd', '2010-04-23 20:36:09', 'asdasd', 'f', '', 'Agosto', 2, NULL, NULL, 'asdadasd', NULL, NULL, NULL, NULL, 'asd', 't', 'asdadadasd', 11)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://localhost:3003/users/2/subscriptions/12
+Completed in 171ms (DB: 22) | 302 Found [http://localhost/users/2/subscriptions]
+
+
+Processing SubscriptionsController#show (for 127.0.0.1 at 2010-04-23 17:36:10) [GET]
+  Parameters: {"id"=>"12", "user_id"=>"2"}
+  [4;36;1mUser Load (4.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mSubscription Load (5.0ms)[0m   [0mSELECT * FROM "subscriptions" WHERE ("subscriptions"."id" = 12 AND ("subscriptions".user_id = 2)) [0m
+Rendering template within layouts/application
+Rendering subscriptions/show
+Completed in 97ms (View: 20, DB: 10) | 200 OK [http://localhost/users/2/subscriptions/12]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:36:10) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-23 17:36:26) [GET]
+  [4;36;1mCourse Load (19.8ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 747ms (View: 675, DB: 20) | 200 OK [http://localhost/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:36:27) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#index (for 127.0.0.1 at 2010-04-23 17:36:43) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;35;1mUser Load (4.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering subscriptions/index
+  [4;36;1mSubscription Load (8.5ms)[0m   [0;1mSELECT * FROM "subscriptions" WHERE ("subscriptions".user_id = 2) [0m
+Completed in 189ms (View: 104, DB: 13) | 200 OK [http://localhost/users/2/subscriptions/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:36:44) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 17:36:54) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;35;1mUser Load (4.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCourse Load (5.7ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (3.0ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (9.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') GROUP BY subarea[0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 167ms (View: 47, DB: 23) | 200 OK [http://localhost/users/2/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:36:55) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#create (for 127.0.0.1 at 2010-04-23 17:40:54) [POST]
+  Parameters: {"commit"=>"Finalizar", "authenticity_token"=>"K1XTe8rJSHgvpb56Xbuj5WTfnglrSRNj5CzMPJOK+8E=", "nivel_select"=>"Doutorado", "user_id"=>"2", "area_select"=>"Ciência da Computação", "subarea_select"=>"Engenharia de Software", "subscription"=>{"outros_programas"=>"Nao", "propositos"=>"", "orientador"=>"Fabio Kon", "poscomp"=>#<File:/tmp/RackMultipart20100423-5500-10hbyqe-0>, "diploma"=>#<File:/tmp/RackMultipart20100423-5500-vycyi5-0>, "dados_carta_recomendacao"=>"Fulano, Ciclano", "bolsa_ime"=>"1", "bolsa_fomento"=>"Fapesp", "inicio_pretendido"=>"Agosto", "observacoes"=>"", "historico"=>#<File:/tmp/RackMultipart20100423-5500-y95ulg-0>, "bolsas_anteriores"=>"ASDASD", "resumo_dissertacao_mestrado"=>"sdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakj\r\nsdfskadjask ljdskad jlasjdlakj sdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjv", "trabalhar_se_aceito"=>"1"}}
+  [4;35;1mUser Load (7.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCourse Load (4.2ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."subarea" = 'Engenharia de Software' AND "courses"."area" = 'Ciência da Computação' AND "courses"."nivel" = 'Doutorado') LIMIT 1[0m
+  [4;35;1mSubscription Create (5.8ms)[0m   [0mINSERT INTO "subscriptions" ("outros_programas", "diploma_content_type", "historico_file_name", "created_at", "historico_file_size", "orientador", "propositos", "updated_at", "bolsa_fomento", "bolsa_ime", "dados_carta_recomendacao", "inicio_pretendido", "user_id", "diploma_file_name", "historico_content_type", "observacoes", "diploma_file_size", "poscomp_file_name", "poscomp_content_type", "poscomp_file_size", "bolsas_anteriores", "trabalhar_se_aceito", "resumo_dissertacao_mestrado", "curso_id") VALUES('Nao', 'application/octet-stream', 'pubkey.pub', '2010-04-23 20:40:54', 409, 'Fabio Kon', '', '2010-04-23 20:40:54', 'Fapesp', 't', 'Fulano, Ciclano', 'Agosto', 2, 'pubkey', 'application/octet-stream', '', 1743, 'README', 'application/octet-stream', 10011, 'ASDASD', 't', 'sdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakjsdfskadjaskljdskadjlasjdlakj
+sdfskadjask ljdskad jlasjdlakj sdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjsdfskadjask ljdskad jlasjdlakjv', 34)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/claudia.melo/Ingresso-na-Pos/public/arquivos/poscomp/13/README.
+[paperclip] saving /home/claudia.melo/Ingresso-na-Pos/public/arquivos/diploma/13/pubkey.
+[paperclip] saving /home/claudia.melo/Ingresso-na-Pos/public/arquivos/historico/13/pubkey.pub
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/2/subscriptions/13
+Completed in 246ms (DB: 17) | 302 Found [http://localhost/users/2/subscriptions]
+
+
+Processing SubscriptionsController#show (for 127.0.0.1 at 2010-04-23 17:40:54) [GET]
+  Parameters: {"id"=>"13", "user_id"=>"2"}
+  [4;36;1mUser Load (4.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mSubscription Load (8.4ms)[0m   [0mSELECT * FROM "subscriptions" WHERE ("subscriptions"."id" = 13 AND ("subscriptions".user_id = 2)) [0m
+Rendering template within layouts/application
+Rendering subscriptions/show
+Completed in 106ms (View: 22, DB: 13) | 200 OK [http://localhost/users/2/subscriptions/13]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 17:40:54) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
