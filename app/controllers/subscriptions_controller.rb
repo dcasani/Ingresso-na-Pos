@@ -22,7 +22,6 @@ class SubscriptionsController < ApplicationController
     @course_areas = Course.find(:all, :group => 'area')
     @course = Course.first;
     @course_subareas = Course.find(:all, :conditions => { :area => @course.area } )
-
   end
   
   def course_subareas

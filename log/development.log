@@ -1,0 +1,1396 @@
+# Logfile created on Fri Apr 23 15:55:57 -0300 2010
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 15:56:02) [GET]
+  Parameters: {"user_id"=>"8"}
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/subscriptions_controller.rb:20:in `new'
+
+Rendered rescues/_trace (76.9ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 15:56:05) [GET]
+  Parameters: {"user_id"=>"8"}
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/subscriptions_controller.rb:20:in `new'
+
+Rendered rescues/_trace (365.7ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:56:11) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:27:in `new'
+  app/controllers/users_controller.rb:27:in `new'
+
+Rendered rescues/_trace (446.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:57:01) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:27:in `new'
+  app/controllers/users_controller.rb:27:in `new'
+
+Rendered rescues/_trace (123.9ms)
+Rendered rescues/_request_and_response (9.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:57:02) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:27:in `new'
+  app/controllers/users_controller.rb:27:in `new'
+
+Rendered rescues/_trace (131.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:57:03) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:27:in `new'
+  app/controllers/users_controller.rb:27:in `new'
+
+Rendered rescues/_trace (125.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:57:04) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:27:in `new'
+  app/controllers/users_controller.rb:27:in `new'
+
+Rendered rescues/_trace (122.0ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:57:05) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:27:in `new'
+  app/controllers/users_controller.rb:27:in `new'
+
+Rendered rescues/_trace (321.5ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:57:06) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:27:in `new'
+  app/controllers/users_controller.rb:27:in `new'
+
+Rendered rescues/_trace (147.0ms)
+Rendered rescues/_request_and_response (11.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:57:41) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:27:in `new'
+  app/controllers/users_controller.rb:27:in `new'
+
+Rendered rescues/_trace (121.9ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:57:43) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:27:in `new'
+  app/controllers/users_controller.rb:27:in `new'
+
+Rendered rescues/_trace (125.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (55.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (10.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100406172104)
+  [4;36;1mSQL (25.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome_completo" varchar(255), "data_de_nascimento" date, "estado_civil" varchar(255), "identidade" integer, "tipo" varchar(255), "cpf" integer, "nacionalidade" varchar(255), "logradouro_permanente" varchar(255), "numero_permanente" integer, "cidade_permanente" varchar(255), "estado_permanente" varchar(255), "pais_permanente" varchar(255), "cep_permanente" integer, "telefone_permanente" integer, "logradouro_correspondencia" varchar(255), "numero_correspondencia" integer, "cidade_correspondencia" varchar(255), "estado_correspondencia" varchar(255), "pais_correspondencia" varchar(255), "cep_correspondencia" integer, "telefone_correspondencia" integer, "celular_correspondencia" integer, "email" varchar(255), "formacao_superior_graduacao" text, "formacao_superior_pos" text, "outras_academicas" text, "empregos_passados" text, "empregos_atuais" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100406172104')[0m
+Migrating to CreateCourses (20100406172742)
+  [4;36;1mSQL (5.1ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "area" varchar(255), "nivel" varchar(255), "subarea" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100406172742')[0m
+Migrating to CreateSubscriptions (20100406173914)
+  [4;36;1mSQL (5.2ms)[0m   [0;1mCREATE TABLE "subscriptions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "inicio_pretendido" varchar(255), "outros_programas" text, "orientador" varchar(255), "bolsa_fomento" varchar(255), "bolsa_ime" boolean, "bolsas_anteriores" text, "dados_carta_recomendacao" text, "trabalhar_se_aceito" boolean, "resumo_dissertacao_mestrado" text, "propositos" text, "observacoes" text, "curso_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100406173914')[0m
+Migrating to Mymigration (20100420210311)
+  [4;36;1mSQL (12.0ms)[0m   [0;1mALTER TABLE "subscriptions" ADD "diploma_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mALTER TABLE "subscriptions" ADD "diploma_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "subscriptions" ADD "diploma_file_size" integer[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mALTER TABLE "subscriptions" ADD "historico_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "subscriptions" ADD "historico_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "subscriptions" ADD "historico_file_size" integer[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mALTER TABLE "subscriptions" ADD "poscomp_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "subscriptions" ADD "poscomp_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mALTER TABLE "subscriptions" ADD "poscomp_file_size" integer[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100420210311')[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("courses")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("subscriptions")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:58:36) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 934ms (View: 739, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 15:58:38) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 15:58:46) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;36;1mUser Load (3.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=8):
+  app/controllers/subscriptions_controller.rb:20:in `new'
+
+Rendered rescues/_trace (118.6ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-23 15:58:51) [GET]
+  [4;35;1mUser Load (17.9ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 115ms (View: 34, DB: 18) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 15:58:51) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-23 15:58:55) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 211ms (View: 166, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#tour to gif (for 127.0.0.1 at 2010-04-23 15:58:55) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-23 15:59:02) [POST]
+  Parameters: {"commit"=>"Continuar", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "user"=>{"cep_correspondencia"=>"", "pais_correspondencia"=>"", "numero_correspondencia"=>"", "tipo"=>"CNH", "nome_completo"=>"regis", "logradouro_correspondencia"=>"", "telefone_permanente"=>"", "cpf"=>"", "empregos_atuais"=>"", "outras_academicas"=>"", "celular_correspondencia"=>"", "numero_permanente"=>"", "logradouro_permanente"=>"", "identidade"=>"", "formacao_superior_pos"=>"", "nacionalidade"=>"", "empregos_passados"=>"", "formacao_superior_graduacao"=>"", "pais_permanente"=>"", "estado_permanente"=>"", "data_de_nascimento(1i)"=>"1994", "cidade_correspondencia"=>"", "estado_civil"=>"Casado", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"", "cidade_permanente"=>"", "data_de_nascimento(3i)"=>"23", "estado_correspondencia"=>"", "cep_permanente"=>"", "email"=>""}}
+  [4;36;1mUser Load (2.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identidade" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 575ms (View: 308, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 15:59:03) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-23 15:59:26) [POST]
+  Parameters: {"commit"=>"Continuar", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "user"=>{"cep_correspondencia"=>"jgh", "pais_correspondencia"=>"jgh", "numero_correspondencia"=>"jfgh", "tipo"=>"CNH", "nome_completo"=>"regis", "logradouro_correspondencia"=>"jghj", "telefone_permanente"=>"jgh", "cpf"=>"hgjf", "empregos_atuais"=>"jg", "outras_academicas"=>"jgh", "celular_correspondencia"=>"jghjgh", "numero_permanente"=>"ghjhg", "logradouro_permanente"=>"jghjf", "identidade"=>"ghfj", "formacao_superior_pos"=>"ghj", "nacionalidade"=>"gfh", "empregos_passados"=>"jgh", "formacao_superior_graduacao"=>"jhg", "pais_permanente"=>"ghfjh", "estado_permanente"=>"jfghj", "data_de_nascimento(1i)"=>"1994", "cidade_correspondencia"=>"jh", "estado_civil"=>"Casado", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"jgh", "cidade_permanente"=>"ghjfgh", "data_de_nascimento(3i)"=>"23", "estado_correspondencia"=>"jf", "cep_permanente"=>"jgh", "email"=>"hjfg"}}
+  [4;35;1mUser Load (2.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."identidade" = 0) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 202ms (View: 118, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 15:59:27) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-23 15:59:45) [POST]
+  Parameters: {"commit"=>"Continuar", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "user"=>{"cep_correspondencia"=>"jgh", "pais_correspondencia"=>"jgh", "numero_correspondencia"=>"jfgh", "tipo"=>"CNH", "nome_completo"=>"regis", "logradouro_correspondencia"=>"jghj", "telefone_permanente"=>"jgh", "cpf"=>"hgjf", "empregos_atuais"=>"jg", "outras_academicas"=>"jgh", "celular_correspondencia"=>"jghjgh", "numero_permanente"=>"ghjhg", "logradouro_permanente"=>"jghjf", "identidade"=>"ghfj", "formacao_superior_pos"=>"ghj", "nacionalidade"=>"gfh", "empregos_passados"=>"jgh", "formacao_superior_graduacao"=>"jhg", "pais_permanente"=>"ghfjh", "estado_permanente"=>"jfghj", "data_de_nascimento(1i)"=>"1994", "cidade_correspondencia"=>"jh", "estado_civil"=>"Casado", "data_de_nascimento(2i)"=>"4", "telefone_correspondencia"=>"jgh", "cidade_permanente"=>"ghjfgh", "data_de_nascimento(3i)"=>"23", "estado_correspondencia"=>"jf", "cep_permanente"=>"jgh", "email"=>"hjfg@jkhd.com"}}
+  [4;36;1mUser Load (5.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."identidade" = 0) LIMIT 1[0m
+  [4;35;1mUser Create (31.1ms)[0m   [0mINSERT INTO "users" ("nome_completo", "tipo", "numero_correspondencia", "pais_correspondencia", "cep_correspondencia", "created_at", "logradouro_correspondencia", "cpf", "telefone_permanente", "updated_at", "logradouro_permanente", "numero_permanente", "celular_correspondencia", "outras_academicas", "empregos_atuais", "identidade", "nacionalidade", "formacao_superior_pos", "estado_permanente", "pais_permanente", "formacao_superior_graduacao", "empregos_passados", "estado_civil", "cidade_correspondencia", "data_de_nascimento", "cidade_permanente", "telefone_correspondencia", "cep_permanente", "estado_correspondencia", "email") VALUES('regis', 'CNH', 0, 'jgh', 0, '2010-04-23 18:59:45', 'jghj', 0, 0, '2010-04-23 18:59:45', 'jghjf', 0, 0, 'jgh', 'jg', 0, 'gfh', 'ghj', 'jfghj', 'ghfjh', 'jhg', 'jgh', 'Casado', 'jh', '1994-04-23', 'ghjfgh', 0, 0, 'jf', 'hjfg@jkhd.com')[0m
+Redirected to http://localhost:3000/users/1/subscriptions/new
+Completed in 218ms (DB: 36) | 302 Found [http://localhost/users]
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 15:59:46) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (12.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCourse Load (6.1ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (5.7ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+
+NoMethodError (undefined method `area' for nil:NilClass):
+  app/controllers/subscriptions_controller.rb:24:in `new'
+
+Rendered rescues/_trace (104.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-23 16:01:20) [GET]
+  [4;35;1mCourse Load (6.9ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 102ms (View: 31, DB: 7) | 200 OK [http://localhost/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:01:20) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:07:18) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (15.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=1):
+  app/controllers/subscriptions_controller.rb:20:in `new'
+
+Rendered rescues/_trace (306.9ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:07:21) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (5.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=1):
+  app/controllers/subscriptions_controller.rb:20:in `new'
+
+Rendered rescues/_trace (60.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-23 16:07:24) [GET]
+  [4;36;1mUser Load (50.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 275ms (View: 181, DB: 50) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:07:25) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:07:36) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (30.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (5.2ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (3.8ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (8.9ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 508ms (View: 295, DB: 49) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:07:37) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:08:14) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (7.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (5.4ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (3.1ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (9.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 312ms (View: 84, DB: 25) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:08:15) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:09:33) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (8.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (7.5ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (6.4ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (10.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 383ms (View: 86, DB: 33) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:09:34) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:12:56) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (3.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (3.9ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (2.4ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (7.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 122ms (View: 40, DB: 17) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:12:56) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:13:53) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (4.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (5.5ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (3.0ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (18.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 229ms (View: 77, DB: 31) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:13:54) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:14:27) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (4.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (5.3ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (3.1ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (9.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 434ms (View: 82, DB: 22) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:14:28) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:14:29) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (4.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (5.3ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (3.1ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (9.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 303ms (View: 154, DB: 22) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:14:30) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:14:32) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (16.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (14.3ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (3.0ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (9.2ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 281ms (View: 56, DB: 43) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:14:32) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 16:14:36) [POST]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "area"=>"area_select=Estatística"}
+  [4;35;1mCourse Load (10.9ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Estatística') [0m
+Completed in 54ms (View: 13, DB: 11) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 16:14:39) [POST]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "area"=>"area_select=Ciência da Computação"}
+  [4;36;1mCourse Load (14.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Completed in 41ms (View: 3, DB: 14) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-23 16:15:18) [GET]
+  [4;35;1mCourse Load (29.7ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 399ms (View: 316, DB: 30) | 200 OK [http://localhost/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:15:19) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#destroy (for 127.0.0.1 at 2010-04-23 16:15:23) [DELETE]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "id"=>"22"}
+  [4;36;1mCourse Load (11.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 22) [0m
+  [4;35;1mCourse Destroy (5.5ms)[0m   [0mDELETE FROM "courses" WHERE "id" = 22[0m
+Redirected to http://localhost:3000/courses
+Completed in 95ms (DB: 17) | 302 Found [http://localhost/courses/22]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-23 16:15:24) [GET]
+  [4;36;1mCourse Load (34.1ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 493ms (View: 424, DB: 34) | 200 OK [http://localhost/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:15:25) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#destroy (for 127.0.0.1 at 2010-04-23 16:15:31) [DELETE]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "id"=>"21"}
+  [4;35;1mCourse Load (4.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 21) [0m
+  [4;36;1mCourse Destroy (14.9ms)[0m   [0;1mDELETE FROM "courses" WHERE "id" = 21[0m
+Redirected to http://localhost:3000/courses
+Completed in 56ms (DB: 19) | 302 Found [http://localhost/courses/21]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-23 16:15:31) [GET]
+  [4;35;1mCourse Load (14.5ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 314ms (View: 281, DB: 14) | 200 OK [http://localhost/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:15:31) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:15:34) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;36;1mUser Load (13.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mCourse Load (5.8ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.1ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (8.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 194ms (View: 55, DB: 31) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:15:35) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2010-04-23 16:15:52) [GET]
+Rendering template within layouts/application
+Rendering courses/new
+Completed in 56ms (View: 32, DB: 0) | 200 OK [http://localhost/courses/new]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:15:53) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:16:16) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Banco de Dados", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (5.9ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:16:16', 'Banco de Dados', '2010-04-23 19:16:16', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/26
+Completed in 67ms (DB: 6) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:16:16) [GET]
+  Parameters: {"id"=>"26"}
+  [4;35;1mCourse Load (5.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 26) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 64ms (View: 24, DB: 6) | 200 OK [http://localhost/courses/26]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:16:16) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2010-04-23 16:16:27) [GET]
+Rendering template within layouts/application
+Rendering courses/new
+Completed in 120ms (View: 75, DB: 0) | 200 OK [http://localhost/courses/new]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:16:28) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:16:37) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Bioinformática", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (5.9ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:16:37', 'Bioinformática', '2010-04-23 19:16:37', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/27
+Completed in 59ms (DB: 6) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:16:37) [GET]
+  Parameters: {"id"=>"27"}
+  [4;35;1mCourse Load (4.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 27) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 51ms (View: 14, DB: 4) | 200 OK [http://localhost/courses/27]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:16:37) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2010-04-23 16:16:42) [GET]
+Rendering template within layouts/application
+Rendering courses/new
+Completed in 131ms (View: 82, DB: 0) | 200 OK [http://localhost/courses/new]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:16:43) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:16:53) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Combinatória", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (19.2ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:16:53', 'Combinatória', '2010-04-23 19:16:53', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/28
+Completed in 98ms (DB: 19) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:16:54) [GET]
+  Parameters: {"id"=>"28"}
+  [4;35;1mCourse Load (4.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 28) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 44ms (View: 12, DB: 5) | 200 OK [http://localhost/courses/28]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:16:54) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2010-04-23 16:16:56) [GET]
+Rendering template within layouts/application
+Rendering courses/new
+Completed in 111ms (View: 62, DB: 0) | 200 OK [http://localhost/courses/new]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:16:57) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:17:10) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Combinatória e Grafos", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (10.7ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:17:10', 'Combinatória e Grafos', '2010-04-23 19:17:10', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/29
+Completed in 90ms (DB: 11) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:17:10) [GET]
+  Parameters: {"id"=>"29"}
+  [4;35;1mCourse Load (4.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 29) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 55ms (View: 14, DB: 4) | 200 OK [http://localhost/courses/29]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:17:11) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2010-04-23 16:17:14) [GET]
+Rendering template within layouts/application
+Rendering courses/new
+Completed in 108ms (View: 63, DB: 0) | 200 OK [http://localhost/courses/new]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:17:14) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:17:30) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Computação Gráfica", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (17.3ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:17:30', 'Computação Gráfica', '2010-04-23 19:17:30', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/30
+Completed in 84ms (DB: 17) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:17:30) [GET]
+  Parameters: {"id"=>"30"}
+  [4;35;1mCourse Load (15.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 30) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 180ms (View: 60, DB: 16) | 200 OK [http://localhost/courses/30]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:17:31) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2010-04-23 16:17:38) [GET]
+Rendering template within layouts/application
+Rendering courses/new
+Completed in 118ms (View: 62, DB: 0) | 200 OK [http://localhost/courses/new]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:17:39) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:17:44) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Computação Paralela", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (6.3ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:17:44', 'Computação Paralela', '2010-04-23 19:17:44', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/31
+Completed in 63ms (DB: 6) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:17:44) [GET]
+  Parameters: {"id"=>"31"}
+  [4;35;1mCourse Load (5.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 220ms (View: 14, DB: 5) | 200 OK [http://localhost/courses/31]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:17:45) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:17:54) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Computação Musical", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (26.1ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:17:54', 'Computação Musical', '2010-04-23 19:17:54', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/32
+Completed in 96ms (DB: 26) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:17:55) [GET]
+  Parameters: {"id"=>"32"}
+  [4;35;1mCourse Load (12.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 32) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 48ms (View: 13, DB: 12) | 200 OK [http://localhost/courses/32]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:17:55) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:18:04) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Criptografia", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (11.8ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:18:04', 'Criptografia', '2010-04-23 19:18:04', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/33
+Completed in 110ms (DB: 12) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:18:04) [GET]
+  Parameters: {"id"=>"33"}
+  [4;35;1mCourse Load (4.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 33) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 39ms (View: 12, DB: 5) | 200 OK [http://localhost/courses/33]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:18:04) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:18:14) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Engenharia de Software", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (21.6ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:18:14', 'Engenharia de Software', '2010-04-23 19:18:14', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/34
+Completed in 95ms (DB: 22) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:18:14) [GET]
+  Parameters: {"id"=>"34"}
+  [4;35;1mCourse Load (4.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 34) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 48ms (View: 12, DB: 5) | 200 OK [http://localhost/courses/34]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:18:15) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:18:24) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Inteligência Artificial", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (329.0ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:18:24', 'Inteligência Artificial', '2010-04-23 19:18:24', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/35
+Completed in 411ms (DB: 329) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:18:24) [GET]
+  Parameters: {"id"=>"35"}
+  [4;35;1mCourse Load (13.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 35) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 53ms (View: 15, DB: 14) | 200 OK [http://localhost/courses/35]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:18:25) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:18:38) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Linguagens de Programação", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (28.5ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:18:39', 'Linguagens de Programação', '2010-04-23 19:18:39', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/36
+Completed in 101ms (DB: 28) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:18:39) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mCourse Load (4.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 50ms (View: 15, DB: 5) | 200 OK [http://localhost/courses/36]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:18:39) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:18:49) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Lógica Computacional", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (7.8ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:18:49', 'Lógica Computacional', '2010-04-23 19:18:49', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/37
+Completed in 80ms (DB: 8) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:18:49) [GET]
+  Parameters: {"id"=>"37"}
+  [4;35;1mCourse Load (11.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 37) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 59ms (View: 13, DB: 12) | 200 OK [http://localhost/courses/37]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:18:50) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:19:03) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Otimização Combinatória", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (6.1ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:19:03', 'Otimização Combinatória', '2010-04-23 19:19:03', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/38
+Completed in 64ms (DB: 6) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:19:03) [GET]
+  Parameters: {"id"=>"38"}
+  [4;35;1mCourse Load (4.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 38) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 49ms (View: 12, DB: 5) | 200 OK [http://localhost/courses/38]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:19:03) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:19:11) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Otimização Contínua", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (9.5ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:19:11', 'Otimização Contínua', '2010-04-23 19:19:11', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/39
+Completed in 80ms (DB: 10) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:19:11) [GET]
+  Parameters: {"id"=>"39"}
+  [4;35;1mCourse Load (12.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 39) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 51ms (View: 13, DB: 13) | 200 OK [http://localhost/courses/39]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:19:12) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:19:21) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Sistemas Distribuídos", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (9.9ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:19:21', 'Sistemas Distribuídos', '2010-04-23 19:19:21', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/40
+Completed in 99ms (DB: 10) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:19:21) [GET]
+  Parameters: {"id"=>"40"}
+  [4;35;1mCourse Load (4.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 40) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 47ms (View: 12, DB: 5) | 200 OK [http://localhost/courses/40]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:19:22) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:19:33) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Sistemas de Tutores Inteligentes", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (11.3ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:19:33', 'Sistemas de Tutores Inteligentes', '2010-04-23 19:19:33', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/41
+Completed in 96ms (DB: 11) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:19:33) [GET]
+  Parameters: {"id"=>"41"}
+  [4;35;1mCourse Load (4.8ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 41) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 49ms (View: 13, DB: 5) | 200 OK [http://localhost/courses/41]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:19:33) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:19:45) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Teoria dos Autômatos", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (7.6ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:19:45', 'Teoria dos Autômatos', '2010-04-23 19:19:45', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/42
+Completed in 75ms (DB: 8) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:19:45) [GET]
+  Parameters: {"id"=>"42"}
+  [4;35;1mCourse Load (12.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 42) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 59ms (View: 16, DB: 13) | 200 OK [http://localhost/courses/42]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:19:46) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:19:57) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Visão Computacional", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (12.2ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:19:57', 'Visão Computacional', '2010-04-23 19:19:57', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/43
+Completed in 80ms (DB: 12) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:19:57) [GET]
+  Parameters: {"id"=>"43"}
+  [4;35;1mCourse Load (31.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 43) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 91ms (View: 28, DB: 31) | 200 OK [http://localhost/courses/43]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:19:58) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:20:03) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Outras", "area"=>"Ciência da Computação"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (6.3ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:20:03', 'Outras', '2010-04-23 19:20:03', 'Ciência da Computação')[0m
+Redirected to http://localhost:3000/courses/44
+Completed in 46ms (DB: 6) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:20:03) [GET]
+  Parameters: {"id"=>"44"}
+  [4;35;1mCourse Load (4.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 44) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 64ms (View: 13, DB: 5) | 200 OK [http://localhost/courses/44]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:20:04) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:20:27) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Estudo das Integrais", "area"=>"Matemática"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;36;1mCourse Create (10.3ms)[0m   [0;1mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:20:27', 'Estudo das Integrais', '2010-04-23 19:20:27', 'Matemática')[0m
+Redirected to http://localhost:3000/courses/45
+Completed in 95ms (DB: 10) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:20:28) [GET]
+  Parameters: {"id"=>"45"}
+  [4;35;1mCourse Load (6.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 45) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 66ms (View: 17, DB: 7) | 200 OK [http://localhost/courses/45]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:20:28) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-23 16:20:35) [GET]
+  [4;36;1mCourse Load (22.2ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 877ms (View: 836, DB: 22) | 200 OK [http://localhost/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:20:37) [GET]
+
+ActionController::RoutingError (No route matches "/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:20:50) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Assassinos em Séries", "area"=>"Estatística"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;35;1mCourse Create (19.1ms)[0m   [0mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:20:50', 'Assassinos em Séries', '2010-04-23 19:20:50', 'Estatística')[0m
+Redirected to http://localhost:3000/courses/46
+Completed in 107ms (DB: 19) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:20:50) [GET]
+  Parameters: {"id"=>"46"}
+  [4;36;1mCourse Load (4.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 46) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 52ms (View: 15, DB: 5) | 200 OK [http://localhost/courses/46]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:20:51) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2010-04-23 16:21:12) [POST]
+  Parameters: {"course"=>{"nivel"=>"Doutorado", "subarea"=>"Aplicações da Raiz Quadrada", "area"=>"Matemática Aplicada"}, "commit"=>"Create", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ="}
+  [4;35;1mCourse Create (11.2ms)[0m   [0mINSERT INTO "courses" ("nivel", "created_at", "subarea", "updated_at", "area") VALUES('Doutorado', '2010-04-23 19:21:12', 'Aplicações da Raiz Quadrada', '2010-04-23 19:21:12', 'Matemática Aplicada')[0m
+Redirected to http://localhost:3000/courses/47
+Completed in 70ms (DB: 11) | 302 Found [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:21:12) [GET]
+  Parameters: {"id"=>"47"}
+  [4;36;1mCourse Load (4.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 47) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 52ms (View: 20, DB: 5) | 200 OK [http://localhost/courses/47]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:21:13) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-04-23 16:21:16) [GET]
+  Parameters: {"id"=>"47"}
+  [4;35;1mCourse Load (7.8ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 47) [0m
+Rendering template within layouts/application
+Rendering courses/show
+Completed in 109ms (View: 31, DB: 8) | 200 OK [http://localhost/courses/47]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:21:17) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-04-23 16:21:21) [GET]
+  [4;36;1mCourse Load (29.2ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/application
+Rendering courses/index
+Completed in 789ms (View: 740, DB: 29) | 200 OK [http://localhost/courses/]
+
+
+Processing CoursesController#tour to gif (for 127.0.0.1 at 2010-04-23 16:21:22) [GET]
+  Parameters: {"id"=>"espacador"}
+
+ActionController::UnknownAction (No action responded to tour. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:21:30) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Load (4.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCourse Load (5.9ms)[0m   [0;1mSELECT * FROM "courses" GROUP BY area[0m
+  [4;35;1mCourse Load (3.0ms)[0m   [0mSELECT * FROM "courses" LIMIT 1[0m
+  [4;36;1mCourse Load (22.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 299ms (View: 53, DB: 36) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:21:31) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 16:21:40) [POST]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "area"=>"area_select=Matemática"}
+  [4;35;1mCourse Load (10.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Matemática') [0m
+Completed in 261ms (View: 4, DB: 10) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 16:21:41) [POST]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "area"=>"area_select=Estatística"}
+  [4;36;1mCourse Load (9.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Estatística') [0m
+Completed in 34ms (View: 3, DB: 9) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 16:21:43) [POST]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "area"=>"area_select=Matemática"}
+  [4;35;1mCourse Load (9.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Matemática') [0m
+Completed in 36ms (View: 3, DB: 9) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 16:21:45) [POST]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "area"=>"area_select=Matemática Aplicada"}
+  [4;36;1mCourse Load (9.7ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."area" = 'Matemática Aplicada') [0m
+Completed in 56ms (View: 26, DB: 10) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#course_subareas (for 127.0.0.1 at 2010-04-23 16:21:47) [POST]
+  Parameters: {"authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "area"=>"area_select=Ciência da Computação"}
+  [4;35;1mCourse Load (18.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Completed in 47ms (View: 3, DB: 19) | 200 OK [http://localhost/subscriptions/course_subareas]
+
+
+Processing SubscriptionsController#index (for 127.0.0.1 at 2010-04-23 16:26:31) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;36;1mUser Load (13.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering subscriptions/index
+  [4;35;1mSubscription Load (6.0ms)[0m   [0mSELECT * FROM "subscriptions" WHERE ("subscriptions".user_id = 8) [0m
+Completed in 250ms (View: 92, DB: 19) | 200 OK [http://localhost/users/8/subscriptions/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:26:31) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:27:04) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;36;1mUser Load (16.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mCourse Load (7.6ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.1ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (18.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 257ms (View: 71, DB: 46) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:27:05) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#create (for 127.0.0.1 at 2010-04-23 16:27:11) [POST]
+  Parameters: {"commit"=>"Finalizar", "authenticity_token"=>"LcCKHfwsAB6NhjZ9pNC1T03vWTynLOPhppMI5DtIxmQ=", "nivel_select"=>"Mestrado", "user_id"=>"8", "area_select"=>"Ciência da Computação", "subarea_select"=>"Banco de Dados", "subscription"=>{"outros_programas"=>"", "propositos"=>"", "orientador"=>"", "dados_carta_recomendacao"=>"", "bolsa_ime"=>"0", "bolsa_fomento"=>"", "inicio_pretendido"=>"Março", "observacoes"=>"", "bolsas_anteriores"=>"j", "resumo_dissertacao_mestrado"=>"", "trabalhar_se_aceito"=>"0"}}
+  [4;36;1mUser Load (5.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mSubscription Create (6.6ms)[0m   [0mINSERT INTO "subscriptions" ("outros_programas", "diploma_content_type", "historico_file_name", "created_at", "historico_file_size", "orientador", "propositos", "updated_at", "bolsa_fomento", "bolsa_ime", "dados_carta_recomendacao", "inicio_pretendido", "user_id", "diploma_file_name", "historico_content_type", "observacoes", "diploma_file_size", "poscomp_file_name", "poscomp_content_type", "poscomp_file_size", "bolsas_anteriores", "trabalhar_se_aceito", "resumo_dissertacao_mestrado", "curso_id") VALUES('', NULL, NULL, '2010-04-23 19:27:11', NULL, '', '', '2010-04-23 19:27:11', '', 'f', '', 'Março', 8, NULL, NULL, '', NULL, NULL, NULL, NULL, 'j', 'f', '', NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/8/subscriptions/10
+Completed in 138ms (DB: 12) | 302 Found [http://localhost/users/8/subscriptions]
+
+
+Processing SubscriptionsController#show (for 127.0.0.1 at 2010-04-23 16:27:11) [GET]
+  Parameters: {"id"=>"10", "user_id"=>"8"}
+  [4;36;1mUser Load (4.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mSubscription Load (5.0ms)[0m   [0mSELECT * FROM "subscriptions" WHERE ("subscriptions"."id" = 10 AND ("subscriptions".user_id = 8)) [0m
+Rendering template within layouts/application
+Rendering subscriptions/show
+Completed in 133ms (View: 43, DB: 9) | 200 OK [http://localhost/users/8/subscriptions/10]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:27:11) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#new (for 127.0.0.1 at 2010-04-23 16:27:20) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;36;1mUser Load (19.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mCourse Load (7.7ms)[0m   [0mSELECT * FROM "courses" GROUP BY area[0m
+  [4;36;1mCourse Load (3.0ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mCourse Load (14.1ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."area" = 'Ciência da Computação') [0m
+Rendering template within layouts/application
+Rendering subscriptions/new
+Completed in 367ms (View: 68, DB: 45) | 200 OK [http://localhost/users/8/subscriptions/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:27:21) [GET]
+
+ActionController::RoutingError (No route matches "/users/8/subscriptions/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:33:37) [GET]
+
+ActionController::RoutingError (No route matches "/user/2/subscriptions" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SubscriptionsController#index (for 127.0.0.1 at 2010-04-23 16:33:42) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (4.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering subscriptions/index
+  [4;35;1mSubscription Load (7.7ms)[0m   [0mSELECT * FROM "subscriptions" WHERE ("subscriptions".user_id = 2) [0m
+Completed in 194ms (View: 95, DB: 12) | 200 OK [http://localhost/users/2/subscriptions]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-23 16:33:42) [GET]
+
+ActionController::RoutingError (No route matches "/users/2/tour/espacador.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
