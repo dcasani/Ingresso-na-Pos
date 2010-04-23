@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   validates_format_of :logradouro_permanente, :logradouro_correspondencia,
                        :with => /\A[a-zA-Zá-úÁ-ÚçÇ-]+( [-,.]? ?[a-zA-Zá-úÁ-ÚçÇ-]+)*\Z/, :message => ": Usar somente letras e espaços"
 
+  validates_numericality_of :cep_permanente, :cep_correspondencia, :message => ":Usar apenas números no código postal"
+
   validates_format_of :numero_permanente, :numero_correspondencia,
                       :with => /\A[A-Za-z0-9]+\Z/, :message => ": Usar somente números e letras, sem espaços."
 

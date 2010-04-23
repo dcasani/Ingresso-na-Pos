@@ -15,7 +15,12 @@ describe User do
     end
 
     it "Deve validar um nome com acentos e caracteres latinos" do
-      @user = User.new(:nome_completo => 'Álvaro Cássia João Cauê Cabeçada')
+      @user = User.new(:nome_completo => 'Álvaro Cássia João Cauê Cabëçada')
+      @user.should have(:no).errors_on(:nome_completo)
+    end
+
+    it "Deve validar um nome com hífen" do
+      @user = User.new(:nome_completo => 'Alinka François-Lépine')
       @user.should have(:no).errors_on(:nome_completo)
     end
 
@@ -56,7 +61,7 @@ describe User do
     end
 
     it "Não deve validar um logradouro permanente com caracteres estranhos" do
-      @user = User.new(:logradouro_permanente => '@$%&*()-+')
+      @user = User.new(:logradouro_permanente => '!@$%*()+=|\\#{}[]?><')
       @user.should have_at_least(1).errors_on(:logradouro_permanente)
     end
 
@@ -65,8 +70,28 @@ describe User do
       @user.should have_at_least(1).errors_on(:numero_permanente)
     end
 
+    it "Deve validar códigos postais vazios" do
+      pending "ARRUMAR!!!"
+      @user = User.new(:cep_permanente => '')
+      @user.should have(:no).errors_on(:cep_permanente)
+    end
+
+    it "Deve validar códigos postais que possuam apenas números" do
+      @user = User.new(:cep_permanente => '1234567890')
+      @user.should have(:no).errors_on(:cep_permanente)
+
+      @user = User.new(:cep_permanente => 'a1234567890')
+      @user.should have_at_least(1).errors_on(:cep_permanente)
+    end
+
     it "Deve validar um número permanente que seja formado por números e letras" do
-      @user = User.new(:numero_permanente => 'b')
+      @user = User.new(:numero_permanente => '23')
+      @user.should have(:no).errors_on(:numero_permanente)
+
+      @user = User.new(:numero_permanente => 'B')
+      @user.should have(:no).errors_on(:numero_permanente)
+
+      @user = User.new(:numero_permanente => '23b')
       @user.should have(:no).errors_on(:numero_permanente)
     end
 
