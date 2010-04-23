@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-models-subscription_rb.html">app/models/subscription.rb</a></td>
-            <td class='right_align'><tt>3</tt></td>
-            <td class='right_align'><tt>3</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class='right_align'><tt>7</tt></td>
+            <td class='right_align'><tt>7</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>42.86%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:100px"></div>
-            <div class="uncovered" style="width:0px"></div>
+            <div class="covered" style="width:43px"></div>
+            <div class="uncovered" style="width:57px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>42.86%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:100px"></div>
-            <div class="uncovered" style="width:0px"></div>
+            <div class="covered" style="width:43px"></div>
+            <div class="uncovered" style="width:57px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -68,14 +68,38 @@
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line3">3</a> end</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line3">3</a>   require 'paperclip'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line4">4</a>   has_attached_file :diploma, :url =&gt; &quot;/arquivos/diploma/:id/:basename.:extension&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line5">5</a>   has_attached_file :historico, :url =&gt; &quot;/arquivos/historico/:id/:basename.:extension&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line6">6</a>   has_attached_file :poscomp, :url =&gt; &quot;/arquivos/poscomp/:id/:basename.:extension&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line7">7</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Fri Apr 16 14:25:04 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri Apr 23 16:44:38 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
