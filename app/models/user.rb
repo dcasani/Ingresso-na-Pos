@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
 
   validates_format_of :identidade,
-                      :with => /\A([0-9]+)\Z/, :message => ": Usar somente letras, números, . e -"
+                      :with => /\A([a-z0-9]+)*\Z/i, :message => ": Usar somente letras, números, . e -"
 
   validates_format_of :tipo, :nacionalidade, :cidade_permanente,
                       :estado_permanente, :pais_permanente, :cidade_correspondencia,

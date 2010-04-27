@@ -55,9 +55,9 @@ describe User do
 
   context "Validaçoes de outros dados pessoais" do
 
-    it "Não deve validar um documento de identidade em branco" do
+    it "Deve validar um documento de identidade em branco" do
       @user = User.new(:identidade => '')
-      @user.should have_at_least(1).errors_on(:identidade)
+      @user.should have(:no).errors_on(:identidade)
     end
 
     it "Deve validar um documento de identidade com pontos e traços" do
@@ -68,6 +68,11 @@ describe User do
     it "Deve validar uma nacionalidade em branco" do
       @user = User.new(:nacionalidade => '')
       @user.should have(:no).errors_on(:nacionalidade)
+    end
+
+    it "Deve validar um cpf em branco" do
+      @user = User.new(:cpf => '')
+      @user.should have(:no).errors_on(:cpf)
     end
 
   end

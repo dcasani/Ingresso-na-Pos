@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-models-subscription_rb.html">app/models/subscription.rb</a></td>
-            <td class='right_align'><tt>7</tt></td>
-            <td class='right_align'><tt>7</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>42.86%</tt></div>
+            <td class='right_align'><tt>18</tt></td>
+            <td class='right_align'><tt>10</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>16.67%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:43px"></div>
-            <div class="uncovered" style="width:57px"></div>
+            <div class="covered" style="width:17px"></div>
+            <div class="uncovered" style="width:83px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>42.86%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>30.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:43px"></div>
-            <div class="uncovered" style="width:57px"></div>
+            <div class="covered" style="width:30px"></div>
+            <div class="uncovered" style="width:70px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -93,13 +93,79 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line7">7</a> end</pre></td>
+            <td><pre><a name="line7">7</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line8">8</a>   validates_presence_of :inicio_pretendido, :propositos</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line9">9</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line10">10</a>   validates_format_of :orientador,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line11">11</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ\.-]*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line12">12</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line13">13</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line14">14</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line15">15</a>   #validates_format_of :bolsa_fomento, :bolsas_anteriores,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line16">16</a>   #                    :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ-]+( [a-zA-Zá-úÁ-ÚçÇ-]+)*\Z+\A\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line17">17</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line18">18</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Fri Apr 23 16:44:38 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Apr 27 16:08:51 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
