@@ -53,6 +53,31 @@ describe User do
 
   end
 
+  context "Validaçoes de outros dados pessoais" do
+
+    it "Não deve validar um documento de identidade em branco" do
+      @user = User.new(:identidade => '')
+      @user.should have_at_least(1).errors_on(:identidade)
+    end
+
+    it "Deve validar um documento de identidade com pontos e traços" do
+      @user = User.new(:identidade => '999.999.999-69')
+      @user.should have(0).errors_on(:identidade)
+    end
+
+    it "Não deve validar um documento de identidade com caracteres estranhos" do
+      pending
+      @user = User.new(:identidade => 'abc')
+      @user.should have_at_least(1).errors_on(:identidade)
+    end
+
+    it "Não deve validar uma nacionalidade em branco" do
+      @user = User.new(:nacionalidade => '')
+      @user.should have_at_least(1).errors_on(:nacionalidade)
+    end
+
+  end
+
   context "Validaçoes de endereço:" do
 
     it "Não deve validar um logradouro permanente vazio" do
