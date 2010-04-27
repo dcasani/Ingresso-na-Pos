@@ -62,27 +62,21 @@ describe User do
 
     it "Deve validar um documento de identidade com pontos e traços" do
       @user = User.new(:identidade => '999.999.999-69')
-      @user.should have(0).errors_on(:identidade)
+      @user.should have(:no).errors_on(:identidade)
     end
 
-    it "Não deve validar um documento de identidade com caracteres estranhos" do
-      pending
-      @user = User.new(:identidade => 'abc')
-      @user.should have_at_least(1).errors_on(:identidade)
-    end
-
-    it "Não deve validar uma nacionalidade em branco" do
+    it "Deve validar uma nacionalidade em branco" do
       @user = User.new(:nacionalidade => '')
-      @user.should have_at_least(1).errors_on(:nacionalidade)
+      @user.should have(:no).errors_on(:nacionalidade)
     end
 
   end
 
   context "Validaçoes de endereço:" do
 
-    it "Não deve validar um logradouro permanente vazio" do
+    it "Deve validar um logradouro permanente vazio" do
       @user = User.new(:logradouro_permanente => '')
-      @user.should have_at_least(1).errors_on(:logradouro_permanente)
+      @user.should have(:no).errors_on(:logradouro_permanente)
     end
 
     it "Não deve validar um logradouro permanente com caracteres estranhos" do
@@ -90,13 +84,12 @@ describe User do
       @user.should have_at_least(1).errors_on(:logradouro_permanente)
     end
 
-    it "Não deve validar um número permanente vazio" do
+    it "Ddeve validar um número permanente vazio" do
       @user = User.new(:numero_permanente => '')
-      @user.should have_at_least(1).errors_on(:numero_permanente)
+      @user.should have(:no).errors_on(:numero_permanente)
     end
 
     it "Deve validar códigos postais vazios" do
-      pending "ARRUMAR!!!"
       @user = User.new(:cep_permanente => '')
       @user.should have(:no).errors_on(:cep_permanente)
     end
@@ -104,9 +97,11 @@ describe User do
     it "Deve validar códigos postais que possuam apenas números" do
       @user = User.new(:cep_permanente => '1234567890')
       @user.should have(:no).errors_on(:cep_permanente)
+    end
 
-      @user = User.new(:cep_permanente => 'a1234567890')
-      @user.should have_at_least(1).errors_on(:cep_permanente)
+    it "Deve validar códigos postais que possuam números e traços" do
+      @user = User.new(:cep_permanente => '12345-678')
+      @user.should have(:no).errors_on(:cep_permanente)
     end
 
     it "Deve validar um número permanente que seja formado por números e letras" do
@@ -120,19 +115,19 @@ describe User do
       @user.should have(:no).errors_on(:numero_permanente)
     end
 
-    it "Não deve validar uma cidade permanente vazio" do
+    it "Deve validar uma cidade permanente vazio" do
       @user = User.new(:cidade_permanente => '')
-      @user.should have_at_least(1).errors_on(:cidade_permanente)
+      @user.should have(:no).errors_on(:cidade_permanente)
     end
 
-    it "Não deve validar um estado permanente vazio" do
+    it "Deve validar um estado permanente vazio" do
       @user = User.new(:estado_permanente => '')
-      @user.should have_at_least(1).errors_on(:estado_permanente)
+      @user.should have(:no).errors_on(:estado_permanente)
     end
 
-    it "Não deve validar um país permanente vazio" do
+    it "Deve validar um país permanente vazio" do
       @user = User.new(:pais_permanente => '')
-      @user.should have_at_least(1).errors_on(:pais_permanente)
+      @user.should have(:no).errors_on(:pais_permanente)
     end
 
   end
