@@ -14,20 +14,11 @@ describe Subscription do
     end
   end
 
-  context "validacao de inicio pretendido do mestrado" do
+  context "validacao de inicio pretendido" do
      it "Não deve aceitar inicio pretendido vazio" do
-       pending
        @subscription = Subscription.new(:inicio_pretendido => '')
-       @subscription.should have_at_least(1).errors
+       @subscription.should have_at_least(1).errors_on(:inicio_pretendido)
      end
-  end
-
-
-  context "validacao de inicio pretendido do doutorado" do
-     it "deve aceitar inscricao em qualquer mes" do
-     pending
-     end
-
   end
 
   context "validacao de outros programas" do

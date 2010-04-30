@@ -21,7 +21,7 @@ Recomenda-se ao candidato que leia atentamente este formulário antes de começa
     </tr>
     <tr>
       <td><%= f.label :estado_civil %></td>
-      <td><%= f.select(:estado_civil,%w[Casado Divorciado Separado Solteiro Viúvo]) %></td>
+      <td><%= f.select(:estado_civil,%w[Casado Divorciado Separado Solteiro Viúvo Outro]) %></td>
     </tr>
     <tr>
       <td><%= f.label "Documento de identidade" %></td>
@@ -29,7 +29,7 @@ Recomenda-se ao candidato que leia atentamente este formulário antes de começa
     </tr>
     <tr>
       <td><%= f.label :tipo %></td>
-      <td><%= f.select(:tipo,%w[CNH Passaporte RG RNE Outro]) %></td>
+      <td><%= f.select(:tipo,%w[RG Passaporte RNE Outro]) %></td>
     </tr>
     <tr>
       <td><label for="user_CPF">CPF</label></td>

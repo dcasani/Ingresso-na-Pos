@@ -37,7 +37,10 @@
     </tr>
     <tr>
       <td><%= f.label "Início pretendido" %></td>
-      <td><%= f.select(:inicio_pretendido,%w[Março Agosto]) %></td>
+      <td>
+          <%= f.select(:inicio_pretendido,%w[Março Agosto]) %>
+          <%= observe_field("nivel_select", :frequency => 1, :url => { :action => :starting_months }, :update => "subscription_inicio_pretendido", :with => "'nivel='+Form.Element.serialize('nivel_select')" ) %>
+      </td>
     </tr>
     <tr>
       <td><label for="subscription_outros_programas">Está pleiteando inscrição em outros programas de pós-graduação? (Relacionar o(s) nome(s) da(s)

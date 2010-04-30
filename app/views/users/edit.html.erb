@@ -1,124 +1,132 @@
-<h1>Editing user</h1>
+<h1>Edite suas informações:</h1>
 
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
+<td><% form_for(@user) do |f| %></td>
+  <td><%= f.error_messages %></td>
 
-  <p>
-    <%= f.label :nome_completo %><br />
-    <%= f.text_field :nome_completo %>
-  </p>
-  <p>
-    <%= f.label :data_de_nascimento %><br />
-    <%= f.date_select :data_de_nascimento %>
-  </p>
-  <p>
-    <%= f.label :estado_civil %><br />
-    <%= f.text_field :estado_civil %>
-  </p>
-  <p>
-    <%= f.label :identidade %><br />
-    <%= f.text_field :identidade %>
-  </p>
-  <p>
-    <%= f.label :tipo %><br />
-    <%= f.text_field :tipo %>
-  </p>
-  <p>
-    <%= f.label :cpf %><br />
-    <%= f.text_field :cpf %>
-  </p>
-  <p>
-    <%= f.label :nacionalidade %><br />
-    <%= f.text_field :nacionalidade %>
-  </p>
-  <p>
-    <%= f.label :logradouro_permanente %><br />
-    <%= f.text_field :logradouro_permanente %>
-  </p>
-  <p>
-    <%= f.label :numero_permanente %><br />
-    <%= f.text_field :numero_permanente %>
-  </p>
-  <p>
-    <%= f.label :cidade_permanente %><br />
-    <%= f.text_field :cidade_permanente %>
-  </p>
-  <p>
-    <%= f.label :estado_permanente %><br />
-    <%= f.text_field :estado_permanente %>
-  </p>
-  <p>
-    <%= f.label :pais_permanente %><br />
-    <%= f.text_field :pais_permanente %>
-  </p>
-  <p>
-    <%= f.label :cep_permanente %><br />
-    <%= f.text_field :cep_permanente %>
-  </p>
-  <p>
-    <%= f.label :telefone_permanente %><br />
-    <%= f.text_field :telefone_permanente %>
-  </p>
-  <p>
-    <%= f.label :logradouro_correspondencia %><br />
-    <%= f.text_field :logradouro_correspondencia %>
-  </p>
-  <p>
-    <%= f.label :numero_correspondencia %><br />
-    <%= f.text_field :numero_correspondencia %>
-  </p>
-  <p>
-    <%= f.label :cidade_correspondencia %><br />
-    <%= f.text_field :cidade_correspondencia %>
-  </p>
-  <p>
-    <%= f.label :estado_correspondencia %><br />
-    <%= f.text_field :estado_correspondencia %>
-  </p>
-  <p>
-    <%= f.label :pais_correspondencia %><br />
-    <%= f.text_field :pais_correspondencia %>
-  </p>
-  <p>
-    <%= f.label :cep_correspondencia %><br />
-    <%= f.text_field :cep_correspondencia %>
-  </p>
-  <p>
-    <%= f.label :telefone_correspondencia %><br />
-    <%= f.text_field :telefone_correspondencia %>
-  </p>
-  <p>
-    <%= f.label :celular_correspondencia %><br />
-    <%= f.text_field :celular_correspondencia %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :formacao_superior_graduacao %><br />
-    <%= f.text_area :formacao_superior_graduacao %>
-  </p>
-  <p>
-    <%= f.label :formacao_superior_pos %><br />
-    <%= f.text_area :formacao_superior_pos %>
-  </p>
-  <p>
-    <%= f.label :outras_academicas %><br />
-    <%= f.text_area :outras_academicas %>
-  </p>
-  <p>
-    <%= f.label :empregos_passados %><br />
-    <%= f.text_area :empregos_passados %>
-  </p>
-  <p>
-    <%= f.label :empregos_atuais %><br />
-    <%= f.text_area :empregos_atuais %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <table>
+    <tr><td colspan="2"><br/><h2>Dados Pessoais</h2></td></tr>
+    <tr>
+      <td><%= f.label :nome_completo %></td>
+      <td><%= f.text_field :nome_completo, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :data_de_nascimento %></td>
+      <td><%= f.date_select(:data_de_nascimento,:order => [:day, :month, :year],:end_year => 1920, :start_year => Time.now.year - 16, :use_month_names => %w(Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro)) %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "E-mail" %></td>
+      <td><%= f.text_field :email, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :estado_civil %></td>
+      <td><%= f.select(:estado_civil,%w[Casado Divorciado Separado Solteiro Viúvo Outro]) %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Documento de identidade" %></td>
+      <td><%= f.text_field :identidade, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :tipo %></td>
+      <td><%= f.select(:tipo,%w[RG Passaporte RNE Outro]) %></td>
+    </tr>
+    <tr>
+      <td><label for="user_CPF">CPF</label></td>
+      <td><%= f.text_field :cpf, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :nacionalidade %></td>
+      <td><%= f.text_field :nacionalidade, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr><td colspan="2"><br/><h2>Endereço Permanente</h2></td></tr>
+    <tr>
+      <td><%= f.label "Logradouro" %></td>
+      <td><%= f.text_field :logradouro_permanente, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Número" %></td>
+      <td><%= f.text_field :numero_permanente, :size => "10", :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Cidade" %></td>
+      <td><%= f.text_field :cidade_permanente, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Estado" %></td>
+      <td><%= f.text_field :estado_permanente, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "País" %></td>
+      <td><%= f.text_field :pais_permanente, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><label for="user_CEP">CEP</label></td>
+      <td><%= f.text_field :cep_permanente, :size => "15", :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Telefone" %></td>
+      <td><%= f.text_field :telefone_permanente, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr><td colspan="2"><br/><h2>Endereço de Correspondência</h2></td></tr>
+    <tr>
+      <td><%= f.label "Logradouro" %></td>
+      <td><%= f.text_field :logradouro_correspondencia, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Número" %></td>
+      <td><%= f.text_field :numero_correspondencia, :size => "10", :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Cidade" %></td>
+      <td><%= f.text_field :cidade_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Estado" %></td>
+      <td><%= f.text_field :estado_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "País" %></td>
+      <td><%= f.text_field :pais_correspondencia, :size => "15", :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><label for="user_CEP">CEP</label></td>
+      <td><%= f.text_field :cep_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Telefone" %></td>
+      <td><%= f.text_field :telefone_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Celular" %></td>
+      <td><%= f.text_field :celular_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr><td colspan="2"><br/><h2>Formação Acadêmica</h2></td></tr>
+    <tr>
+      <td><%= f.label "Formação superior - graduação: instituição, início e término (mês e ano), título obtido" %></td>
+      <td><%= f.text_area :formacao_superior_graduacao, :rows => "10" , :cols => "70" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Formação superior - pós-graduação (mestrado): instituição, início e término (mês e ano), título obtido, título
+ da dissertação, nome do orientador (quando pertinente)" %></td>
+      <td><%= f.text_area :formacao_superior_pos, :rows => "10" , :cols => "70" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Outras atividades acadêmicas já realizadas, pertinentes ao programa pretendido (cursos de pós-graduação
+“lato sensu”, especialização, aperfeiçoamento, extensão, etc.): instituição, início e término (mês e ano), título
+obtido" %></td>
+      <td><%= f.text_area :outras_academicas, :rows => "10" , :cols => "70" %></td>
+    </tr>
+    <tr><td colspan="2"><br/><h2>Experiência Profissional</h2></td></tr>
+    <tr>
+      <td><%= f.label "Relacionar empregos e funções já exercidas nos quais desenvolveu atividades relacionadas com suas
+aspirações futuras em termos do programa pretendido" %></td>
+      <td><%= f.text_area :empregos_passados, :rows => "10" , :cols => "70" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Atividades atuais (se exerce alguma atividade remunerada, indicar empregador e cargo)" %></td>
+      <td><%= f.text_area :empregos_atuais, :rows => "10" , :cols => "70" %></td>
+    </tr>
+  </table>
+  <%= f.submit 'Salvar' %>
+
 <% end %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>

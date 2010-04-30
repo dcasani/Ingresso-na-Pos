@@ -1,59 +1,141 @@
-<h1>Editing subscription</h1>
+<h1>Inscrição na Pós-Graduação</h1>
 
-<% form_for([@user,@subscription]) do |f| %>
+<% form_for [@user,@subscription], :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :inicio_pretendido %><br />
-    <%= f.text_field :inicio_pretendido %>
-  </p>
-  <p>
-    <%= f.label :outros_programas %><br />
-    <%= f.text_area :outros_programas %>
-  </p>
-  <p>
-    <%= f.label :orientador %><br />
-    <%= f.text_field :orientador %>
-  </p>
-  <p>
-    <%= f.label :bolsa_fomento %><br />
-    <%= f.text_field :bolsa_fomento %>
-  </p>
-  <p>
-    <%= f.label :bolsa_ime %><br />
-    <%= f.check_box :bolsa_ime %>
-  </p>
-  <p>
-    <%= f.label :bolsas_anteriores %><br />
-    <%= f.text_area :bolsas_anteriores %>
-  </p>
-  <p>
-    <%= f.label :dados_carta_recomendacao %><br />
-    <%= f.text_area :dados_carta_recomendacao %>
-  </p>
-  <p>
-    <%= f.label :trabalhar_se_aceito %><br />
-    <%= f.check_box :trabalhar_se_aceito %>
-  </p>
-  <p>
-    <%= f.label :resumo_dissertacao_mestrado %><br />
-    <%= f.text_area :resumo_dissertacao_mestrado %>
-  </p>
-  <p>
-    <%= f.label :propositos %><br />
-    <%= f.text_area :propositos %>
-  </p>
-  <p>
-    <%= f.label :observacoes %><br />
-    <%= f.text_area :observacoes %>
-  </p>
-  <p>
-    <%= f.label :curso_id %><br />
-    <%= f.text_field :curso_id %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <table>
+    <tr><td colspan="2"><br/><h2>Curso</h2></td></tr>
+    <tr>
+      <td><label for="nivel_select">Nível</label></td>
+      <td>
+        <select name="nivel_select" id="nivel_select">
+          <%
+          @select = ""
+          if @nivel_selected == "Mestrado"
+            @select = "selected"
+          end
+        %>
+          <option <%= @select %>>Mestrado</option>
+          <%
+          @select = ""
+          if @nivel_selected == "Doutorado"
+            @select = "selected"
+          end
+        %>
+          <option <%= @select %>>Doutorado</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="area_select">Área</label></td>
+      <td>
+        <select name="area_select" id="area_select">
+          <%
+          @select = ""
+          @course_areas.each do |course|
+            if course.area == @area_selected
+              @select = "selected"
+            end
+          %>
+            <option <%= @select %>><%= course.area %></option>
+            <%
+            @select = ""
+          end %>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="subarea_select">Sub-área</label></td>
+      <td>
+        <select name="subarea_select" id="subarea_select">
+          <%
+          @select = ""
+          @course_subareas.each do |course|
+
+            if course.subarea == @subarea_selected
+              @select = "selected"
+            end
+
+          %>
+            <option <%= @select %>><%= course.subarea %></option>
+            <%   @select = ""
+          end %>
+        </select>
+        <%= observe_field("area_select", :frequency => 1, :url => { :action => :course_subareas }, :update => "subarea_select", :with => "'area='+Form.Element.serialize('area_select')" ) %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label "Início pretendido" %></td>
+      <td>
+        <%= f.select(:inicio_pretendido,%w[Março Agosto]) %>
+        <%= observe_field("nivel_select", :frequency => 1, :url => { :action => :starting_months }, :update => "subscription_inicio_pretendido", :with => "'nivel='+Form.Element.serialize('nivel_select')" ) %>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="subscription_outros_programas">Está pleiteando inscrição em outros programas de pós-graduação? (Relacionar o(s) nome(s) da(s)
+          instituição(ões) e do(s) respectivo(s) programa(s).)</label></td>
+      <td><%= f.text_area :outros_programas, :rows => "10" , :cols => "70" %></td>
+    </tr>
+    <tr>
+      <td><label for="subscription_orientador">Já entrou em contato com algum docente deste Instituto com vistas à sua orientação? (Caso sim, indicar o
+          nome do docente.)</label></td>
+      <td><%= f.text_field :orientador, :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr><td colspan="2"><br/><h2>Bolsas</h2></td></tr>
+    <tr>
+      <td><label for="subscription_bolsa_fomento">Está solicitando a concessão de uma bolsa a alguma agência de fomento (FAPESP,...)? Caso sim, qual?</label></td>
+      <td><%= f.text_field :bolsa_fomento, :rows => "10" , :cols => "70", :onkeypress => "return event.keyCode!=13" %></td>
+    </tr>
+    <tr>
+      <td><label for="subscription_bolsa_ime">Está solicitando a concessão de uma bolsa do IME-USP?</label></td>
+      <td><%= f.check_box :bolsa_ime %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Bolsas obtidas anteriormente (tipo de bolsa, instituição que a concedeu, duração, finalidade, orientador, etc.)" %></td>
+      <td><%= f.text_area :bolsas_anteriores, :rows => "10" , :cols => "70" %></td>
+    </tr>
+    <tr><td colspan="2"><br/><h2>Cartas de Recomendação</h2></td></tr>
+    <tr>
+      <td><%= f.label "Nomes e instituições de (pelo menos 2) professores a quem pediu cartas de recomendação" %></td>
+      <td><%= f.text_area :dados_carta_recomendacao, :rows => "10" , :cols => "70" %></td>
+    </tr>
+    <tr><td colspan="2"><br/><h2>Upload de arquivos solicitados:</h2></td></tr>
+    <tr>
+      <td><%= f.label "Diploma" %></td>
+      <td><%= f.file_field :diploma  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Histórico escolar" %></td>
+      <td><%= f.file_field :historico  %></td>
+    </tr>
+    <tr>
+      <td><label for="subscription_poscomp">Resultado do Poscomp (se Pós-Graduação em Ciência da Computação)</label></td>
+      <td><%= f.file_field :poscomp  %></td>
+    </tr>
+
+
+    <tr><td colspan="2"><br/><h2>Trabalho</h2></td></tr>
+    <tr>
+      <td><label for="subscription_trabalhar_se_aceito">Sendo aceito para o programa, pretende continuar exercendo as atividades exercidas atualmente?</label></td>
+      <td><%= f.check_box :trabalhar_se_aceito%></td>
+    </tr>
+    <tr><td colspan="2"><br/><h2>Dissertação de Mestrado</h2></td></tr>
+    <tr>
+      <td><%= f.label "Indicar brevemente os principais resultados e as referências bibliográficas mais importantes" %></td>
+      <td><%= f.text_area :resumo_dissertacao_mestrado, :rows => "10" , :cols => "70" %></td>
+    </tr>
+    <tr><td colspan="2"><br/><h2>Exposição de Propósitos</h2></td></tr>
+    <tr>
+      <td><%= f.label "Descrever de modo sucinto os motivos acadêmicos da solicitação, inclusive as perspectivas com relação ao
+  programa e as áreas de maior interesse"%></td>
+      <td><%= f.text_area :propositos, :rows => "10" , :cols => "70" %></td>
+    </tr>
+    <tr><td colspan="2"><br/><h2>Observações</h2></td></tr>
+    <tr>
+      <td><%= f.label "Informações adicionais que considera relevantes para o julgamento de sua solicitação" %></td>
+      <td><%= f.text_area :observacoes, :rows => "10" , :cols => "70" %></td>
+    </tr>
+  </table>
+  <%= f.submit 'Salvar' %>
 <% end %>
 
-<%= link_to 'Show', user_subscription_path(@user,@subscription) %>

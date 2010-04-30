@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-models-subscription_rb.html">app/models/subscription.rb</a></td>
-            <td class='right_align'><tt>18</tt></td>
-            <td class='right_align'><tt>10</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>16.67%</tt></div>
+            <td class='right_align'><tt>21</tt></td>
+            <td class='right_align'><tt>12</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>14.29%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:17px"></div>
-            <div class="uncovered" style="width:83px"></div>
+            <div class="covered" style="width:14px"></div>
+            <div class="uncovered" style="width:86px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>30.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>25.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:30px"></div>
-            <div class="uncovered" style="width:70px"></div>
+            <div class="covered" style="width:25px"></div>
+            <div class="uncovered" style="width:75px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -111,13 +111,13 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line10">10</a>   validates_format_of :orientador,</pre></td>
+            <td><pre><a name="line10">10</a>   validates_format_of :inicio_pretendido,</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line11">11</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ\.-]*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
+            <td><pre><a name="line11">11</a>                       :with =&gt; /\A.+\Z/i , :message =&gt; &quot;O inicio do mestrado deve ser em março ou agosto&quot;</pre></td>
           </tr>
         
           
@@ -129,25 +129,25 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line13">13</a> </pre></td>
+            <td><pre><a name="line13">13</a>   validates_format_of :orientador,</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line14">14</a> </pre></td>
+            <td><pre><a name="line14">14</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ\.-]*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line15">15</a>   #validates_format_of :bolsa_fomento, :bolsas_anteriores,</pre></td>
+            <td><pre><a name="line15">15</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line16">16</a>   #                    :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ-]+( [a-zA-Zá-úÁ-ÚçÇ-]+)*\Z+\A\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
+            <td><pre><a name="line16">16</a> </pre></td>
           </tr>
         
           
@@ -159,13 +159,31 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line18">18</a> end</pre></td>
+            <td><pre><a name="line18">18</a>   #validates_format_of :bolsa_fomento, :bolsas_anteriores,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line19">19</a>   #                    :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ-]+( [a-zA-Zá-úÁ-ÚçÇ-]+)*\Z+\A\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line20">20</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line21">21</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue Apr 27 16:08:51 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Apr 27 16:33:04 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
