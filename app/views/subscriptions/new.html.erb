@@ -5,7 +5,7 @@
 
   <table>
     <tr><td colspan="2"><br/><h2>Curso</h2></td></tr>
-    <tr>
+<!--    <tr>
       <td><label for="nivel_select">Nível</label></td>
       <td>
         <select name="nivel_select" id="nivel_select">
@@ -13,14 +13,43 @@
           <option>Doutorado</option>
         </select>
       </td>
+    </tr> -->
+  <tr>
+      <td><label for="nivel_select">Nível</label></td>
+      <td>
+        <select name="nivel_select" id="nivel_select">
+          <%
+          @select = ""
+          if @nivel_selected == "Mestrado"
+            @select = "selected"
+          end
+        %>
+          <option <%= @select %>>Mestrado</option>
+          <%
+          @select = ""
+          if @nivel_selected == "Doutorado"
+            @select = "selected"
+          end
+        %>
+          <option <%= @select %>>Doutorado</option>
+        </select>
+      </td>
     </tr>
     <tr>
       <td><label for="area_select">Área</label></td>
       <td>
         <select name="area_select" id="area_select">
-          <%  @course_areas.each do |course| %>
-            <option><%= course.area %></option>
-          <%  end %>
+          <%
+          @select = ""
+          @course_areas.each do |course|
+            if course.area == @area_selected
+              @select = "selected"
+            end
+          %>
+            <option <%= @select %>><%= course.area %></option>
+            <%
+            @select = ""
+          end %>
         </select>
       </td>
     </tr>
@@ -28,18 +57,27 @@
       <td><label for="subarea_select">Sub-área</label></td>
       <td>
         <select name="subarea_select" id="subarea_select">
-          <%  @course_subareas.each do |course| %>
-            <option><%= course.subarea %></option>
-          <%  end %>
+          <%
+          @select = ""
+          @course_subareas.each do |course|
+
+            if course.subarea == @subarea_selected
+              @select = "selected"
+            end
+
+          %>
+            <option <%= @select %>><%= course.subarea %></option>
+            <%   @select = ""
+          end %>
         </select>
         <%= observe_field("area_select", :frequency => 1, :url => { :action => :course_subareas }, :update => "subarea_select", :with => "'area='+Form.Element.serialize('area_select')" ) %>
       </td>
     </tr>
-    <tr>
+      <tr>
       <td><%= f.label "Início pretendido" %></td>
       <td>
-          <%= f.select(:inicio_pretendido,%w[Março Agosto]) %>
-          <%= observe_field("nivel_select", :frequency => 1, :url => { :action => :starting_months }, :update => "subscription_inicio_pretendido", :with => "'nivel='+Form.Element.serialize('nivel_select')" ) %>
+        <%= f.select(:inicio_pretendido,%w[Março Agosto]) %>
+        <%= observe_field("nivel_select", :frequency => 1, :url => { :action => :starting_months }, :update => "subscription_inicio_pretendido", :with => "'nivel='+Form.Element.serialize('nivel_select')" ) %>
       </td>
     </tr>
     <tr>

@@ -20,7 +20,8 @@ class SubscriptionsController < ApplicationController
     @user = User.find(params[:user_id])
     @subscription = @user.subscriptions.build
     @course_areas = Course.find(:all, :group => 'area')
-    @course = Course.first;
+    @course = Course.find_by_id(@subscription.curso_id)
+    @course = Course.first
     @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
   end
 
@@ -70,8 +71,15 @@ class SubscriptionsController < ApplicationController
       redirect_to user_subscription_url(@user, @subscription)
     else
       @course_areas = Course.find(:all, :group => 'area')
-      @course = Course.first;
-      @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
+      @course = Course.find_by_id(@subscription.curso_id)
+       if @course == nil then
+          @course = Course.first
+       else
+         @area_selected = @course.area
+         @nivel_selected = @course.nivel
+         @subarea_selected = @course.subarea
+       end
+       @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
       render :action => "new"
     end
   end
