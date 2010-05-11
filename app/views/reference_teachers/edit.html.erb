@@ -1,0 +1,28 @@
+<h1>Editing reference_teacher</h1>
+
+<% form_for(@reference_teacher) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :instituicao %><br />
+    <%= f.text_field :instituicao %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :subscription %><br />
+    <%= f.text_field :subscription %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @reference_teacher %> |
+<%= link_to 'Back', reference_teachers_path %>

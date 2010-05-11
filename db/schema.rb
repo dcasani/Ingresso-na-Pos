@@ -9,12 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100420210311) do
+ActiveRecord::Schema.define(:version => 20100511153009) do
 
   create_table "courses", :force => true do |t|
     t.string   "area"
     t.string   "nivel"
     t.string   "subarea"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reference_teachers", :force => true do |t|
+    t.string   "nome"
+    t.string   "instituicao"
+    t.string   "email"
+    t.integer  "subscription_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
