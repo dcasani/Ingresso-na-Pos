@@ -14,13 +14,9 @@
     <td><%=h reference_teacher.instituicao %></td>
     <td><%=h reference_teacher.email %></td>
     <td><%=h reference_teacher.subscription %></td>
-    <td><%= link_to 'Show', reference_teacher %></td>
-    <td><%= link_to 'Edit', edit_reference_teacher_path(reference_teacher) %></td>
-    <td><%= link_to 'Destroy', reference_teacher, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New reference_teacher', new_reference_teacher_path %>
