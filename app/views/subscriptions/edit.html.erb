@@ -1,7 +1,7 @@
 <h1>Inscrição na Pós-Graduação</h1>
 
 <% form_for [@user,@subscription], :html => {:multipart => true} do |f| %>
-  <%= f.error_messages %>
+  <td><%= error_messages_for :subscription, :header_message => "Erros de preenchimento encontrados", :message => "Por favor, corrija os seguintes erros para continuar:" %></td>
 
   <table>
     <tr><td colspan="2"><br/><h2>Curso</h2></td></tr>
@@ -67,7 +67,16 @@
     <tr>
       <td><%= f.label "Início pretendido" %></td>
       <td>
-        <%= f.select(:inicio_pretendido,%w[Março Agosto]) %>
+        <select name="subscription[inicio_pretendido]" id="subscription_inicio_pretendido">
+          <% @selected = ""
+          @st_months.each do |month|  %>
+            <% if  @month_selected == month
+              @selected = "selected"
+            end          %>
+            <option <%= @selected  %>><%= month  %></option>
+            <% @selected = ""
+          end  %>
+        </select>
         <%= observe_field("nivel_select", :frequency => 1, :url => { :action => :starting_months }, :update => "subscription_inicio_pretendido", :with => "'nivel='+Form.Element.serialize('nivel_select')" ) %>
       </td>
     </tr>

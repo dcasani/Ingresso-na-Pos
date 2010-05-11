@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
 
   validates_format_of :identidade,
-                      :with => /\A([a-z0-9]+)*\Z/i, :message => ": Usar somente letras, números, . e -"
+                      :with => /\A([a-z0-9-]+)*\Z/i, :message => ": Usar somente letras, números, . e -"
 
   validates_format_of :tipo, :nacionalidade, :cidade_permanente,
                       :estado_permanente, :pais_permanente, :cidade_correspondencia,
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
                       # Campos formados por palavras e sinais de pontuação (.,-)
   validates_format_of :logradouro_permanente, :logradouro_correspondencia,
-                       :with => /\A[a-zA-Zá-úÁ-ÚçÇ-]*( [-,.]? ?[a-zA-Zá-úÁ-ÚçÇ-]+)*\Z/, :message => ": Usar somente letras e espaços"
+                       :with => /\A[a-zA-Zá-úÁ-ÚçÇ0-9-]*( [-,.]? ?[a-zA-Zá-úÁ-ÚçÇ0-9-]+)*\Z/, :message => ": Usar somente letras e espaços"
 
   validates_format_of :cep_permanente, :cep_correspondencia,
                       :with => /\A[0-9-]*\Z/, :message => ":Usar apenas números no código postal"
@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
 
   #validate_length_of :nome_completo, :in => 2..150
 
-  validates_uniqueness_of :email
+  validates_uniqueness_of :email, :message => ": Já existe um usuário cadastrado com esse e-mail, por favor, escolha outro"
 
 
 end

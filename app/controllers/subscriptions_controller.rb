@@ -14,6 +14,28 @@ class SubscriptionsController < ApplicationController
     @subscription = @user.subscriptions.find(params[:id])
   end
 
+  def months(nivel)
+    @st_months = Array.new
+    if nivel == "Mestrado"
+      @st_months[0] = "Março"
+      @st_months[1] = "Agosto"
+    else
+      @st_months[0] = "Janeiro"
+      @st_months[1] = "Fevereiro"
+      @st_months[2] = "Março"
+      @st_months[3] = "Abril"
+      @st_months[4] = "Maio"
+      @st_months[5] = "Junho"
+      @st_months[6] = "Julho"
+      @st_months[7] = "Agosto"
+      @st_months[8] = "Setembro"
+      @st_months[9] = "Outubro"
+      @st_months[10] = "Novembro"
+      @st_months[11] = "Dezembro"
+    end
+    return @st_months
+  end
+
   # GET /subscriptions/new
   # GET /subscriptions/new.xml
   def new
@@ -23,6 +45,8 @@ class SubscriptionsController < ApplicationController
     @course = Course.find_by_id(@subscription.curso_id)
     @course = Course.first
     @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
+    @st_months = months("Mestrado")
+    @month_selected = ""
   end
 
   def course_subareas
@@ -57,6 +81,8 @@ class SubscriptionsController < ApplicationController
     @nivel_selected = @course.nivel
     @subarea_selected = @course.subarea
     @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
+    @st_months = months(@nivel_selected)
+    @month_selected = @subscription.inicio_pretendido
   end
 
   # POST /subscriptions
@@ -72,14 +98,12 @@ class SubscriptionsController < ApplicationController
     else
       @course_areas = Course.find(:all, :group => 'area')
       @course = Course.find_by_id(@subscription.curso_id)
-       if @course == nil then
-          @course = Course.first
-       else
-         @area_selected = @course.area
-         @nivel_selected = @course.nivel
-         @subarea_selected = @course.subarea
-       end
-       @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
+      @area_selected = @course.area
+      @nivel_selected = @course.nivel
+      @subarea_selected = @course.subarea
+      @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
+      @month_selected = params[:subscription_inicio_pretendido]
+      @st_months = months(@course.nivel)
       render :action => "new"
     end
   end
@@ -98,6 +122,8 @@ class SubscriptionsController < ApplicationController
       @course_areas = Course.find(:all, :group => 'area')
       @course = Course.first;
       @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
+      @month_selected = params[:subscription_inicio_pretendido]
+      @st_months = months(@course.nivel)
       render :action => "new"
     end
   end

@@ -1,7 +1,7 @@
 <h1>Edite suas informações:</h1>
 
 <td><% form_for(@user) do |f| %></td>
-  <td><%= f.error_messages %></td>
+  <td><%= error_messages_for :user, :header_message => "Erros de preenchimento encontrados", :message => "Por favor, corrija os seguintes erros para continuar:" %></td>
 
   <table>
     <tr><td colspan="2"><br/><h2>Dados Pessoais</h2></td></tr>

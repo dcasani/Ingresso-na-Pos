@@ -5,12 +5,11 @@ class Subscription < ActiveRecord::Base
   has_attached_file :historico, :url => "/arquivos/historico/:id/:basename.:extension"
   has_attached_file :poscomp, :url => "/arquivos/poscomp/:id/:basename.:extension"
 
-  validates_presence_of :inicio_pretendido, :propositos,
+  validates_presence_of :propositos, :inicio_pretendido,
                         :message => ": Preencher campo obrigatório"
 
-
   validates_format_of :inicio_pretendido,
-                      :with => /\A[a-zA-Zá-úÁ-ÚçÇ]+\Z/ , :message => "O inicio do mestrado deve ser em março ou agosto"
+                      :with => /\A[ a-zA-Zá-úÁ-ÚçÇ]*\Z/ , :message => ": Usar somente letras"
 
   validates_format_of :orientador,
                       :with => /\A[ a-zA-Zá-úÁ-ÚçÇ\.-]*\Z/, :message => ": Usar somente letras e espaços"

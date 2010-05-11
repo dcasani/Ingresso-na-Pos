@@ -13,3 +13,6 @@
     border: 1px solid #000;
 }
 
+div.fieldWithErrors input, div.fieldWithErrors textarea{
+    background-color: #f6d6f6;
+}
