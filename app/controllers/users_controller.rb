@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   # POST /users
@@ -43,6 +43,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     respond_to do |format|
+      #utiliza email como login
+      @user.username = @user.email
       if @user.save
         flash[:notice] = 'User was successfully created.'
         format.html { redirect_to new_user_subscription_url(@user) }
@@ -57,9 +59,11 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.find(params[:id])
+    @user = current_user
 
     respond_to do |format|
+      #utiliza email como login
+      @user.username = @user.email
       if @user.update_attributes(params[:user])
         flash[:notice] = 'User was successfully updated.'
         format.html { redirect_to(@user) }

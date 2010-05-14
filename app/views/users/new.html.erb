@@ -19,6 +19,14 @@ Recomenda-se ao candidato que leia atentamente este formulário antes de começa
       <td><%= f.text_field :email, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
+      <td><%= f.label "Senha" %></td>
+      <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Confirmação da senha" %></td>
+      <td><%= f.password_field :password_confirmation %></td>
+    </tr>
+    <tr>
       <td><%= f.label :estado_civil %></td>
       <td><%= f.select(:estado_civil,%w[Casado Divorciado Separado Solteiro Viúvo Outro]) %></td>
     </tr>

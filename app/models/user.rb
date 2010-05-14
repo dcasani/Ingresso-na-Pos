@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :subscriptions
+  acts_as_authentic
 
   validates_presence_of :nome_completo, :data_de_nascimento, :email,
     :formacao_superior_graduacao,
