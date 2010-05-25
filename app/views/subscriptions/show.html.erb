@@ -174,8 +174,11 @@
 </p>
 
 <p>
-  <b>Dados carta recomendacao:</b>
-  <%=h @subscription.dados_carta_recomendacao %>
+  <b>Dados professores recomendantes:</b> <ul>
+  <%  @teachers.each do |teacher| %>
+    <li><%= teacher.nome + ", " + teacher.instituicao + ", " + teacher.email %></li>
+  <% end %>
+</ul>
 </p>
 
 <p>

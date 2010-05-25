@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100511183247) do
+ActiveRecord::Schema.define(:version => 20100514172306) do
 
   create_table "courses", :force => true do |t|
     t.string   "area"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20100511183247) do
     t.string   "bolsa_fomento"
     t.boolean  "bolsa_ime"
     t.text     "bolsas_anteriores"
-    t.text     "dados_carta_recomendacao"
     t.boolean  "trabalhar_se_aceito"
     t.text     "resumo_dissertacao_mestrado"
     t.text     "propositos"

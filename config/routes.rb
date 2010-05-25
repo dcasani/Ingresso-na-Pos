@@ -1,8 +1,20 @@
 ActionController::Routing::Routes.draw do |map|
  
   map.resources :courses
+  #map.resources :subscriptions, :has_many => :reference_teachers
+  #map.resources :users, :has_many => :subscriptions
+
+  #map.resources :subscriptions, :has_many => :reference_teachers
+  #map.resources :users, :has_many =>:reference_teachers, :through => :subscriptions
+
+
+  # Make paths look like /user/id/subscription/id/reference_teacher/id
   map.resources :users, :has_many => :subscriptions
-  map.resources :subscriptions, :has_many => :reference_teachers
+
+  map.resources :subscriptions do |subscription|
+    subscription.resources :reference_teachers
+  end
+  
   map.root :controller => "users", :action => "new"
 
   # The priority is based upon order of creation: first created -> highest priority.

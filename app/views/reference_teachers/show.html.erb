@@ -13,11 +13,5 @@
   <%=h @reference_teacher.email %>
 </p>
 
-<p>
-  <b>Subscription:</b>
-  <%=h @reference_teacher.subscription %>
-</p>
-
-
-<%= link_to 'Edit', edit_reference_teacher_path(@reference_teacher) %> |
+<%= link_to 'Edit', edit_user_subscription_reference_teacher_path(@subscrption,@reference_teacher) %> |
 <%= link_to 'Back', reference_teachers_path %>
