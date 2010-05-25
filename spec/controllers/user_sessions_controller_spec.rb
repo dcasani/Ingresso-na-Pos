@@ -16,17 +16,19 @@ describe UserSessionsController do
     }.merge attributes
   end
 
-  context "GET new" do
-    before :each do
-      UserSession.stub!(:new).and_return(mock_session)
-      get :new
-    end
+  before :each do
+    UserSession.stub!(:new).and_return(mock_session)
+    get :new
+  end
 
+
+  context "GET new" do
     it "should assign to @user_session a new instance" do
       assigns[:user_session].should == mock_session
     end
   end
 
+  
   context "POST create" do
     it "should create a new session given valid attributes" do
       post :create, :user_session => valid_attributes

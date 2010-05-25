@@ -25,7 +25,7 @@ Spec::Runner.configure do |config|
   config.use_transactional_fixtures = true
   config.use_instantiated_fixtures  = false
   config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
-
+end
   # == Fixtures
   #
   # You can declare fixtures for each example_group like this:
@@ -66,4 +66,4 @@ Spec::Runner.configure do |config|
     current_user_session = controller.current_user_session
     current_user_session.destroy unless current_user_session.nil?
   end
-end
+
