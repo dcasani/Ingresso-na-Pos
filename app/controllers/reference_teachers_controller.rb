@@ -4,14 +4,13 @@ class ReferenceTeachersController < ApplicationController
   def index
     @subscription = Subscription.find(params[:subscription_id])
     @reference_teachers = @subscription.reference_teachers
-
   end
 
   # GET /reference_teachers/1
   # GET /reference_teachers/1.xml
   def show
     @subscription = Subscription.find(params[:subscription_id])
-    @reference_teachers = @subscription.reference_teachers.find(params[:id])
+    @reference_teacher = @subscription.reference_teachers.find(params[:id])
   end
 
   # GET /reference_teachers/new
@@ -24,14 +23,14 @@ class ReferenceTeachersController < ApplicationController
   # GET /reference_teachers/1/edit
   def edit
     @subscription = Subscription.find(params[:subscription_id])
-    @reference_teachers = @subscription.reference_teachers.find(params[:id])
+    @reference_teacher = @subscription.reference_teachers.find(params[:id])
   end
 
   # POST /reference_teachers
   # POST /reference_teachers.xml
   def create
     @subscription = Subscription.find(params[:subscription_id])
-    @reference_teachers = @subscription.reference_teachers.build(params[:reference_teacher])
+    @reference_teacher = @subscription.reference_teachers.build(params[:reference_teacher])
     if @subscription.save
       redirect_to user_subscription_url(@subscription, @reference_teacher)
     else

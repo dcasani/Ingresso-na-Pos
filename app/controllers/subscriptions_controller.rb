@@ -16,6 +16,7 @@ class SubscriptionsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @subscription = @user.subscriptions.find(params[:id])
+    @teachers = ReferenceTeacher.find_all_by_subscription_id(@subscription.id)
   end
 
   def months(nivel)
@@ -100,6 +101,8 @@ class SubscriptionsController < ApplicationController
     if @subscription.save
       @reference_teacher1 = @subscription.reference_teachers.build(params[:reference_teacher1])
       @reference_teacher1.save
+      @reference_teacher2 = @subscription.reference_teachers.build(params[:reference_teacher2])
+      @reference_teacher2.save
       redirect_to user_subscription_url(@user, @subscription)
     else
       @course_areas = Course.find(:all, :group => 'area')

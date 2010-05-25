@@ -1,19 +1,19 @@
-<h1>Listing reference_teachers</h1>
+<h1>Professores recomendantes</h1>
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Nome</th>
     <th>Instituicao</th>
     <th>Email</th>
-    <th>Subscription</th>
   </tr>
 
 <% @reference_teachers.each do |reference_teacher| %>
   <tr>
+    <td><%=h reference_teacher.id %></td>
     <td><%=h reference_teacher.nome %></td>
     <td><%=h reference_teacher.instituicao %></td>
     <td><%=h reference_teacher.email %></td>
-    <td><%=h reference_teacher.subscription %></td>
   </tr>
 <% end %>
 </table>
