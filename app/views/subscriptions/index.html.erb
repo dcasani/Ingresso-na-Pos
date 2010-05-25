@@ -1,25 +1,15 @@
-<h1>Listing subscriptions</h1>
+<h1>Suas inscrições:</h1>
 
 <table>
   <tr>
-    <th>Inicio pretendido</th>
-    <th>Outros programas</th>
-    <th>Orientador</th>
-    <th>Bolsa fomento</th>
-    <th>Bolsa ime</th>
-    <th>Bolsas anteriores</th>
-    <th>Dados carta recomendacao</th>
-    <th>Trabalhar se aceito</th>
-    <th>Resumo dissertacao mestrado</th>
-    <th>Propositos</th>
-    <th>Observacoes</th>
+    <th>Última Modificação</th>
     <th>Curso</th>
+    <th>Nível</th>
   </tr>
-
 <% @subscriptions.each do |subscription| %>
   <tr>
-    <td><%=h subscription.inicio_pretendido %></td>
-    <td><%=h subscription.outros_programas %></td>
+    <td><%=h subscription.updated_at %></td>
+    <td><%=h subscription.curso%></td>
     <td><%=h subscription.orientador %></td>
     <td><%=h subscription.bolsa_fomento %></td>
     <td><%=h subscription.bolsa_ime %></td>

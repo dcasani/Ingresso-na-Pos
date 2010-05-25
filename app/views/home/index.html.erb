@@ -1,0 +1,46 @@
+
+
+<div id="login" style="width:400px; margin: 0 auto;">
+  <% if current_user %>
+
+  <%= link_to "Ir para área administrativa de inscrições", "/users/"+current_user.id.to_s+"/subscriptions" %>
+
+  <% else %>
+
+    <h1>Bem-Vindo ao Sistema de Inscrição na Pós-Graduação do IME/USP</h1>
+    
+ 
+
+ <!--<h2>Usuário já cadastrado:</h2>-->
+
+<% form_for(@user_session) do |f| %>
+  <%= f.error_messages %>
+<table>
+  <tr>
+    <td><b>Login:</b><br/><br/></td>
+  </tr>
+  <tr>
+    <td><%= f.label :'e-mail' %></td>
+    <td><%= f.text_field :username %></td>
+  </tr>
+  <tr>
+  <td><%= f.label :senha %></td>
+  <td><%= f.password_field :password %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><%= f.submit 'Entrar' %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Esqueci minha senha</td>
+  </tr>
+  </table>
+<% end %>
+<br/>
+ <p><b>Novo usuário?</b>
+    <%= link_to "Cadastrar-se", new_user_path %>
+ </p>
+ <% end %>
+
+</div>

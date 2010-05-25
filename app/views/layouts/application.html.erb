@@ -36,18 +36,15 @@
         <td bgcolor="#ebebeb" height="1px"><img src="tour/espacador.gif" width="10" height="1"></td>
       </tr>
     </tbody></table>
-  <div id="user_nav">
-    <% if current_user %>
-      <span>Bem vindo <strong><%= current_user.nome_completo%></strong>!</span> |
-      <%= link_to "Editar", edit_user_path(:current) %> |
-      <%= link_to "Logout", logout_path %> 
-    <% else %>
-      <%= link_to "Registrar", new_user_path %> |
-      <%= link_to "Login", login_path %>
-    <% end %>
-  </div>
 
   <div id="content">
+    <div id="login">
+      <% if current_user %>
+        <span>Bem vindo <strong><%= current_user.nome_completo%></strong>!</span> |
+        <%= link_to "Alterar dados pessoais", edit_user_path(:current) %> |
+        <%= link_to "Sair", logout_path %>
+      <% end %>
+    </div>
     <%= yield  %>
   </div>
   <table width="100%" border="0" align="center" cellspacing="0">

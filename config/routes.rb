@@ -19,6 +19,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => "users", :action => "new"
 
+  map.resources :subscriptions
+  map.root :controller => "home"
+  
   #autenticacao de usuarios
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"

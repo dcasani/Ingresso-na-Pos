@@ -4,7 +4,11 @@ class SubscriptionsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @subscriptions = @user.subscriptions
-
+    @courses = Array.new
+    @subscriptions.each do |subscription|
+      @course = Course.find_by_id(subscription.curso_id)
+      @courses.add(@course)
+    end
   end
 
   # GET /subscriptions/1
