@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :user_sessions
+
  
   map.resources :courses
   #map.resources :subscriptions, :has_many => :reference_teachers
@@ -16,6 +18,10 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.root :controller => "users", :action => "new"
+
+  #autenticacao de usuarios
+  map.login "login", :controller => "user_sessions", :action => "new"
+  map.logout "logout", :controller => "user_sessions", :action => "destroy"
 
   # The priority is based upon order of creation: first created -> highest priority.
 

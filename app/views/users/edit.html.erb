@@ -15,7 +15,7 @@
     </tr>
     <tr>
       <td><%= f.label "E-mail" %></td>
-      <td><%= f.text_field :email, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
+      <td><%= f.label @user.email %></td>
     </tr>
     <tr>
       <td><%= f.label :estado_civil %></td>

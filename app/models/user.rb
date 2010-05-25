@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
+
+  # Aggregations
   has_many :subscriptions
   has_many :reference_teachers, :through => :subscriptions
+
+  # Authlogic
+  acts_as_authentic
 
   validates_presence_of :nome_completo, :data_de_nascimento, :email,
     :formacao_superior_graduacao,

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100514172306) do
+ActiveRecord::Schema.define(:version => 20100514195919) do
 
   create_table "courses", :force => true do |t|
     t.string   "area"
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(:version => 20100514172306) do
     t.integer  "poscomp_file_size"
   end
 
+  create_table "user_sessions", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "nome_completo"
     t.date     "data_de_nascimento"
@@ -85,6 +92,10 @@ ActiveRecord::Schema.define(:version => 20100514172306) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cpf"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.string   "username"
   end
 
 end
