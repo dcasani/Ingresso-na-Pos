@@ -5,3 +5,53 @@
 #
 # two:
 #   column: value
+
+computacao1:
+ area: Computação
+ nivel: Mestrado
+ subarea: Bioinformática
+
+computacao2:
+ area: Computação
+ nivel: Mestrado
+ subarea: Criptologia
+
+computacao3:
+ area: Computação
+ nivel: Mestrado
+ subarea: Engenharia de Software e Sistemas de Software
+
+computacao4:
+ area: Computação
+ nivel: Mestrado
+ subarea: Inteligência Artificial, Lógica e Métodos Formais
+
+computacao5:
+ area: Computação
+ nivel: Mestrado
+ subarea: Otimização Contínua, Análise Numérica e Pesquisa Operacional
+
+computacao6:
+ area: Computação
+ nivel: Mestrado
+ subarea: Teoria da Computação
+
+computacao7:
+ area: Computação
+ nivel: Mestrado
+ subarea: Visão Computacional e Processamento de Imagens
+
+computacao8:
+ area: Computação
+ nivel: Doutorado
+ subarea: Bioinformática
+
+estatistica1:
+ area: Estatística
+ nivel: Mestrado
+ subarea: Subarea 1 da estatística
+
+estatistica2:
+ area: Estatística
+ nivel: Doutorado
+ subarea: Subarea 2 da estatística
