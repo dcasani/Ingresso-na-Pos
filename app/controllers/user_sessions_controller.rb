@@ -18,7 +18,7 @@ class UserSessionsController < ApplicationController
 
     if @user_session.save
       flash[:notice] = 'Usuario logado com sucesso.'
-      redirect_to(edit_user_url(current_user))
+      redirect_to(user_subscriptions_url(current_user))
     else
       render :action => "new"
     end

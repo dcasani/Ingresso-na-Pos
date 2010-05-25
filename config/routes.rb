@@ -4,8 +4,9 @@ ActionController::Routing::Routes.draw do |map|
  
   map.resources :courses
   map.resources :users, :has_many => :subscriptions
-  map.resources :subscriptions, :has_many => :reference_teachers
-  map.root :controller => "users", :action => "new"
+  map.resources :subscriptions
+  map.root :controller => "home"
+  
 
   #autenticacao de usuarios
   map.login "login", :controller => "user_sessions", :action => "new"
