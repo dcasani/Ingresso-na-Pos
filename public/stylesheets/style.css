@@ -6,7 +6,7 @@
 
 #content table tr td{
     vertical-align: top;
-        font-size: 14px;
+    font-size: 14px;
 }
 
 #content table input, #content table textarea{
@@ -15,4 +15,20 @@
 
 div.fieldWithErrors input, div.fieldWithErrors textarea{
     background-color: #f6d6f6;
+}
+
+a{
+    color:#c00000;
+
+}
+
+table#subscriptions td, table#subscriptions th{
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #000;
+    margin: 0;
+}
+
+table#subscriptions{
+    border-collapse: collapse;
 }
