@@ -1,6 +1,7 @@
 class Subscription < ActiveRecord::Base
-  belongs_to :user
+  
   has_many :reference_teachers
+  belongs_to :user
 
   require 'paperclip'
   has_attached_file :diploma, :url => "/arquivos/diploma/:id/:basename.:extension"

@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20100514195919) do
     t.string   "bolsa_fomento"
     t.boolean  "bolsa_ime"
     t.text     "bolsas_anteriores"
-    t.text     "dados_carta_recomendacao"
     t.boolean  "trabalhar_se_aceito"
     t.text     "resumo_dissertacao_mestrado"
     t.text     "propositos"
