@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
     @courses = Array.new
     @subscriptions.each do |subscription|
       @course = Course.find_by_id(subscription.curso_id)
-      @courses.add(@course)
+      @courses.push(@course)
     end
   end
 
