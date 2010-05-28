@@ -28,7 +28,7 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-models-subscription_rb.html">app/models/subscription.rb</a></td>
-            <td class='right_align'><tt>24</tt></td>
+            <td class='right_align'><tt>25</tt></td>
             <td class='right_align'><tt>14</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
@@ -62,8 +62,8 @@
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line2">2</a>   belongs_to :user</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line2">2</a>   </pre></td>
           </tr>
         
           
@@ -74,92 +74,92 @@
         
           
           
+          <tr class="marked">
+            <td><pre><a name="line4">4</a>   belongs_to :user</pre></td>
+          </tr>
+        
+          
+          
           <tr class="inferred">
-            <td><pre><a name="line4">4</a> </pre></td>
+            <td><pre><a name="line5">5</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line5">5</a>   require 'paperclip'</pre></td>
+            <td><pre><a name="line6">6</a>   require 'paperclip'</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line6">6</a>   has_attached_file :diploma, :url =&gt; &quot;/arquivos/diploma/:id/:basename.:extension&quot;</pre></td>
+            <td><pre><a name="line7">7</a>   has_attached_file :diploma, :url =&gt; &quot;/arquivos/diploma/:id/:basename.:extension&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line7">7</a>   has_attached_file :historico, :url =&gt; &quot;/arquivos/historico/:id/:basename.:extension&quot;</pre></td>
+            <td><pre><a name="line8">8</a>   has_attached_file :historico, :url =&gt; &quot;/arquivos/historico/:id/:basename.:extension&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line8">8</a>   has_attached_file :poscomp, :url =&gt; &quot;/arquivos/poscomp/:id/:basename.:extension&quot;</pre></td>
+            <td><pre><a name="line9">9</a>   has_attached_file :poscomp, :url =&gt; &quot;/arquivos/poscomp/:id/:basename.:extension&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line9">9</a> </pre></td>
+            <td><pre><a name="line10">10</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line10">10</a>   validates_presence_of :propositos, :inicio_pretendido,</pre></td>
+            <td><pre><a name="line11">11</a>   validates_presence_of :propositos, :inicio_pretendido,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line11">11</a>                         :message =&gt; &quot;: Preencher campo obrigatório&quot;</pre></td>
+            <td><pre><a name="line12">12</a>                         :message =&gt; &quot;: Preencher campo obrigatório&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line12">12</a> </pre></td>
+            <td><pre><a name="line13">13</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line13">13</a>   validates_format_of :inicio_pretendido,</pre></td>
+            <td><pre><a name="line14">14</a>   validates_format_of :inicio_pretendido,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line14">14</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ]*\Z/ , :message =&gt; &quot;: Usar somente letras&quot;</pre></td>
+            <td><pre><a name="line15">15</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ]*\Z/ , :message =&gt; &quot;: Usar somente letras&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line15">15</a> </pre></td>
+            <td><pre><a name="line16">16</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line16">16</a>   validates_format_of :orientador,</pre></td>
+            <td><pre><a name="line17">17</a>   validates_format_of :orientador,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line17">17</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ\.-]*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line18">18</a> </pre></td>
+            <td><pre><a name="line18">18</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ\.-]*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
           </tr>
         
           
@@ -177,31 +177,37 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line21">21</a>   #validates_format_of :bolsa_fomento, :bolsas_anteriores,</pre></td>
+            <td><pre><a name="line21">21</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line22">22</a>   #                    :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ-]+( [a-zA-Zá-úÁ-ÚçÇ-]+)*\Z+\A\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
+            <td><pre><a name="line22">22</a>   #validates_format_of :bolsa_fomento, :bolsas_anteriores,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line23">23</a> </pre></td>
+            <td><pre><a name="line23">23</a>   #                    :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ-]+( [a-zA-Zá-úÁ-ÚçÇ-]+)*\Z+\A\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line24">24</a> end</pre></td>
+            <td><pre><a name="line24">24</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line25">25</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue May 11 16:28:59 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri May 28 13:40:54 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

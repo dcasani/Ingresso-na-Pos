@@ -28,8 +28,8 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-models-user_rb.html">app/models/user.rb</a></td>
-            <td class='right_align'><tt>40</tt></td>
-            <td class='right_align'><tt>22</tt></td>
+            <td class='right_align'><tt>78</tt></td>
+            <td class='right_align'><tt>50</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:100px"></div>
@@ -62,170 +62,170 @@
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line2">2</a>   has_many :subscriptions</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line2">2</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line3">3</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line4">4</a>   validates_presence_of :nome_completo, :data_de_nascimento, :email,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line5">5</a>                         :formacao_superior_graduacao,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line6">6</a>                         :message =&gt; &quot;: Preencher campo obrigatório&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line7">7</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line8">8</a>                       # Campos de texto formados apenas por palavras (sem números nem caracteres especiais)</pre></td>
+            <td><pre><a name="line3">3</a>   # Aggregations</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line9">9</a>   validates_format_of :nome_completo,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line10">10</a>                       :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ-]+( [a-zA-Zá-úÁ-ÚçÇ-]+)*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line11">11</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line12">12</a> </pre></td>
+            <td><pre><a name="line4">4</a>   has_many :subscriptions</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line13">13</a>   validates_format_of :identidade,</pre></td>
+            <td><pre><a name="line5">5</a>   has_many :reference_teachers, :through =&gt; :subscriptions</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line14">14</a>                       :with =&gt; /\A([a-z0-9-]+)*\Z/i, :message =&gt; &quot;: Usar somente letras, números, . e -&quot;</pre></td>
+            <td><pre><a name="line6">6</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line15">15</a> </pre></td>
+            <td><pre><a name="line7">7</a>   # Authlogic</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line16">16</a>   validates_format_of :tipo, :nacionalidade, :cidade_permanente,</pre></td>
+            <td><pre><a name="line8">8</a>   acts_as_authentic</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line17">17</a>                       :estado_permanente, :pais_permanente, :cidade_correspondencia,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line18">18</a>                       :estado_correspondencia, :pais_correspondencia, </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line19">19</a>                       :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ-]*\Z/, :message =&gt; &quot;: Usar somente letras e espaços.&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line20">20</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line21">21</a>                       # Campos formados por palavras e sinais de pontuação (.,-)</pre></td>
+            <td><pre><a name="line9">9</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line22">22</a>   validates_format_of :logradouro_permanente, :logradouro_correspondencia,</pre></td>
+            <td><pre><a name="line10">10</a>   validates_presence_of :nome_completo, :data_de_nascimento, :email,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line23">23</a>                        :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ0-9-]*( [-,.]? ?[a-zA-Zá-úÁ-ÚçÇ0-9-]+)*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
+            <td><pre><a name="line11">11</a>     :formacao_superior_graduacao,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line24">24</a> </pre></td>
+            <td><pre><a name="line12">12</a>     :message =&gt; &quot;: Preencher campo obrigatório&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line13">13</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line14">14</a>   # Campos de texto formados apenas por palavras (sem números nem caracteres especiais)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line25">25</a>   validates_format_of :cep_permanente, :cep_correspondencia,</pre></td>
+            <td><pre><a name="line15">15</a>   validates_format_of :nome_completo,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line26">26</a>                       :with =&gt; /\A[0-9-]*\Z/, :message =&gt; &quot;:Usar apenas números no código postal&quot;</pre></td>
+            <td><pre><a name="line16">16</a>     :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ-]+( [a-zA-Zá-úÁ-ÚçÇ-]+)*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line27">27</a> </pre></td>
+            <td><pre><a name="line17">17</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line18">18</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line28">28</a>   validates_format_of :numero_permanente, :numero_correspondencia,</pre></td>
+            <td><pre><a name="line19">19</a>   validates_format_of :identidade,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line29">29</a>                       :with =&gt; /\A[A-Za-z0-9]*\Z/, :message =&gt; &quot;: Usar somente números e letras, sem espaços.&quot;</pre></td>
+            <td><pre><a name="line20">20</a>     :with =&gt; /\A([a-z0-9-]+)*\Z/i, :message =&gt; &quot;: Usar somente letras, números, . e -&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line21">21</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line22">22</a>   validates_format_of :tipo, :nacionalidade, :cidade_permanente,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line23">23</a>     :estado_permanente, :pais_permanente, :cidade_correspondencia,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line24">24</a>     :estado_correspondencia, :pais_correspondencia,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line25">25</a>     :with =&gt; /\A[ a-zA-Zá-úÁ-ÚçÇ-]*\Z/, :message =&gt; &quot;: Usar somente letras e espaços.&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line26">26</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line27">27</a>   # Campos formados por palavras e sinais de pontuação (.,-)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line28">28</a>   validates_format_of :logradouro_permanente, :logradouro_correspondencia,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line29">29</a>     :with =&gt; /\A[a-zA-Zá-úÁ-ÚçÇ0-9-]*( [-,.]? ?[a-zA-Zá-úÁ-ÚçÇ0-9-]+)*\Z/, :message =&gt; &quot;: Usar somente letras e espaços&quot;</pre></td>
           </tr>
         
           
@@ -236,32 +236,32 @@
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line31">31</a>   #validates_format_of :email, :with =&gt; /^[-_a-z0-9]+(\\.[-_a-z0-9]+)*\\@([-a-z0-9]+\\.)*([a-z]{2,4})$/, :message =&gt; &quot;: Formato de email inválido&quot;</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line31">31</a>   validates_format_of :cep_permanente, :cep_correspondencia,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line32">32</a>   #validates_format_of :email, :with =&gt; /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i , :message =&gt; &quot;: Formato de email inválido&quot;</pre></td>
+            <td><pre><a name="line32">32</a>     :with =&gt; /\A[0-9-]*\Z/, :message =&gt; &quot;:Usar apenas números no código postal&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line33">33</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line33">33</a>   validates_format_of :email, :with =&gt; /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i , :message =&gt; &quot;: Formato de email inválido&quot;</pre></td>
+            <td><pre><a name="line34">34</a>   validates_format_of :numero_permanente, :numero_correspondencia,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line34">34</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line35">35</a>   #validate_length_of :nome_completo, :in =&gt; 2..150</pre></td>
+            <td><pre><a name="line35">35</a>     :with =&gt; /\A[A-Za-z0-9]*\Z/, :message =&gt; &quot;: Usar somente números e letras, sem espaços.&quot;</pre></td>
           </tr>
         
           
@@ -272,32 +272,260 @@
         
           
           
+          <tr class="inferred">
+            <td><pre><a name="line37">37</a>   #validates_format_of :email, :with =&gt; /^[-_a-z0-9]+(\\.[-_a-z0-9]+)*\\@([-a-z0-9]+\\.)*([a-z]{2,4})$/, :message =&gt; &quot;: Formato de email inválido&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line38">38</a>   #validates_format_of :email, :with =&gt; /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i , :message =&gt; &quot;: Formato de email inválido&quot;</pre></td>
+          </tr>
+        
+          
+          
           <tr class="marked">
-            <td><pre><a name="line37">37</a>   validates_uniqueness_of :email, :message =&gt; &quot;: Já existe um usuário cadastrado com esse e-mail, por favor, escolha outro&quot;</pre></td>
+            <td><pre><a name="line39">39</a>   validates_format_of :email, :with =&gt; /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i , :message =&gt; &quot;: Formato de email inválido&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line38">38</a> </pre></td>
+            <td><pre><a name="line40">40</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line39">39</a> </pre></td>
+            <td><pre><a name="line41">41</a>   #validate_length_of :nome_completo, :in =&gt; 2..150</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line40">40</a> end</pre></td>
+            <td><pre><a name="line42">42</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line43">43</a>   validates_uniqueness_of :email, :message =&gt; &quot;: Já existe um usuário cadastrado com esse e-mail, por favor, escolha outro&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line44">44</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line45">45</a>   # Função para verificação do CPF</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line46">46</a>   def validate</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line47">47</a>     cpf_string = cpf.to_s</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line48">48</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line49">49</a>     cpf_string.gsub!(/[^0-9]/,'')</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line50">50</a>     #errors.add_to_base &quot;CPF string:&quot; + cpf_string</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line51">51</a>     #errors.add_to_base &quot;CPF class:&quot; + cpf.class.to_s</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line52">52</a>     controle = &quot;&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line53">53</a>     digito = cpf_string.slice(-2,2)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line54">54</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line55">55</a>     if cpf_string.size &gt; 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line56">56</a>       # Permite CPF em branco</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line57">57</a>       if cpf_string.size == 11</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line58">58</a>         fator = 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line59">59</a>         2.times do |i|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line60">60</a>           soma = 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line61">61</a>           9.times do |j|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line62">62</a>             soma += cpf_string.slice(j,1).to_i * (10 + i - j)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line63">63</a>           end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line64">64</a>           soma += (fator * 2) if i == 1</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line65">65</a>           fator = (soma * 10) % 11</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line66">66</a>           fator = 0 if(fator == 10)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line67">67</a>           controle &lt;&lt; fator.to_s</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line68">68</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line69">69</a>       elsif cpf_string.size &gt; 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line70">70</a>         errors.add(:cpf, &quot;CPF inválido: dígitos faltando.&quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line71">71</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line72">72</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line73">73</a>       if (controle != digito)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line74">74</a>         errors.add(:cpf, &quot;CPF inválido: dígito verificador não confere.&quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line75">75</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line76">76</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line77">77</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line78">78</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue May 11 16:28:59 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri May 28 13:40:54 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
