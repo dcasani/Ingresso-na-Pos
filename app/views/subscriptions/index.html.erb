@@ -9,12 +9,14 @@
   </tr>
   <%
   @i = 0
-  @subscriptions.each do |subscription| %>
-
+  @subscriptions.each do |subscription| 
+  @course = Course.find_by_id(subscription.curso_id)%>
     <tr>
       <td><%=h subscription.updated_at.strftime("%d/%m/%Y") %></td>
-      <td><%=h @courses[@i].nivel %></td>
-      <td><%=h @courses[@i].area %></td>
+
+  
+        <td><%=h @course.nivel %></td>
+        <td><%=h @course.area %></td>
 
 
       <td><%= link_to 'Mostrar', user_subscription_path(@user,subscription) %></td>

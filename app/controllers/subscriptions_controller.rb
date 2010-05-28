@@ -4,10 +4,8 @@ class SubscriptionsController < ApplicationController
   def index
     @user = current_user
     @subscriptions = @user.subscriptions
-    @courses = Array.new
     @subscriptions.each do |subscription|
       @course = Course.find_by_id(subscription.curso_id)
-      @courses.push(@course)
     end
   end
 
