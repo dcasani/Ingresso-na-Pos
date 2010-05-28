@@ -99,11 +99,7 @@ class SubscriptionsController < ApplicationController
         :area => params[:area_select], :subarea => params[:subarea_select]})
     @subscription.curso_id = @course.id
     if @subscription.save
-      @reference_teacher1 = @subscription.reference_teachers.build(params[:reference_teacher1])
-      @reference_teacher1.save
-      @reference_teacher2 = @subscription.reference_teachers.build(params[:reference_teacher2])
-      @reference_teacher2.save
-      redirect_to user_subscription_url(@user, @subscription)
+      redirect_to new_subscription_reference_teacher_url(@subscription)
     else
       @course_areas = Course.find(:all, :group => 'area')
       @course = Course.find_by_id(@subscription.curso_id)

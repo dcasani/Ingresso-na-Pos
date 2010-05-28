@@ -18,6 +18,8 @@ class ReferenceTeachersController < ApplicationController
   def new
     @subscription = Subscription.find(params[:subscription_id])
     @reference_teacher = @subscription.reference_teachers.build
+
+
   end
 
   # GET /reference_teachers/1/edit
