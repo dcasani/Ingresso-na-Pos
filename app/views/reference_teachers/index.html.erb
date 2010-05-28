@@ -1,22 +1,27 @@
 <h1>Professores recomendantes</h1>
 
-<table>
-  <tr>
-    <th>ID</th>
+<table id="teachers">
+  <tr>    
     <th>Nome</th>
     <th>Instituicao</th>
     <th>Email</th>
+    <th>Idioma</th>
+    <th colspan="2">Opcoes</th>
   </tr>
 
 <% @reference_teachers.each do |reference_teacher| %>
-  <tr>
-    <td><%=h reference_teacher.id %></td>
+  <tr>    
     <td><%=h reference_teacher.nome %></td>
     <td><%=h reference_teacher.instituicao %></td>
     <td><%=h reference_teacher.email %></td>
+    <td><%=h reference_teacher.lingua %></td>
+    <td><%= link_to 'Editar', edit_subscription_reference_teacher_path(@subscription, reference_teacher) %></td>
+    <td><%= link_to 'Deletar', subscription_reference_teacher_path(@subscription, reference_teacher), :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+<%= link_to 'Adicionar novo professor', new_subscription_reference_teacher_path(@subscription) %>
+<br />
+<%= link_to 'Concluir', user_subscriptions_path(@user) %>

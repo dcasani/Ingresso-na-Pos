@@ -37,14 +37,16 @@
       </tr>
     </tbody></table>
 
+  <div id="login">
+    <% if current_user %>
+      <span>Bem vindo <strong><%= current_user.nome_completo%></strong>!</span> |
+      <%= link_to "Alterar dados pessoais", edit_user_path(:current) %> |
+      <%= link_to "Sair", logout_path %>
+    <% else %>
+    <% end %>
+  </div>
+
   <div id="content">
-    <div id="login">
-      <% if current_user %>
-        <span>Bem vindo <strong><%= current_user.nome_completo%></strong>!</span> |
-        <%= link_to "Alterar dados pessoais", edit_user_path(:current) %> |
-        <%= link_to "Sair", logout_path %>
-      <% end %>
-    </div>
     <%= yield  %>
   </div>
   <table width="100%" border="0" align="center" cellspacing="0">

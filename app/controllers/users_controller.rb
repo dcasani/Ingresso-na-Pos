@@ -47,7 +47,7 @@ class UsersController < ApplicationController
       @user.username = @user.email
       if @user.save
         flash[:notice] = 'User was successfully created.'
-        format.html { redirect_to new_user_subscription_url(@user) }
+        format.html { redirect_to new_subscription_url }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }

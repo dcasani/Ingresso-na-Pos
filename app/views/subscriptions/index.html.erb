@@ -1,13 +1,12 @@
 <h1>Suas inscrições:</h1>
-<%= link_to 'Nova inscrição', new_user_subscription_path(@user) %> <br/><br/>
+<%= link_to 'Nova inscrição', new_subscription_path %> <br/><br/>
 <table id="subscriptions">
   <tr>
     <th>Última Modificação</th>
     <th>Nível</th>
     <th>Curso</th>
-    <th colspan="3">Opções</th>
+    <th colspan="4">Opções</th>
   </tr>
-<<<<<<< HEAD:app/views/subscriptions/index.html.erb
   <%
   @i = 0
   @subscriptions.each do |subscription| %>
@@ -16,36 +15,18 @@
       <td><%=h subscription.updated_at.strftime("%d/%m/%Y") %></td>
       <td><%=h @courses[@i].nivel %></td>
       <td><%=h @courses[@i].area %></td>
-      
+
 
       <td><%= link_to 'Mostrar', user_subscription_path(@user,subscription) %></td>
       <td><%= link_to 'Editar', edit_user_subscription_path(@user,subscription) %></td>
+      <td><%= link_to 'Editar professores', subscription_reference_teachers_path(subscription) %></td>
       <td><%= link_to 'Deletar', user_subscription_path(@user,subscription), :confirm => 'Tem certeza?', :method => :delete %></td>
     </tr>
-  <%   @i+=1
+    <%   @i+=1
 
   end
-  %>
-=======
-<% @subscriptions.each do |subscription| %>
-  <tr>
-    <td><%=h subscription.updated_at %></td>
-    <td><%=h subscription.curso%></td>
-    <td><%=h subscription.orientador %></td>
-    <td><%=h subscription.bolsa_fomento %></td>
-    <td><%=h subscription.bolsa_ime %></td>
-    <td><%=h subscription.bolsas_anteriores %></td>
-    <td><%=h subscription.trabalhar_se_aceito %></td>
-    <td><%=h subscription.resumo_dissertacao_mestrado %></td>
-    <td><%=h subscription.propositos %></td>
-    <td><%=h subscription.observacoes %></td>
-    <td><%=h subscription.curso_id %></td>
-    <td><%= link_to 'Show', user_subscription_path(@user,subscription) %></td>
-    <td><%= link_to 'Edit', edit_user_subscription_path(@user,subscription) %></td>
-    <td><%= link_to 'Destroy', user_subscription_path(@user,subscription), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
->>>>>>> 6b387d1f536edd26f9784788a301c39f7003ab32:app/views/subscriptions/index.html.erb
+%>
+
 </table>
 
 

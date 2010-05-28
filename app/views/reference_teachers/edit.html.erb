@@ -1,6 +1,6 @@
-<h1>Editing reference_teacher</h1>
+<h1>Edite os dados do professor</h1>
 
-<% form_for(@reference_teacher) do |f| %>
+<% form_for [@subscription,@reference_teacher] do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -8,21 +8,19 @@
     <%= f.text_field :nome %>
   </p>
   <p>
-    <%= f.label :instituicao %><br />
+    <%= f.label :instituição %><br />
     <%= f.text_field :instituicao %>
   </p>
   <p>
-    <%= f.label :email %><br />
+    <%= f.label "e-mail" %><br />
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :subscription %><br />
-    <%= f.text_field :subscription %>
+    <%= f.label "idioma" %><br />
+    <%= f.select(:lingua, %w[Português Inglês]) %>
   </p>
+
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Salvar' %>
   </p>
 <% end %>
-
-<%= link_to 'Show', @reference_teacher %> |
-<%= link_to 'Back', reference_teachers_path %>
