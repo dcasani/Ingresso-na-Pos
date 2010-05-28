@@ -1,7 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
 
- 
   map.resources :courses
   #map.resources :subscriptions, :has_many => :reference_teachers
   #map.resources :users, :has_many => :subscriptions
@@ -16,12 +15,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :subscriptions do |subscription|
     subscription.resources :reference_teachers
   end
-  
-  map.root :controller => "users", :action => "new"
 
   map.resources :subscriptions
   map.root :controller => "home"
-  
+
   #autenticacao de usuarios
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
@@ -44,7 +41,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
+
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments
