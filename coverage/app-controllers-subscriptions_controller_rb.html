@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-subscriptions_controller_rb.html">app/controllers/subscriptions_controller.rb</a></td>
-            <td class='right_align'><tt>152</tt></td>
-            <td class='right_align'><tt>125</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>30.92%</tt></div>
+            <td class='right_align'><tt>155</tt></td>
+            <td class='right_align'><tt>128</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>30.32%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:31px"></div>
-            <div class="uncovered" style="width:69px"></div>
+            <div class="covered" style="width:30px"></div>
+            <div class="uncovered" style="width:70px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>17.60%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>17.19%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:18px"></div>
-            <div class="uncovered" style="width:82px"></div>
+            <div class="covered" style="width:17px"></div>
+            <div class="uncovered" style="width:83px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -111,7 +111,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line10">10</a>       @courses.add(@course)</pre></td>
+            <td><pre><a name="line10">10</a>       @courses.push(@course)</pre></td>
           </tr>
         
           
@@ -165,811 +165,829 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line19">19</a>   end</pre></td>
+            <td><pre><a name="line19">19</a>     @teachers = ReferenceTeacher.find_all_by_subscription_id(@subscription.id)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line20">20</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line20">20</a> </pre></td>
+            <td><pre><a name="line21">21</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line21">21</a>   def months(nivel)</pre></td>
+            <td><pre><a name="line22">22</a>   def months(nivel)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line22">22</a>     @st_months = Array.new</pre></td>
+            <td><pre><a name="line23">23</a>     @st_months = Array.new</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line23">23</a>     if nivel == &quot;Mestrado&quot;</pre></td>
+            <td><pre><a name="line24">24</a>     if nivel == &quot;Mestrado&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line24">24</a>       @st_months[0] = &quot;Março&quot;</pre></td>
+            <td><pre><a name="line25">25</a>       @st_months[0] = &quot;Março&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line25">25</a>       @st_months[1] = &quot;Agosto&quot;</pre></td>
+            <td><pre><a name="line26">26</a>       @st_months[1] = &quot;Agosto&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line26">26</a>     else</pre></td>
+            <td><pre><a name="line27">27</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line27">27</a>       @st_months[0] = &quot;Janeiro&quot;</pre></td>
+            <td><pre><a name="line28">28</a>       @st_months[0] = &quot;Janeiro&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line28">28</a>       @st_months[1] = &quot;Fevereiro&quot;</pre></td>
+            <td><pre><a name="line29">29</a>       @st_months[1] = &quot;Fevereiro&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line29">29</a>       @st_months[2] = &quot;Março&quot;</pre></td>
+            <td><pre><a name="line30">30</a>       @st_months[2] = &quot;Março&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line30">30</a>       @st_months[3] = &quot;Abril&quot;</pre></td>
+            <td><pre><a name="line31">31</a>       @st_months[3] = &quot;Abril&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line31">31</a>       @st_months[4] = &quot;Maio&quot;</pre></td>
+            <td><pre><a name="line32">32</a>       @st_months[4] = &quot;Maio&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line32">32</a>       @st_months[5] = &quot;Junho&quot;</pre></td>
+            <td><pre><a name="line33">33</a>       @st_months[5] = &quot;Junho&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line33">33</a>       @st_months[6] = &quot;Julho&quot;</pre></td>
+            <td><pre><a name="line34">34</a>       @st_months[6] = &quot;Julho&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line34">34</a>       @st_months[7] = &quot;Agosto&quot;</pre></td>
+            <td><pre><a name="line35">35</a>       @st_months[7] = &quot;Agosto&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line35">35</a>       @st_months[8] = &quot;Setembro&quot;</pre></td>
+            <td><pre><a name="line36">36</a>       @st_months[8] = &quot;Setembro&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line36">36</a>       @st_months[9] = &quot;Outubro&quot;</pre></td>
+            <td><pre><a name="line37">37</a>       @st_months[9] = &quot;Outubro&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line37">37</a>       @st_months[10] = &quot;Novembro&quot;</pre></td>
+            <td><pre><a name="line38">38</a>       @st_months[10] = &quot;Novembro&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line38">38</a>       @st_months[11] = &quot;Dezembro&quot;</pre></td>
+            <td><pre><a name="line39">39</a>       @st_months[11] = &quot;Dezembro&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line39">39</a>     end</pre></td>
+            <td><pre><a name="line40">40</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line40">40</a>     return @st_months</pre></td>
+            <td><pre><a name="line41">41</a>     return @st_months</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line41">41</a>   end</pre></td>
+            <td><pre><a name="line42">42</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line42">42</a> </pre></td>
+            <td><pre><a name="line43">43</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line43">43</a>   # GET /subscriptions/new</pre></td>
+            <td><pre><a name="line44">44</a>   # GET /subscriptions/new</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line44">44</a>   # GET /subscriptions/new.xml</pre></td>
+            <td><pre><a name="line45">45</a>   # GET /subscriptions/new.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line45">45</a>   def new</pre></td>
+            <td><pre><a name="line46">46</a>   def new</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line46">46</a>     @user = User.find(params[:user_id])</pre></td>
+            <td><pre><a name="line47">47</a>     @user = User.find(params[:user_id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line47">47</a>     @subscription = @user.subscriptions.build</pre></td>
+            <td><pre><a name="line48">48</a>     @subscription = @user.subscriptions.build</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line48">48</a>     @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
+            <td><pre><a name="line49">49</a>     @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line49">49</a>     @course = Course.find_by_id(@subscription.curso_id)</pre></td>
+            <td><pre><a name="line50">50</a>     @course = Course.find_by_id(@subscription.curso_id)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line50">50</a>     @course = Course.first</pre></td>
+            <td><pre><a name="line51">51</a>     @course = Course.first</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line51">51</a>     @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
+            <td><pre><a name="line52">52</a>     @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line52">52</a>     @st_months = months(&quot;Mestrado&quot;)</pre></td>
+            <td><pre><a name="line53">53</a>     @st_months = months(&quot;Mestrado&quot;)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line53">53</a>     @month_selected = &quot;&quot;</pre></td>
+            <td><pre><a name="line54">54</a>     @month_selected = &quot;&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line54">54</a>   end</pre></td>
+            <td><pre><a name="line55">55</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line55">55</a> </pre></td>
+            <td><pre><a name="line56">56</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line56">56</a>   def course_subareas</pre></td>
+            <td><pre><a name="line57">57</a>   def course_subareas</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line57">57</a>     @area = params[:area].sub(&quot;area_select=&quot;,&quot;&quot;)</pre></td>
+            <td><pre><a name="line58">58</a>     @area = params[:area].sub(&quot;area_select=&quot;,&quot;&quot;)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line58">58</a>     @render = &quot;&quot;</pre></td>
+            <td><pre><a name="line59">59</a>     @render = &quot;&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line59">59</a>     @subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @area}, :group =&gt; 'subarea' )</pre></td>
+            <td><pre><a name="line60">60</a>     @subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @area}, :group =&gt; 'subarea' )</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line60">60</a>     @subareas.each do |course|</pre></td>
+            <td><pre><a name="line61">61</a>     @subareas.each do |course|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line61">61</a>       @render += &quot;&lt;option&gt;&quot;+course.subarea+&quot;&lt;/option&gt;&quot;</pre></td>
+            <td><pre><a name="line62">62</a>       @render += &quot;&lt;option&gt;&quot;+course.subarea+&quot;&lt;/option&gt;&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line62">62</a>     end</pre></td>
+            <td><pre><a name="line63">63</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line63">63</a>     render :inline =&gt; &quot;&lt;%= @render %&gt;&quot;</pre></td>
+            <td><pre><a name="line64">64</a>     render :inline =&gt; &quot;&lt;%= @render %&gt;&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line64">64</a> </pre></td>
+            <td><pre><a name="line65">65</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line65">65</a>   end</pre></td>
+            <td><pre><a name="line66">66</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line66">66</a> </pre></td>
+            <td><pre><a name="line67">67</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line67">67</a>   def starting_months</pre></td>
+            <td><pre><a name="line68">68</a>   def starting_months</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line68">68</a>     @nivel = params[:nivel].sub(&quot;nivel_select=&quot;,&quot;&quot;)</pre></td>
+            <td><pre><a name="line69">69</a>     @nivel = params[:nivel].sub(&quot;nivel_select=&quot;,&quot;&quot;)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line69">69</a>     @render = &quot;&quot;</pre></td>
+            <td><pre><a name="line70">70</a>     @render = &quot;&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line70">70</a>     if @nivel == &quot;Doutorado&quot;</pre></td>
+            <td><pre><a name="line71">71</a>     if @nivel == &quot;Doutorado&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line71">71</a>       @render += &quot;&lt;option&gt;Janeiro&lt;/option&gt;&lt;option&gt;Fevereiro&lt;/option&gt;&lt;option&gt;Março&lt;/option&gt;&lt;option&gt;Abril&lt;/option&gt;&lt;option&gt;Maio&lt;/option&gt;&lt;option&gt;Junho&lt;/option&gt;&lt;option&gt;Julho&lt;/option&gt;&lt;option&gt;Agosto&lt;/option&gt;&lt;option&gt;Setembro&lt;/option&gt;&lt;option&gt;Outubro&lt;/option&gt;&lt;option&gt;Novembro&lt;/option&gt;&lt;option&gt;Dezembro&lt;/option&gt;&quot;</pre></td>
+            <td><pre><a name="line72">72</a>       @render += &quot;&lt;option&gt;Janeiro&lt;/option&gt;&lt;option&gt;Fevereiro&lt;/option&gt;&lt;option&gt;Março&lt;/option&gt;&lt;option&gt;Abril&lt;/option&gt;&lt;option&gt;Maio&lt;/option&gt;&lt;option&gt;Junho&lt;/option&gt;&lt;option&gt;Julho&lt;/option&gt;&lt;option&gt;Agosto&lt;/option&gt;&lt;option&gt;Setembro&lt;/option&gt;&lt;option&gt;Outubro&lt;/option&gt;&lt;option&gt;Novembro&lt;/option&gt;&lt;option&gt;Dezembro&lt;/option&gt;&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line72">72</a>     else</pre></td>
+            <td><pre><a name="line73">73</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line73">73</a>       @render += &quot;&lt;option&gt;Março&lt;/option&gt;&lt;option&gt;Agosto&lt;/option&gt;&quot;</pre></td>
+            <td><pre><a name="line74">74</a>       @render += &quot;&lt;option&gt;Março&lt;/option&gt;&lt;option&gt;Agosto&lt;/option&gt;&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line74">74</a>     end</pre></td>
+            <td><pre><a name="line75">75</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line75">75</a>     render :inline =&gt; &quot;&lt;%= @render %&gt;&quot;</pre></td>
+            <td><pre><a name="line76">76</a>     render :inline =&gt; &quot;&lt;%= @render %&gt;&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line76">76</a>   end</pre></td>
+            <td><pre><a name="line77">77</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line77">77</a> </pre></td>
+            <td><pre><a name="line78">78</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line78">78</a>   # GET /subscriptions/1/edit</pre></td>
+            <td><pre><a name="line79">79</a>   # GET /subscriptions/1/edit</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line79">79</a>   def edit</pre></td>
+            <td><pre><a name="line80">80</a>   def edit</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line80">80</a>     @user = User.find(params[:user_id])</pre></td>
+            <td><pre><a name="line81">81</a>     @user = User.find(params[:user_id])</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line81">81</a>     @subscription = @user.subscriptions.find(params[:id])</pre></td>
+            <td><pre><a name="line82">82</a>     @subscription = @user.subscriptions.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line82">82</a>     @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
+            <td><pre><a name="line83">83</a>     @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line83">83</a>     @course = Course.find_by_id(@subscription.curso_id)</pre></td>
+            <td><pre><a name="line84">84</a>     @course = Course.find_by_id(@subscription.curso_id)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line84">84</a>     @area_selected = @course.area</pre></td>
+            <td><pre><a name="line85">85</a>     @area_selected = @course.area</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line85">85</a>     @nivel_selected = @course.nivel</pre></td>
+            <td><pre><a name="line86">86</a>     @nivel_selected = @course.nivel</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line86">86</a>     @subarea_selected = @course.subarea</pre></td>
+            <td><pre><a name="line87">87</a>     @subarea_selected = @course.subarea</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line87">87</a>     @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
+            <td><pre><a name="line88">88</a>     @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line88">88</a>     @st_months = months(@nivel_selected)</pre></td>
+            <td><pre><a name="line89">89</a>     @st_months = months(@nivel_selected)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line89">89</a>     @month_selected = @subscription.inicio_pretendido</pre></td>
+            <td><pre><a name="line90">90</a>     @month_selected = @subscription.inicio_pretendido</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line90">90</a>   end</pre></td>
+            <td><pre><a name="line91">91</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line91">91</a> </pre></td>
+            <td><pre><a name="line92">92</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line92">92</a>   # POST /subscriptions</pre></td>
+            <td><pre><a name="line93">93</a>   # POST /subscriptions</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line93">93</a>   # POST /subscriptions.xml</pre></td>
+            <td><pre><a name="line94">94</a>   # POST /subscriptions.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line94">94</a>   def create</pre></td>
+            <td><pre><a name="line95">95</a>   def create</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line95">95</a>     @user = User.find(params[:user_id])</pre></td>
+            <td><pre><a name="line96">96</a>     @user = User.find(params[:user_id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line96">96</a>     @subscription = @user.subscriptions.build(params[:subscription])</pre></td>
+            <td><pre><a name="line97">97</a>     @subscription = @user.subscriptions.build(params[:subscription])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line97">97</a>     @course = Course.find(:first, :conditions =&gt; {:nivel =&gt; params[:nivel_select],</pre></td>
+            <td><pre><a name="line98">98</a>     @course = Course.find(:first, :conditions =&gt; {:nivel =&gt; params[:nivel_select],</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line98">98</a>         :area =&gt; params[:area_select], :subarea =&gt; params[:subarea_select]})</pre></td>
+            <td><pre><a name="line99">99</a>         :area =&gt; params[:area_select], :subarea =&gt; params[:subarea_select]})</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line99">99</a>     @subscription.curso_id = @course.id</pre></td>
+            <td><pre><a name="line100">100</a>     @subscription.curso_id = @course.id</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line100">100</a>     if @subscription.save</pre></td>
+            <td><pre><a name="line101">101</a>     if @subscription.save</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line101">101</a>       @reference_teacher1 = @subscription.reference_teachers.build(params[:reference_teacher1])</pre></td>
+            <td><pre><a name="line102">102</a>       @reference_teacher1 = @subscription.reference_teachers.build(params[:reference_teacher1])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line102">102</a>       @reference_teacher1.save</pre></td>
+            <td><pre><a name="line103">103</a>       @reference_teacher1.save</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line103">103</a>       redirect_to user_subscription_url(@user, @subscription)</pre></td>
+            <td><pre><a name="line104">104</a>       @reference_teacher2 = @subscription.reference_teachers.build(params[:reference_teacher2])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line104">104</a>     else</pre></td>
+            <td><pre><a name="line105">105</a>       @reference_teacher2.save</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line105">105</a>       @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
+            <td><pre><a name="line106">106</a>       redirect_to user_subscription_url(@user, @subscription)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line106">106</a>       @course = Course.find_by_id(@subscription.curso_id)</pre></td>
+            <td><pre><a name="line107">107</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line107">107</a>       @area_selected = @course.area</pre></td>
+            <td><pre><a name="line108">108</a>       @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line108">108</a>       @nivel_selected = @course.nivel</pre></td>
+            <td><pre><a name="line109">109</a>       @course = Course.find_by_id(@subscription.curso_id)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line109">109</a>       @subarea_selected = @course.subarea</pre></td>
+            <td><pre><a name="line110">110</a>       @area_selected = @course.area</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line110">110</a>       @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
+            <td><pre><a name="line111">111</a>       @nivel_selected = @course.nivel</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line111">111</a>       @month_selected = params[:subscription_inicio_pretendido]</pre></td>
+            <td><pre><a name="line112">112</a>       @subarea_selected = @course.subarea</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line112">112</a>       @st_months = months(@course.nivel)</pre></td>
+            <td><pre><a name="line113">113</a>       @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line113">113</a>       render :action =&gt; &quot;new&quot;</pre></td>
+            <td><pre><a name="line114">114</a>       @month_selected = params[:subscription_inicio_pretendido]</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line114">114</a>     end</pre></td>
+            <td><pre><a name="line115">115</a>       @st_months = months(@course.nivel)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line115">115</a>   end</pre></td>
+            <td><pre><a name="line116">116</a>       render :action =&gt; &quot;new&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line117">117</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line118">118</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line116">116</a> </pre></td>
+            <td><pre><a name="line119">119</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line117">117</a>   # PUT /subscriptions/1</pre></td>
+            <td><pre><a name="line120">120</a>   # PUT /subscriptions/1</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line118">118</a>   # PUT /subscriptions/1.xml</pre></td>
+            <td><pre><a name="line121">121</a>   # PUT /subscriptions/1.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line119">119</a>   def update</pre></td>
+            <td><pre><a name="line122">122</a>   def update</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line120">120</a>     @user = User.find(params[:user_id])</pre></td>
+            <td><pre><a name="line123">123</a>     @user = User.find(params[:user_id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line121">121</a>     @subscription = @user.subscriptions.find(params[:id])</pre></td>
+            <td><pre><a name="line124">124</a>     @subscription = @user.subscriptions.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line122">122</a>     @course = Course.find(:first, :conditions =&gt; {:nivel =&gt; params[:nivel_select],</pre></td>
+            <td><pre><a name="line125">125</a>     @course = Course.find(:first, :conditions =&gt; {:nivel =&gt; params[:nivel_select],</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line123">123</a>         :area =&gt; params[:area_select], :subarea =&gt; params[:subarea_select]})</pre></td>
+            <td><pre><a name="line126">126</a>         :area =&gt; params[:area_select], :subarea =&gt; params[:subarea_select]})</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line124">124</a>     @subscription.curso_id = @course.id</pre></td>
+            <td><pre><a name="line127">127</a>     @subscription.curso_id = @course.id</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line125">125</a>     if @subscription.update_attributes(params[:subscription])</pre></td>
+            <td><pre><a name="line128">128</a>     if @subscription.update_attributes(params[:subscription])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line126">126</a>       redirect_to user_subscription_url(@user, @subscription)</pre></td>
+            <td><pre><a name="line129">129</a>       redirect_to user_subscription_url(@user, @subscription)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line127">127</a>     else</pre></td>
+            <td><pre><a name="line130">130</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line128">128</a>       @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
+            <td><pre><a name="line131">131</a>       @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line129">129</a>       @course = Course.first;</pre></td>
+            <td><pre><a name="line132">132</a>       @course = Course.first;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line130">130</a>       @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
+            <td><pre><a name="line133">133</a>       @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line131">131</a>       @month_selected = params[:subscription_inicio_pretendido]</pre></td>
+            <td><pre><a name="line134">134</a>       @month_selected = params[:subscription_inicio_pretendido]</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line132">132</a>       @st_months = months(@course.nivel)</pre></td>
+            <td><pre><a name="line135">135</a>       @st_months = months(@course.nivel)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line133">133</a>       render :action =&gt; &quot;new&quot;</pre></td>
+            <td><pre><a name="line136">136</a>       render :action =&gt; &quot;new&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line134">134</a>     end</pre></td>
+            <td><pre><a name="line137">137</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line135">135</a>   end</pre></td>
+            <td><pre><a name="line138">138</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line136">136</a> </pre></td>
+            <td><pre><a name="line139">139</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line137">137</a>   # DELETE /subscriptions/1</pre></td>
+            <td><pre><a name="line140">140</a>   # DELETE /subscriptions/1</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line138">138</a>   # DELETE /subscriptions/1.xml</pre></td>
+            <td><pre><a name="line141">141</a>   # DELETE /subscriptions/1.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line139">139</a>   def destroy</pre></td>
+            <td><pre><a name="line142">142</a>   def destroy</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line140">140</a>     @user = User.find(params[:user_id])</pre></td>
+            <td><pre><a name="line143">143</a>     @user = User.find(params[:user_id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line141">141</a>     @subscription = @user.subscriptions.find(params[:id])</pre></td>
+            <td><pre><a name="line144">144</a>     @subscription = @user.subscriptions.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line142">142</a>     @subscription.destroy</pre></td>
+            <td><pre><a name="line145">145</a>     @subscription.destroy</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line143">143</a> </pre></td>
+            <td><pre><a name="line146">146</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line144">144</a>     respond_to do |format|</pre></td>
+            <td><pre><a name="line147">147</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line145">145</a>       format.html { redirect_to(user_subscriptions_url(@user)) }</pre></td>
+            <td><pre><a name="line148">148</a>       format.html { redirect_to(user_subscriptions_url(@user)) }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line146">146</a>       format.xml  { head :ok }</pre></td>
+            <td><pre><a name="line149">149</a>       format.xml  { head :ok }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line147">147</a>     end</pre></td>
+            <td><pre><a name="line150">150</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line148">148</a>   end</pre></td>
+            <td><pre><a name="line151">151</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line149">149</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line150">150</a> end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line151">151</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
             <td><pre><a name="line152">152</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line153">153</a> end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line154">154</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line155">155</a> </pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue May 25 13:53:15 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri May 28 17:57:52 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

@@ -58,12 +58,15 @@ end
   #
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
 
-  def login_as login
-    UserSession.create(users(username))
+  def login_as_user
+    # define user and session
+    @current_user = mock_model(User, :username => "teste@teste.com.br")
+    @current_session = mock_model(UserSession)
+
+    controller.stub!(:current_user).and_return @current_user
+    controller.stub!(:current_session).and_return @current_session
   end
 
-  def logout
-    current_user_session = controller.current_user_session
-    current_user_session.destroy unless current_user_session.nil?
+  def not_logged_in
+    controller.stub!(:current_user).and_return nil
   end
-

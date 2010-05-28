@@ -28,12 +28,12 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-reference_teachers_controller_rb.html">app/controllers/reference_teachers_controller.rb</a></td>
-            <td class='right_align'><tt>61</tt></td>
+            <td class='right_align'><tt>60</tt></td>
             <td class='right_align'><tt>40</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>44.26%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>45.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:44px"></div>
-            <div class="uncovered" style="width:56px"></div>
+            <div class="covered" style="width:45px"></div>
+            <div class="uncovered" style="width:55px"></div>
           </div></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>20.00%</tt></div>
           <div class="percent_graph">
@@ -93,337 +93,331 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line7">7</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line8">8</a>   end</pre></td>
+            <td><pre><a name="line7">7</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line9">9</a> </pre></td>
+            <td><pre><a name="line8">8</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line10">10</a>   # GET /reference_teachers/1</pre></td>
+            <td><pre><a name="line9">9</a>   # GET /reference_teachers/1</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line11">11</a>   # GET /reference_teachers/1.xml</pre></td>
+            <td><pre><a name="line10">10</a>   # GET /reference_teachers/1.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line12">12</a>   def show</pre></td>
+            <td><pre><a name="line11">11</a>   def show</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line13">13</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
+            <td><pre><a name="line12">12</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line14">14</a>     @reference_teachers = @subscription.reference_teachers.find(params[:id])</pre></td>
+            <td><pre><a name="line13">13</a>     @reference_teacher = @subscription.reference_teachers.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line15">15</a>   end</pre></td>
+            <td><pre><a name="line14">14</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line16">16</a> </pre></td>
+            <td><pre><a name="line15">15</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line17">17</a>   # GET /reference_teachers/new</pre></td>
+            <td><pre><a name="line16">16</a>   # GET /reference_teachers/new</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line18">18</a>   # GET /reference_teachers/new.xml</pre></td>
+            <td><pre><a name="line17">17</a>   # GET /reference_teachers/new.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line19">19</a>   def new</pre></td>
+            <td><pre><a name="line18">18</a>   def new</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line20">20</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
+            <td><pre><a name="line19">19</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line21">21</a>     @reference_teacher = @subscription.reference_teachers.build</pre></td>
+            <td><pre><a name="line20">20</a>     @reference_teacher = @subscription.reference_teachers.build</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line22">22</a>   end</pre></td>
+            <td><pre><a name="line21">21</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line23">23</a> </pre></td>
+            <td><pre><a name="line22">22</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line24">24</a>   # GET /reference_teachers/1/edit</pre></td>
+            <td><pre><a name="line23">23</a>   # GET /reference_teachers/1/edit</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line25">25</a>   def edit</pre></td>
+            <td><pre><a name="line24">24</a>   def edit</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line26">26</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
+            <td><pre><a name="line25">25</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line27">27</a>     @reference_teachers = @subscription.reference_teachers.find(params[:id])</pre></td>
+            <td><pre><a name="line26">26</a>     @reference_teacher = @subscription.reference_teachers.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line28">28</a>   end</pre></td>
+            <td><pre><a name="line27">27</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line29">29</a> </pre></td>
+            <td><pre><a name="line28">28</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line30">30</a>   # POST /reference_teachers</pre></td>
+            <td><pre><a name="line29">29</a>   # POST /reference_teachers</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line31">31</a>   # POST /reference_teachers.xml</pre></td>
+            <td><pre><a name="line30">30</a>   # POST /reference_teachers.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line32">32</a>   def create</pre></td>
+            <td><pre><a name="line31">31</a>   def create</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line33">33</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
+            <td><pre><a name="line32">32</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line34">34</a>     @reference_teachers = @subscription.reference_teachers.build(params[:reference_teacher])</pre></td>
+            <td><pre><a name="line33">33</a>     @reference_teacher = @subscription.reference_teachers.build(params[:reference_teacher])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line35">35</a>     if @subscription.save</pre></td>
+            <td><pre><a name="line34">34</a>     if @subscription.save</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line36">36</a>       redirect_to user_subscription_url(@subscription, @reference_teacher)</pre></td>
+            <td><pre><a name="line35">35</a>       redirect_to user_subscription_url(@subscription, @reference_teacher)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line37">37</a>     else</pre></td>
+            <td><pre><a name="line36">36</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line38">38</a>       render :action =&gt; &quot;new&quot;</pre></td>
+            <td><pre><a name="line37">37</a>       render :action =&gt; &quot;new&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line39">39</a>     end</pre></td>
+            <td><pre><a name="line38">38</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line40">40</a>   end</pre></td>
+            <td><pre><a name="line39">39</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line41">41</a> </pre></td>
+            <td><pre><a name="line40">40</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line42">42</a>   # PUT /reference_teachers/1</pre></td>
+            <td><pre><a name="line41">41</a>   # PUT /reference_teachers/1</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line43">43</a>   # PUT /reference_teachers/1.xml</pre></td>
+            <td><pre><a name="line42">42</a>   # PUT /reference_teachers/1.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line44">44</a>   def update</pre></td>
+            <td><pre><a name="line43">43</a>   def update</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line45">45</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
+            <td><pre><a name="line44">44</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line46">46</a>     @reference_teachers = @subscription.reference_teachers.find(params[:id])</pre></td>
+            <td><pre><a name="line45">45</a>     @reference_teachers = @subscription.reference_teachers.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line47">47</a>   end</pre></td>
+            <td><pre><a name="line46">46</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line48">48</a> </pre></td>
+            <td><pre><a name="line47">47</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line49">49</a>   # DELETE /reference_teachers/1</pre></td>
+            <td><pre><a name="line48">48</a>   # DELETE /reference_teachers/1</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line50">50</a>   # DELETE /reference_teachers/1.xml</pre></td>
+            <td><pre><a name="line49">49</a>   # DELETE /reference_teachers/1.xml</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line51">51</a>   def destroy</pre></td>
+            <td><pre><a name="line50">50</a>   def destroy</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line52">52</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
+            <td><pre><a name="line51">51</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line53">53</a>     @reference_teachers = @subscription.reference_teachers.find(params[:id])</pre></td>
+            <td><pre><a name="line52">52</a>     @reference_teachers = @subscription.reference_teachers.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line54">54</a>     @reference_teachers.destroy</pre></td>
+            <td><pre><a name="line53">53</a>     @reference_teachers.destroy</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line55">55</a>     </pre></td>
+            <td><pre><a name="line54">54</a>     </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line56">56</a>     respond_to do |format|</pre></td>
+            <td><pre><a name="line55">55</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line57">57</a>       format.html { redirect_to(reference_teachers_url) }</pre></td>
+            <td><pre><a name="line56">56</a>       format.html { redirect_to(reference_teachers_url) }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line58">58</a>       format.xml  { head :ok }</pre></td>
+            <td><pre><a name="line57">57</a>       format.xml  { head :ok }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line59">59</a>     end</pre></td>
+            <td><pre><a name="line58">58</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line60">60</a>   end</pre></td>
+            <td><pre><a name="line59">59</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line61">61</a> end</pre></td>
+            <td><pre><a name="line60">60</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue May 25 13:53:15 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri May 28 17:57:52 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
