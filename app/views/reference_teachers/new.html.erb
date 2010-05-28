@@ -1,6 +1,6 @@
 <h1>Insira os dados de um dos professores que vão recomendar você</h1>
 
-<% form_for [@subscription,@reference_teacher], :html => {:multipart => true} do |f| %>
+<% form_for [@subscription,@reference_teacher] do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -8,13 +8,18 @@
     <%= f.text_field :nome %>
   </p>
   <p>
-    <%= f.label :instituicao %><br />
+    <%= f.label :instituição %><br />
     <%= f.text_field :instituicao %>
   </p>
   <p>
-    <%= f.label :email %><br />
+    <%= f.label "e-mail" %><br />
     <%= f.text_field :email %>
-  </p>  
+  </p>
+  <p>
+    <%= f.label "idioma" %><br />
+    <%= f.select(:lingua, %w[Português Inglês]) %>
+  </p>
+
   <p>
     <%= f.submit 'Adicionar professor' %>
   </p>

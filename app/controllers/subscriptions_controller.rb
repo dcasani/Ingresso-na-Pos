@@ -129,7 +129,7 @@ class SubscriptionsController < ApplicationController
       @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
       @month_selected = params[:subscription_inicio_pretendido]
       @st_months = months(@course.nivel)
-      render :action => "new"
+      render :action => "edit"
     end
   end
 

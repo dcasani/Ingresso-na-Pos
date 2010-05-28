@@ -4,6 +4,7 @@ class ReferenceTeachersController < ApplicationController
   def index
     @subscription = Subscription.find(params[:subscription_id])
     @reference_teachers = @subscription.reference_teachers
+    @user = current_user
   end
 
   # GET /reference_teachers/1
@@ -18,9 +19,7 @@ class ReferenceTeachersController < ApplicationController
   def new
     @subscription = Subscription.find(params[:subscription_id])
     @reference_teacher = @subscription.reference_teachers.build
-
-
-  end
+ end
 
   # GET /reference_teachers/1/edit
   def edit
@@ -34,7 +33,7 @@ class ReferenceTeachersController < ApplicationController
     @subscription = Subscription.find(params[:subscription_id])
     @reference_teacher = @subscription.reference_teachers.build(params[:reference_teacher])
     if @subscription.save
-      redirect_to user_subscription_url(@subscription, @reference_teacher)
+      redirect_to subscription_reference_teachers_url(@subscription)
     else
       render :action => "new"
     end
@@ -43,19 +42,26 @@ class ReferenceTeachersController < ApplicationController
   # PUT /reference_teachers/1
   # PUT /reference_teachers/1.xml
   def update
+
     @subscription = Subscription.find(params[:subscription_id])
-    @reference_teachers = @subscription.reference_teachers.find(params[:id])
+    @reference_teacher = @subscription.reference_teachers.find(params[:id])
+
+    if @reference_teacher.update_attributes(params[:reference_teacher])
+      redirect_to subscription_reference_teachers_url(@subscription)
+    else
+      render :action => "edit"
+    end
   end
 
   # DELETE /reference_teachers/1
   # DELETE /reference_teachers/1.xml
   def destroy
     @subscription = Subscription.find(params[:subscription_id])
-    @reference_teachers = @subscription.reference_teachers.find(params[:id])
-    @reference_teachers.destroy
+    @reference_teacher = @subscription.reference_teachers.find(params[:id])
+    @reference_teacher.destroy
     
     respond_to do |format|
-      format.html { redirect_to(reference_teachers_url) }
+      format.html { redirect_to(subscription_reference_teachers_url) }
       format.xml  { head :ok }
     end
   end

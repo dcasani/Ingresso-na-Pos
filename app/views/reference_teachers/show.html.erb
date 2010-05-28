@@ -13,5 +13,10 @@
   <%=h @reference_teacher.email %>
 </p>
 
-<%= link_to 'Edit', edit_subscription_reference_teacher_path(@subscription,@reference_teacher) %> |
-<%= link_to 'Back', subscription_reference_teacher_path %>
+<p>
+  <b>Idioma:</b>
+  <%=h @reference_teacher.lingua %>
+</p>
+
+<%= link_to 'Editar', edit_subscription_reference_teacher_path(@subscription,@reference_teacher) %> |
+<%= link_to 'Adicionar mais um professor', new_subscription_reference_teacher_path(@subscription) %> 

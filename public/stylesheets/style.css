@@ -22,13 +22,13 @@ a{
 
 }
 
-table#subscriptions td, table#subscriptions th{
+table#subscriptions td, table#subscriptions th, table#teachers td, table#teachers th{
     text-align: center;
     padding: 5px;
     border: 1px solid #000;
     margin: 0;
 }
 
-table#subscriptions{
+table#subscriptions, table#teachers{
     border-collapse: collapse;
 }
