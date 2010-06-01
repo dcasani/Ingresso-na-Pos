@@ -17,6 +17,7 @@ class ReferenceTeachersController < ApplicationController
   # GET /reference_teachers/new
   # GET /reference_teachers/new.xml
   def new
+
     @subscription = Subscription.find(params[:subscription_id])
     @reference_teacher = @subscription.reference_teachers.build
  end
