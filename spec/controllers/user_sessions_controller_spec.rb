@@ -34,7 +34,7 @@ describe UserSessionsController do
       user_session.should_not be_nil
       user = user_session.user
       user.should == users(:teste)
-   #   flash[:message].should == "Usuario logado com sucesso.!"
+      flash[:notice].should == "Usuário logado com sucesso!"
    #   response.should redirect_to(user_path(user.id))
     end
 

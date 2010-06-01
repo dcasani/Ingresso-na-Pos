@@ -12,7 +12,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
 
     if @user_session.save
-      flash[:notice] = 'Usuario logado com sucesso.'
+      flash[:notice] = 'Usuário logado com sucesso!'
       redirect_to(user_subscriptions_url(current_user))
       #redirect_to user_path(@user_session.user.login) Mezuro
     else
