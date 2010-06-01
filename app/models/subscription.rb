@@ -1,5 +1,5 @@
 class Subscription < ActiveRecord::Base
-  
+
   has_many :reference_teachers
   belongs_to :user
 
