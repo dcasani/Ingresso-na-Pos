@@ -4,11 +4,6 @@ class UserSessionsController < ApplicationController
   # GET /user_sessions/new.xml
   def new
     @user_session = UserSession.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @user_session }
-    end
   end
 
   # POST /user_sessions
@@ -19,7 +14,9 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       flash[:notice] = 'Usuario logado com sucesso.'
       redirect_to(user_subscriptions_url(current_user))
+      #redirect_to user_path(@user_session.user.login) Mezuro
     else
+      flash[:message] = "Usuário e/ou senha inválidos!"
       render :action => "new"
     end
   end

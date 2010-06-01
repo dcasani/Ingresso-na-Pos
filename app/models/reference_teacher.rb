@@ -1,5 +1,5 @@
 class ReferenceTeacher < ActiveRecord::Base
-  belongs_to :subscription
+ belongs_to :subscription
 
  validates_presence_of :nome, :instituicao, :email, :lingua,
                         :message => ": Preencher campo obrigatório"

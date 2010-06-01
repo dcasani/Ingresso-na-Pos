@@ -28,6 +28,16 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-subscriptions_controller_rb.html">app/controllers/subscriptions_controller.rb</a></td>
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td class='right_align'><tt>151</tt></td>
+            <td class='right_align'><tt>124</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>31.13%</tt></div>
+          <div class="percent_graph">
+            <div class="covered" style="width:31px"></div>
+            <div class="uncovered" style="width:69px"></div>
+          </div></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>17.74%</tt></div>
+=======
             <td class='right_align'><tt>155</tt></td>
             <td class='right_align'><tt>128</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>30.32%</tt></div>
@@ -36,6 +46,7 @@
             <div class="uncovered" style="width:70px"></div>
           </div></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>17.19%</tt></div>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           <div class="percent_graph">
             <div class="covered" style="width:17px"></div>
             <div class="uncovered" style="width:83px"></div>
@@ -622,6 +633,8 @@
           
           <tr class="marked">
             <td><pre><a name="line95">95</a>   def create</pre></td>
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+=======
           </tr>
         
           
@@ -634,119 +647,195 @@
           
           <tr class="uncovered">
             <td><pre><a name="line97">97</a>     @subscription = @user.subscriptions.build(params[:subscription])</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line96">96</a>     @user = current_user</pre></td>
+=======
             <td><pre><a name="line98">98</a>     @course = Course.find(:first, :conditions =&gt; {:nivel =&gt; params[:nivel_select],</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line97">97</a>     @subscription = @user.subscriptions.build(params[:subscription])</pre></td>
+=======
             <td><pre><a name="line99">99</a>         :area =&gt; params[:area_select], :subarea =&gt; params[:subarea_select]})</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line98">98</a>     @course = Course.find(:first, :conditions =&gt; {:nivel =&gt; params[:nivel_select],</pre></td>
+=======
             <td><pre><a name="line100">100</a>     @subscription.curso_id = @course.id</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line99">99</a>         :area =&gt; params[:area_select], :subarea =&gt; params[:subarea_select]})</pre></td>
+=======
             <td><pre><a name="line101">101</a>     if @subscription.save</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line100">100</a>     @subscription.curso_id = @course.id</pre></td>
+=======
             <td><pre><a name="line102">102</a>       @reference_teacher1 = @subscription.reference_teachers.build(params[:reference_teacher1])</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line101">101</a>     if @subscription.save</pre></td>
+=======
             <td><pre><a name="line103">103</a>       @reference_teacher1.save</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line102">102</a>       redirect_to new_subscription_reference_teacher_url(@subscription)</pre></td>
+=======
             <td><pre><a name="line104">104</a>       @reference_teacher2 = @subscription.reference_teachers.build(params[:reference_teacher2])</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line103">103</a>     else</pre></td>
+=======
             <td><pre><a name="line105">105</a>       @reference_teacher2.save</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line104">104</a>       @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
+=======
             <td><pre><a name="line106">106</a>       redirect_to user_subscription_url(@user, @subscription)</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line105">105</a>       @course = Course.find_by_id(@subscription.curso_id)</pre></td>
+=======
             <td><pre><a name="line107">107</a>     else</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line106">106</a>       @area_selected = @course.area</pre></td>
+=======
             <td><pre><a name="line108">108</a>       @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line107">107</a>       @nivel_selected = @course.nivel</pre></td>
+=======
             <td><pre><a name="line109">109</a>       @course = Course.find_by_id(@subscription.curso_id)</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line108">108</a>       @subarea_selected = @course.subarea</pre></td>
+=======
             <td><pre><a name="line110">110</a>       @area_selected = @course.area</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line109">109</a>       @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
+=======
             <td><pre><a name="line111">111</a>       @nivel_selected = @course.nivel</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line110">110</a>       @month_selected = params[:subscription_inicio_pretendido]</pre></td>
+=======
             <td><pre><a name="line112">112</a>       @subarea_selected = @course.subarea</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line111">111</a>       @st_months = months(@course.nivel)</pre></td>
+=======
             <td><pre><a name="line113">113</a>       @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line112">112</a>       render :action =&gt; &quot;new&quot;</pre></td>
+=======
             <td><pre><a name="line114">114</a>       @month_selected = params[:subscription_inicio_pretendido]</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line113">113</a>     end</pre></td>
+=======
             <td><pre><a name="line115">115</a>       @st_months = months(@course.nivel)</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line114">114</a>   end</pre></td>
+=======
             <td><pre><a name="line116">116</a>       render :action =&gt; &quot;new&quot;</pre></td>
           </tr>
         
@@ -760,234 +849,387 @@
           
           <tr class="uncovered">
             <td><pre><a name="line118">118</a>   end</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="inferred">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line115">115</a> </pre></td>
+=======
             <td><pre><a name="line119">119</a> </pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="inferred">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line116">116</a>   # PUT /subscriptions/1</pre></td>
+=======
             <td><pre><a name="line120">120</a>   # PUT /subscriptions/1</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="inferred">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line117">117</a>   # PUT /subscriptions/1.xml</pre></td>
+=======
             <td><pre><a name="line121">121</a>   # PUT /subscriptions/1.xml</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="marked">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line118">118</a>   def update</pre></td>
+=======
             <td><pre><a name="line122">122</a>   def update</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line119">119</a>     @user = current_user</pre></td>
+=======
             <td><pre><a name="line123">123</a>     @user = current_user</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line120">120</a>     @subscription = @user.subscriptions.find(params[:id])</pre></td>
+=======
             <td><pre><a name="line124">124</a>     @subscription = @user.subscriptions.find(params[:id])</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line121">121</a>     @course = Course.find(:first, :conditions =&gt; {:nivel =&gt; params[:nivel_select],</pre></td>
+=======
             <td><pre><a name="line125">125</a>     @course = Course.find(:first, :conditions =&gt; {:nivel =&gt; params[:nivel_select],</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line122">122</a>         :area =&gt; params[:area_select], :subarea =&gt; params[:subarea_select]})</pre></td>
+=======
             <td><pre><a name="line126">126</a>         :area =&gt; params[:area_select], :subarea =&gt; params[:subarea_select]})</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line123">123</a>     @subscription.curso_id = @course.id</pre></td>
+=======
             <td><pre><a name="line127">127</a>     @subscription.curso_id = @course.id</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line124">124</a>     if @subscription.update_attributes(params[:subscription])</pre></td>
+=======
             <td><pre><a name="line128">128</a>     if @subscription.update_attributes(params[:subscription])</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line125">125</a>       redirect_to user_subscription_url(@user, @subscription)</pre></td>
+=======
             <td><pre><a name="line129">129</a>       redirect_to user_subscription_url(@user, @subscription)</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line126">126</a>     else</pre></td>
+=======
             <td><pre><a name="line130">130</a>     else</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line127">127</a>       @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
+=======
             <td><pre><a name="line131">131</a>       @course_areas = Course.find(:all, :group =&gt; 'area')</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line128">128</a>       @course = Course.first;</pre></td>
+=======
             <td><pre><a name="line132">132</a>       @course = Course.first;</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line129">129</a>       @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
+=======
             <td><pre><a name="line133">133</a>       @course_subareas = Course.find(:all, :conditions =&gt; { :area =&gt; @course.area }, :group =&gt; 'subarea' )</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line130">130</a>       @month_selected = params[:subscription_inicio_pretendido]</pre></td>
+=======
             <td><pre><a name="line134">134</a>       @month_selected = params[:subscription_inicio_pretendido]</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line131">131</a>       @st_months = months(@course.nivel)</pre></td>
+=======
             <td><pre><a name="line135">135</a>       @st_months = months(@course.nivel)</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line132">132</a>       render :action =&gt; &quot;edit&quot;</pre></td>
+=======
             <td><pre><a name="line136">136</a>       render :action =&gt; &quot;new&quot;</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line133">133</a>     end</pre></td>
+=======
             <td><pre><a name="line137">137</a>     end</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line134">134</a>   end</pre></td>
+=======
             <td><pre><a name="line138">138</a>   end</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="inferred">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line135">135</a> </pre></td>
+=======
             <td><pre><a name="line139">139</a> </pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="inferred">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line136">136</a>   # DELETE /subscriptions/1</pre></td>
+=======
             <td><pre><a name="line140">140</a>   # DELETE /subscriptions/1</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="inferred">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line137">137</a>   # DELETE /subscriptions/1.xml</pre></td>
+=======
             <td><pre><a name="line141">141</a>   # DELETE /subscriptions/1.xml</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="marked">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line138">138</a>   def destroy</pre></td>
+=======
             <td><pre><a name="line142">142</a>   def destroy</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line139">139</a>     @user = User.find(params[:user_id])</pre></td>
+=======
             <td><pre><a name="line143">143</a>     @user = User.find(params[:user_id])</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line140">140</a>     @subscription = @user.subscriptions.find(params[:id])</pre></td>
+=======
             <td><pre><a name="line144">144</a>     @subscription = @user.subscriptions.find(params[:id])</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line141">141</a>     @subscription.destroy</pre></td>
+=======
             <td><pre><a name="line145">145</a>     @subscription.destroy</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line142">142</a> </pre></td>
+=======
             <td><pre><a name="line146">146</a> </pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line143">143</a>     respond_to do |format|</pre></td>
+=======
             <td><pre><a name="line147">147</a>     respond_to do |format|</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line144">144</a>       format.html { redirect_to(user_subscriptions_url(@user)) }</pre></td>
+=======
             <td><pre><a name="line148">148</a>       format.html { redirect_to(user_subscriptions_url(@user)) }</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line145">145</a>       format.xml  { head :ok }</pre></td>
+=======
             <td><pre><a name="line149">149</a>       format.xml  { head :ok }</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line146">146</a>     end</pre></td>
+=======
             <td><pre><a name="line150">150</a>     end</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line147">147</a>   end</pre></td>
+=======
             <td><pre><a name="line151">151</a>   end</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line148">148</a> </pre></td>
+=======
             <td><pre><a name="line152">152</a> </pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="uncovered">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line149">149</a> end</pre></td>
+=======
             <td><pre><a name="line153">153</a> end</pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="inferred">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line150">150</a> </pre></td>
+=======
             <td><pre><a name="line154">154</a> </pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
           
           
           <tr class="inferred">
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+            <td><pre><a name="line151">151</a> </pre></td>
+=======
             <td><pre><a name="line155">155</a> </pre></td>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
           </tr>
         
       </tbody>
     </table>
 
+<<<<<<< HEAD:coverage/app-controllers-subscriptions_controller_rb.html
+    <p>Generated on Fri May 28 18:57:54 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+=======
     <p>Generated on Fri May 28 13:40:54 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+>>>>>>> 67ea52ace4e54e455f402e2fceddf321ac88e86c:coverage/app-controllers-subscriptions_controller_rb.html
 
   </body>
 </html>

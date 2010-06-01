@@ -4,6 +4,12 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environment'))
 require 'spec/autorun'
 require 'spec/rails'
+require 'authlogic/test_case'
+include Authlogic::TestCase
+
+activate_authlogic
+
+ApplicationController.send(:public, :current_user, :current_user_session)
 
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'
@@ -19,7 +25,7 @@ Spec::Runner.configure do |config|
   config.use_transactional_fixtures = true
   config.use_instantiated_fixtures  = false
   config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
-
+end
   # == Fixtures
   #
   # You can declare fixtures for each example_group like this:
@@ -51,4 +57,16 @@ Spec::Runner.configure do |config|
   # == Notes
   #
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
-end
+
+  def login_as_user
+    # define user and session
+    @current_user = mock_model(User, :username => "teste@teste.com.br")
+    @current_session = mock_model(UserSession)
+
+    controller.stub!(:current_user).and_return @current_user
+    controller.stub!(:current_session).and_return @current_session
+  end
+
+  def not_logged_in
+    controller.stub!(:current_user).and_return nil
+  end
