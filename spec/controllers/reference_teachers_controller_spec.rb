@@ -24,28 +24,23 @@ describe ReferenceTeachersController do
   end
 
   context "GET new" do
-   # before :each do
-   #  @reference_teacher = mock_reference_teacher
-   #  ReferenceTeacher.stub!(:new).and_return(@reference_teacher)
-   #  @subscription = mock_subscription
-   #  Subscription.should_receive(:find).and_return(@subscription)
-   #  @subscription.should_receive(:reference_teachers).and_return(@subscription.reference_teachers)
-   #  @reference_teacher = valid_reference_teacher_attributes
-   #  @subscription.should_receive(:build).and_return(@reference_teacher)
-     #@controller.instance_variable_set(:@subscription, @subscription)
-    # @reference_teacher = valid_reference_teacher_attributes
-   #  get :new,  :subscription_id => @subscription.id
-  # end
-
-   it "A criação de um novo reference_teacher deve ter sucesso" do
-     pending
-     #response.should be_success
-     
+    before :each do
+     @subscription = mock_subscription
+     Subscription.should_receive(:find).and_return(@subscription)
+     @reference_teachers = mock_reference_teacher
+     @subscription.should_receive(:reference_teachers).and_return(@reference_teachers)
+     @reference_teacher = mock_reference_teacher
+     @reference_teachers.should_receive(:build).and_return(@reference_teacher)
+     get :new 
    end
 
-   #it "should assign new reference_teacher" do
-   #  assigns[:reference_teacher].should == mock_reference_teacher
-   #end
+   it "A criação de um novo reference_teacher deve ter sucesso" do
+     response.should be_success
+   end
+
+   it "should assign new reference_teacher" do
+     assigns[:reference_teacher].should == mock_reference_teacher
+   end
 
  end
 
