@@ -30,15 +30,15 @@
             <td class="left_align"><a href="app-controllers-reference_teachers_controller_rb.html">app/controllers/reference_teachers_controller.rb</a></td>
             <td class='right_align'><tt>68</tt></td>
             <td class='right_align'><tt>46</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>44.12%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>77.94%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:44px"></div>
-            <div class="uncovered" style="width:56px"></div>
+            <div class="covered" style="width:78px"></div>
+            <div class="uncovered" style="width:22px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>23.91%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>67.39%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:24px"></div>
-            <div class="uncovered" style="width:76px"></div>
+            <div class="covered" style="width:67px"></div>
+            <div class="uncovered" style="width:33px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -206,19 +206,19 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line26">26</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line27">27</a>     @reference_teacher = @subscription.reference_teachers.find(params[:id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line28">28</a>   end</pre></td>
           </tr>
         
@@ -248,25 +248,25 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line33">33</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line34">34</a>     @reference_teacher = @subscription.reference_teachers.build(params[:reference_teacher])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line35">35</a>     if @subscription.save</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line36">36</a>       redirect_to subscription_reference_teachers_url(@subscription)</pre></td>
           </tr>
         
@@ -320,37 +320,37 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line45">45</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line46">46</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line47">47</a>     @reference_teacher = @subscription.reference_teachers.find(params[:id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line48">48</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line49">49</a>     if @reference_teacher.update_attributes(params[:reference_teacher])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line50">50</a>       redirect_to subscription_reference_teachers_url(@subscription)</pre></td>
           </tr>
         
@@ -404,68 +404,68 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line59">59</a>     @subscription = Subscription.find(params[:subscription_id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line60">60</a>     @reference_teacher = @subscription.reference_teachers.find(params[:id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line61">61</a>     @reference_teacher.destroy</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line62">62</a>     </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line63">63</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line64">64</a>       format.html { redirect_to(subscription_reference_teachers_url) }</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line64">64</a>       format.html { redirect_to(subscription_reference_teachers_url(@subscription)) }</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line65">65</a>       format.xml  { head :ok }</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line66">66</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line67">67</a>   end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line68">68</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Fri Jun 04 22:10:09 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sat Jun 05 02:14:02 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

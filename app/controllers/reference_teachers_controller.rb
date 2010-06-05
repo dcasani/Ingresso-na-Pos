@@ -61,7 +61,7 @@ class ReferenceTeachersController < ApplicationController
     @reference_teacher.destroy
     
     respond_to do |format|
-      format.html { redirect_to(subscription_reference_teachers_url) }
+      format.html { redirect_to(subscription_reference_teachers_url(@subscription)) }
       format.xml  { head :ok }
     end
   end
