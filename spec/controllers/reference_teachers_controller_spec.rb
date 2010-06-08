@@ -23,6 +23,28 @@ describe ReferenceTeachersController do
     }.merge attributes
   end
 
+ context "GET show" do
+   before :each do
+     @subscription = mock_subscription
+     Subscription.should_receive(:find).and_return(@subscription)
+     @reference_teachers = mock_reference_teacher
+     @subscription.should_receive(:reference_teachers).and_return(@reference_teachers)
+     @reference_teacher = mock_reference_teacher
+     @reference_teachers.should_receive(:find).and_return(@reference_teacher)
+     get :show
+   end
+
+   it "" do
+     response.should be_success
+   end
+
+   it "should assign new reference_teacher" do
+     assigns[:reference_teacher].should == mock_reference_teacher
+   end
+
+
+ end
+
   context "GET new" do
     before :each do
      @subscription = mock_subscription
