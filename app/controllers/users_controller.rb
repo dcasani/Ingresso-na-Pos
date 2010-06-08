@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     #utiliza email como login
     @user.username = @user.email
     if @user.save
-      flash[:notice] = 'Usuário criado com sucesso!'
+      flash[:message] = 'Usuário criado com sucesso!'
       redirect_to new_subscription_url
     else
       flash[:error] = "Usuário não criado."

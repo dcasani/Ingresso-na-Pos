@@ -42,7 +42,7 @@ describe ReferenceTeachersController do
      get :index
    end
 
-   it "" do
+   it "should show the reference teachers roll" do
      response.should be_success
    end
  end
