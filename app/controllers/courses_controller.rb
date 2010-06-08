@@ -41,17 +41,11 @@ class CoursesController < ApplicationController
   # POST /courses.xml
   def create
     @course = Course.new(params[:course])
-
-    respond_to do |format|
       if @course.save
-        flash[:notice] = 'Course was successfully created.'
-        format.html { redirect_to(@course) }
-        format.xml  { render :xml => @course, :status => :created, :location => @course }
+        redirect_to(@course)
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @course.errors, :status => :unprocessable_entity }
-      end
-    end
+        render :action => "new"
+      end    
   end
 
   # PUT /courses/1
