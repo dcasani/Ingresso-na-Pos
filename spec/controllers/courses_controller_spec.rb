@@ -31,8 +31,8 @@ describe CoursesController do
     end
 
     it "deveria mostrar os cursos" do
-     response.should be_success
-   end
+      response.should be_success
+    end
   end
 
   context "GET new" do
@@ -43,7 +43,7 @@ describe CoursesController do
     end
 
     it "Criacao do novo curso deveria ser sucesso" do
-       response.should be_success
+      response.should be_success
     end
   end
 
@@ -56,7 +56,7 @@ describe CoursesController do
     end
 
     it "Edicao de um curso deveria ser sucesso" do
-       response.should be_success
+      response.should be_success
     end
   end
 
@@ -73,9 +73,13 @@ describe CoursesController do
         @course.should_receive(:save).once.and_return(true)
       end
       it "...deveria redirecionar para a página do novo curso." do
-       post :create, @attributes
-       response.should redirect_to(course_path(@course))
-     end
+        post :create, @attributes
+        response.should redirect_to(course_path(@course))
+      end
+      it "...deveria guardar o novo curso como uma variável local." do
+        post :create, @attributes
+        assigns[:course].should== @course
+      end
     end
 
     context "...para um curso inválido..." do
@@ -86,7 +90,7 @@ describe CoursesController do
       it "...deveria redirecionar para a página de criação de um novo curso." do
         post :create, @attributes
         response.should render_template(:new)
-     end
+      end
     end
   end
 
@@ -110,4 +114,37 @@ describe CoursesController do
       response.should render_template(:edit)
     end
   end
+
+  context "GET index" do
+    before :each do
+      @courses = Array.new
+      Course.should_receive(:all).and_return(@courses)
+      get :index
+    end
+
+    it "should list all courses" do
+      response.should render_template(:index)
+    end
+
+    it "should have gotten all courses" do
+      assigns[:courses].should == @courses
+    end
+  end
+
+  context "DELETE destroy" do
+    before :each do
+      @course = mock_course
+      Course.should_receive(:find).with(@course.id.to_s).and_return(@course)
+      @course.should_receive(:destroy).and_return(true)
+      delete :destroy, :id => @course.id
+    end
+
+    it "should redirect to index after deleting a course" do
+      response.should redirect_to(courses_url)
+    end
+    
+  end
+
+
+
 end
