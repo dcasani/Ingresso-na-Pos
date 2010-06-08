@@ -9,6 +9,7 @@ describe HomeController do
 #end
   
   it "Não deve validar um nome usuario em branco" do
+    pending
       @user_session = UserSession.new(:email => '')
       @user_session.should have_at_least(1).errors_on(:email)
     end

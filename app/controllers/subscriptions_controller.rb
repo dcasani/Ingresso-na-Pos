@@ -43,13 +43,19 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions/new.xml
   def new
     @user = current_user
-    @subscription = @user.subscriptions.build
-    @course_areas = Course.find(:all, :group => 'area')
-    @course = Course.find_by_id(@subscription.curso_id)
-    @course = Course.first
-    @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
-    @st_months = months("Mestrado")
-    @month_selected = ""
+    #verificar se existe session
+    if @user != nil
+      @subscription = @user.subscriptions.build
+      @course_areas = Course.find(:all, :group => 'area')
+      @course = Course.find_by_id(@subscription.curso_id)
+      @course = Course.first
+      @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
+      @st_months = months("Mestrado")
+      @month_selected = ""
+    else
+      redirect_to root_url
+    end
+
   end
 
   def course_subareas
