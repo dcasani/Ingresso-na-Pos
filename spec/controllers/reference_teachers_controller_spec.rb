@@ -23,6 +23,30 @@ describe ReferenceTeachersController do
     }.merge attributes
   end
 
+  def invalid_reference_teacher_attributes(attributes={})
+    {
+      :nome => '',
+      :instituicao => 'USP',
+      :email => 'cassia@usp.br',
+      :lingua => 'portugues'
+    }.merge attributes
+  end
+
+ context "GET index" do
+   before :each do
+     @subscription = mock_subscription
+     Subscription.should_receive(:find).and_return(@subscription)
+     @reference_teachers = mock_reference_teacher
+     @subscription.should_receive(:reference_teachers).and_return(@reference_teachers)
+     @user = mock_user
+     get :index
+   end
+
+   it "" do
+     response.should be_success
+   end
+ end
+
  context "GET show" do
    before :each do
      @subscription = mock_subscription
@@ -73,7 +97,7 @@ describe ReferenceTeachersController do
      @subscription.should_receive(:reference_teachers).and_return(@reference_teachers)
      @reference_teacher = mock_reference_teacher
      @reference_teachers.should_receive(:find).and_return(@reference_teacher)
-     get :edit, :id =>@reference_teacher.id
+     get :edit#, :id =>@reference_teacher.id
    end
 
    it "A edição de um reference_teacher deve ter sucesso" do
@@ -93,21 +117,38 @@ describe ReferenceTeachersController do
      @reference_teachers = mock_reference_teacher
      @subscription.should_receive(:reference_teachers).and_return(@reference_teachers)
      @reference_teacher = mock_reference_teacher
-     @reference_teachers.should_receive(:build).and_return(@reference_teacher)
-     @subscription.should_receive(:save).and_return(true)
-     post :create, :reference_teacher => valid_reference_teacher_attributes
+     
    end
 
    it "A criação de um reference_teacher deve ter sucesso" do
-     pending
-     response.should be_success
+     @reference_teacher = valid_reference_teacher_attributes
+     @reference_teachers.should_receive(:build).and_return(@reference_teacher)
+     @subscription.should_receive(:save).and_return(true)
+     post :create
+     response.should redirect_to(subscription_reference_teachers_url(@subscription))
+   end
+
+   it "A criação de um reference_teacher sem o campo nome não deve ter sucesso" do
+     @reference_teacher = invalid_reference_teacher_attributes
+     @reference_teachers.should_receive(:build).and_return(@reference_teacher)
+     @subscription.should_receive(:save).and_return(false)
+     post :create
+     response.should render_template(:new)
    end
 
    it "should create a reference_teacher given valid attributes"do
+     @reference_teacher = valid_reference_teacher_attributes
+     @reference_teachers.should_receive(:build).and_return(@reference_teacher)
+     @subscription.should_receive(:save).and_return(true)
+     post :create
      assigns[:reference_teacher].should == @reference_teacher
    end
 
    it "reference_teacher não deve ser nulo" do
+     @reference_teacher = valid_reference_teacher_attributes
+     @reference_teachers.should_receive(:build).and_return(@reference_teacher)
+     @subscription.should_receive(:save).and_return(true)
+     post :create
      @reference_teacher.should_not be_nil
    end
    
@@ -121,12 +162,21 @@ describe ReferenceTeachersController do
      @subscription.should_receive(:reference_teachers).and_return(@reference_teachers)
      @reference_teacher = mock_reference_teacher
      @reference_teachers.should_receive(:find).and_return(@reference_teacher)
-     @reference_teacher.should_receive(:update_attributes).and_return(true)
-     post :update
+     @update_attributes = mock_reference_teacher
   end
 
    it "should update a reference_teacher given valid attributes"do
+     @update_attributes = valid_reference_teacher_attributes
+     @reference_teacher.should_receive(:update_attributes).and_return(true)
+     post :update
      assigns[:reference_teacher].should == @reference_teacher
+   end
+
+   it "nao atualiza" do
+     @update_attributes = invalid_reference_teacher_attributes
+     @reference_teacher.should_receive(:update_attributes).and_return(false)
+     post :update
+     response.should render_template(:edit)
    end
   
  end
@@ -139,15 +189,15 @@ describe ReferenceTeachersController do
      @subscription.should_receive(:reference_teachers).and_return(@reference_teachers)
      @reference_teacher = mock_reference_teacher
      @reference_teachers.should_receive(:find).and_return(@reference_teacher)
+     @id = @reference_teacher.id
      @reference_teacher.should_receive(:destroy)
+
      delete :destroy, :id => @reference_teacher.id
  end
 
   it "should delete a reference_teacher "do
-    pending
-     assigns[:reference_teacher].should be_nil
+     (ReferenceTeacher.find_by_id(:id)).should be_nil
      response.should redirect_to(subscription_reference_teachers_url(@subscription))
-     response.should head(:ok)
    end
  end
 
