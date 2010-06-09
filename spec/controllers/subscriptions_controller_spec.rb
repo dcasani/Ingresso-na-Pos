@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe SubscriptionsController do
-  fixtures :users, :courses
+  fixtures :users, :courses, :subscriptions
 
   def mock_user(stubs = {})
     @mock_user ||= mock_model(User, stubs)
@@ -38,39 +38,107 @@ describe SubscriptionsController do
     }.merge attributes
   end
 
+   def valid_subscription_attributes(attributes={})
+     {
+       :inicio_pretendido => 'agosto',
+       :propositos => 'bla bla bla'
+     }.merge attributes
+   end
+
+  def invalid_subscription_attributes(attributes={})
+    {
+      :inicio_pretendido => '',
+      :propositos => 'bla bla bla'
+    }.merge attributes
+  end
+
    context "when logged in" do
      before {activate_authlogic}
+     before :each do
+       @user = User.find_by_id(1)
+       login_as_user :teste
+     end
 
      context "GET new" do
-
-       it "O usuario deve estar logado" do
-         pending
-        @user = User.find_by_id(1)
-        login_as_user :teste
-        @user_logged = current_user
-        assigns[:user] == @user_logged
-       end
-
-       before :each do
-         @user = User.find_by_id(1)
-         login_as_user :teste
-        # @user_session = mock_user_session
-        # @user = UserSession.create(mock_user)
-         @subscriptions = mock_subscription
-         @user.should_receive(:subscriptions).and_return(@subscriptions)
-         @subscription = mock_subscription
-         @subscriptions.should_receive(:build).and_return(@subscription)
-         get :new
-       end
-
+      
+       
        it "A criação de uma nova subscription deve ter sucesso" do
-         pending
+         @subscriptions = mock_subscription
+         get :new
          response.should be_success
        end
+     end
+
+     context "GET edit" do
+       it "A edicao de uma subscription deve ter sucesso" do
+         @subscription = Subscription.find_by_id(1)
+         Subscription.should_receive(:find).and_return(@subscription)
+         get :edit
+         response.should be_success
+       end
+     end
+
+     context "POST create" do
+
+      it "A criação de um subscription deve ter sucesso" do
+       pending
+       @subscription = mock_subscription
+       @subscription = valid_subscription_attributes
+       Subscription.should_receive(:build).and_return(@subscription)
+       @course = Course.find_by_id(1)
+       Course.should_receive(:find).and_return(@course)
+       @course.should_receive(:id).and_return(@course.id)
+       @subscription.should_receive(:save).and_return(true)
+       post :create
+       #response.should redirect_to(new_subscription_reference_teacher_url(@subscription.id))
+       response.should render_template(:new)
+      end
 
      end
-   
-  end
+
+   end
+
+     context "when user is not logged in" do
+
+       context "GET new" do
+
+         it "A criaçao de uma nova subscription não deve ter sucesso" do
+           @subscriptions = mock_subscription
+           get :new
+           response.should_not be_success
+         end
+
+          it "Deve ser redirecionado para pagina de login" do
+           @subscriptions = mock_subscription
+           get :new
+           response.should redirect_to(root_url)
+         end
+       end
+
+      context "GET edit" do
+
+       it "A edicao de uma subscription não deve ter sucesso" do
+         @subscription = Subscription.find_by_id(1)
+         get :edit
+         response.should_not be_success
+       end
+       
+       it "Deve ser redirecionado para pagina de login" do
+         get :edit
+         response.should redirect_to(root_url)
+       end
+
+
+     end
+
+    context "POST create" do
+      it "Deve ser redirecionado para pagina de login" do
+        post :create
+        response.should redirect_to(root_url)
+      end
+    end
+
+     end
 
 
 

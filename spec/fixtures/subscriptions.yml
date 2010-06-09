@@ -1,7 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# one:
-#   column: value
+ one:
+   id: 1
+   propositos: Preciso fazer mestrado senão meu pai me mata
+   inicio_pretendido: agosto
+   curso_id: 1
 #
 # two:
 #   column: value

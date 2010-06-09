@@ -30,15 +30,15 @@
             <td class="left_align"><a href="app-controllers-users_controller_rb.html">app/controllers/users_controller.rb</a></td>
             <td class='right_align'><tt>64</tt></td>
             <td class='right_align'><tt>48</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>46.88%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>56.25%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:47px"></div>
-            <div class="uncovered" style="width:53px"></div>
+            <div class="covered" style="width:56px"></div>
+            <div class="uncovered" style="width:44px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>35.42%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>47.92%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:35px"></div>
-            <div class="uncovered" style="width:65px"></div>
+            <div class="covered" style="width:48px"></div>
+            <div class="uncovered" style="width:52px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -110,37 +110,37 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line10">10</a>     @user = User.find(params[:id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line11">11</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line12">12</a>       format.html # show.html.erb</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line13">13</a>       format.xml  { render :xml =&gt; @user }</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line14">14</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line15">15</a>   end</pre></td>
           </tr>
         
@@ -231,7 +231,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line30">30</a>       flash[:notice] = 'Usuário criado com sucesso!'</pre></td>
+            <td><pre><a name="line30">30</a>       flash[:message] = 'Usuário criado com sucesso!'</pre></td>
           </tr>
         
           
@@ -441,7 +441,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Tue Jun 08 18:05:59 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Jun 08 21:20:03 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

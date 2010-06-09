@@ -47,7 +47,7 @@ class SubscriptionsController < ApplicationController
     if @user != nil
       @subscription = @user.subscriptions.build
       @course_areas = Course.find(:all, :group => 'area')
-      @course = Course.find_by_id(@subscription.curso_id)
+      #@course = Course.find_by_id(@subscription.curso_id)
       @course = Course.first
       @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
       @st_months = months("Mestrado")
@@ -83,37 +83,45 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions/1/edit
   def edit
     @user = current_user
-    @subscription = @user.subscriptions.find(params[:id])
-    @course_areas = Course.find(:all, :group => 'area')
-    @course = Course.find_by_id(@subscription.curso_id)
-    @area_selected = @course.area
-    @nivel_selected = @course.nivel
-    @subarea_selected = @course.subarea
-    @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
-    @st_months = months(@nivel_selected)
-    @month_selected = @subscription.inicio_pretendido
-  end
-
-  # POST /subscriptions
-  # POST /subscriptions.xml
-  def create
-    @user = current_user
-    @subscription = @user.subscriptions.build(params[:subscription])
-    @course = Course.find(:first, :conditions => {:nivel => params[:nivel_select],
-        :area => params[:area_select], :subarea => params[:subarea_select]})
-    @subscription.curso_id = @course.id
-    if @subscription.save
-      redirect_to new_subscription_reference_teacher_url(@subscription)
-    else
+    if @user != nil
+      @subscription = @user.subscriptions.find(params[:id])
       @course_areas = Course.find(:all, :group => 'area')
       @course = Course.find_by_id(@subscription.curso_id)
       @area_selected = @course.area
       @nivel_selected = @course.nivel
       @subarea_selected = @course.subarea
       @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
-      @month_selected = params[:subscription_inicio_pretendido]
-      @st_months = months(@course.nivel)
-      render :action => "new"
+      @st_months = months(@nivel_selected)
+      @month_selected = @subscription.inicio_pretendido
+    else
+      redirect_to root_url
+    end
+  end
+
+  # POST /subscriptions
+  # POST /subscriptions.xml
+  def create
+    @user = current_user
+    if @user != nil
+      @subscription = @user.subscriptions.build(params[:subscription])
+      @course = Course.find(:first, :conditions => {:nivel => params[:nivel_select],
+          :area => params[:area_select], :subarea => params[:subarea_select]})
+      @subscription.curso_id = @course.id
+      if @subscription.save
+        redirect_to new_subscription_reference_teacher_url(@subscription)
+      else
+        @course_areas = Course.find(:all, :group => 'area')
+        @course = Course.find_by_id(@subscription.curso_id)
+        @area_selected = @course.area
+        @nivel_selected = @course.nivel
+        @subarea_selected = @course.subarea
+        @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
+        @month_selected = params[:subscription_inicio_pretendido]
+        @st_months = months(@course.nivel)
+        render :action => "new"
+      end
+    else
+      redirect_to root_url
     end
   end
 
@@ -121,19 +129,23 @@ class SubscriptionsController < ApplicationController
   # PUT /subscriptions/1.xml
   def update
     @user = current_user
-    @subscription = @user.subscriptions.find(params[:id])
-    @course = Course.find(:first, :conditions => {:nivel => params[:nivel_select],
-        :area => params[:area_select], :subarea => params[:subarea_select]})
-    @subscription.curso_id = @course.id
-    if @subscription.update_attributes(params[:subscription])
-      redirect_to user_subscription_url(@user, @subscription)
+    if @user != nil
+      @subscription = @user.subscriptions.find(params[:id])
+      @course = Course.find(:first, :conditions => {:nivel => params[:nivel_select],
+          :area => params[:area_select], :subarea => params[:subarea_select]})
+      @subscription.curso_id = @course.id
+      if @subscription.update_attributes(params[:subscription])
+        redirect_to user_subscription_url(@user, @subscription)
+      else
+        @course_areas = Course.find(:all, :group => 'area')
+        @course = Course.first;
+        @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
+        @month_selected = params[:subscription_inicio_pretendido]
+        @st_months = months(@course.nivel)
+        render :action => "edit"
+      end
     else
-      @course_areas = Course.find(:all, :group => 'area')
-      @course = Course.first;
-      @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
-      @month_selected = params[:subscription_inicio_pretendido]
-      @st_months = months(@course.nivel)
-      render :action => "edit"
+      redirect_to root_url
     end
   end
 
