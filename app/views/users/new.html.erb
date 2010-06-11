@@ -1,14 +1,15 @@
-<h3>Inscrição na Pós-Graduação</h3>
+<h4>Criando um novo cadastro</h4>
 
-<p>Campos obrigatórios estão demarcados por <span style="color:red">*</span></p>
-
-
+<br/>
+Campos obrigatórios estão demarcados por <span style="color:red">*</span>
+<br/>
 <td><% form_for(@user) do |f| %></td>
   <td><%= error_messages_for :user, :header_message => "Erros de preenchimento encontrados", :message => "Por favor, corrija os seguintes erros para continuar:" %></td>
+
+  <h2>Dados Pessoais</h2>
   <table>
-    <tr><td colspan="2"><br/><h2>Dados Pessoais</h2></td></tr>
     <tr>
-      <td><%= f.label :nome_completo %></td>
+      <td><span style="color:red">*</span><%= f.label :nome_completo %>   </td>
       <td><%= f.text_field :nome_completo, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
@@ -16,15 +17,15 @@
       <td><%= f.date_select(:data_de_nascimento,:order => [:day, :month, :year],:end_year => 1920, :start_year => Time.now.year - 16, :use_month_names => %w(Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro)) %></td>
     </tr>
     <tr>
-      <td><%= f.label "E-mail" %></td>
-      <td><%= f.text_field :email, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
+      <td><span style="color:red">*</span><%= f.label "E-mail" %></td>
+      <td><%= f.text_field :email, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
-      <td><%= f.label "Senha" %></td>
+      <td><span style="color:red">*</span><%= f.label "Senha" %></td>
       <td><%= f.password_field :password %></td>
     </tr>
     <tr>
-      <td><%= f.label "Confirmação da senha" %></td>
+      <td><span style="color:red">*</span><%= f.label "Confirmação da senha" %></td>
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
     <tr>
@@ -33,11 +34,8 @@
     </tr>
     <tr>
       <td><%= f.label "Documento de identidade" %></td>
-      <td><%= f.text_field :identidade, :onkeypress => "return event.keyCode!=13" %></td>
-    </tr>
-    <tr>
-      <td><%= f.label :tipo %></td>
-      <td><%= f.select(:tipo,%w[RG Passaporte RNE Outro]) %></td>
+      <td><%= f.text_field :identidade, :onkeypress => "return event.keyCode!=13" %>
+      <%= f.select(:tipo,%w[RG Passaporte RNE Outro]) %></td>
     </tr>
     <tr>
       <td><label for="user_CPF">CPF</label></td>
@@ -47,7 +45,11 @@
       <td><%= f.label :nacionalidade %></td>
       <td><%= f.text_field :nacionalidade, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
-    <tr><td colspan="2"><br/><h2>Endereço Permanente</h2></td></tr>
+  </table>
+  <br/>
+  <h2>Endereços</h2>
+  <table>
+    <tr><td colspan="2"><h4>Permanente</h4></td></tr>
     <tr>
       <td><%= f.label "Logradouro" %></td>
       <td><%= f.text_field :logradouro_permanente, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
@@ -76,7 +78,7 @@
       <td><%= f.label "Telefone" %></td>
       <td><%= f.text_field :telefone_permanente, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
-    <tr><td colspan="2"><br/><h2>Endereço de Correspondência</h2></td></tr>
+    <tr><td colspan="2"><br/><h4>Para correspondência</h4></td></tr>
     <tr>
       <td><%= f.label "Logradouro" %></td>
       <td><%= f.text_field :logradouro_correspondencia, :size => "50", :onkeypress => "return event.keyCode!=13" %></td>
@@ -109,33 +111,50 @@
       <td><%= f.label "Celular" %></td>
       <td><%= f.text_field :celular_correspondencia, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
-    <tr><td colspan="2"><br/><h2>Formação Acadêmica</h2></td></tr>
+  </table>
+  <br/>
+  <h2>Formação Acadêmica</h2>
+  <table>
     <tr>
-      <td><%= f.label "Formação superior - graduação: instituição, início e término (mês e ano), título obtido" %></td>
-      <td><%= f.text_area :formacao_superior_graduacao, :rows => "10" , :cols => "70" %></td>
+      <td><span style="color:red">*</span><%= f.label "Formação superior - graduação: instituição, início e término (mês e ano), título obtido" %></td>
     </tr>
     <tr>
-      <td><%= f.label "Formação superior - pós-graduação (mestrado): instituição, início e término (mês e ano), título obtido, título
+      <td><%= f.text_area :formacao_superior_graduacao, :rows => "20" , :cols => "80" %></td>
+    </tr>
+    <tr>
+      <td><br/><%= f.label "Formação superior - pós-graduação (mestrado): instituição, início e término (mês e ano), título obtido, título
  da dissertação, nome do orientador (quando pertinente)" %></td>
-      <td><%= f.text_area :formacao_superior_pos, :rows => "10" , :cols => "70" %></td>
     </tr>
     <tr>
-      <td><%= f.label "Outras atividades acadêmicas já realizadas, pertinentes ao programa pretendido (cursos de pós-graduação
+      <td><%= f.text_area :formacao_superior_pos, :rows => "20" , :cols => "80" %></td>
+    </tr>
+    <tr>
+      <td><br/><%= f.label "Outras atividades acadêmicas já realizadas, pertinentes ao programa pretendido (cursos de pós-graduação
 “lato sensu”, especialização, aperfeiçoamento, extensão, etc.): instituição, início e término (mês e ano), título
 obtido" %></td>
-      <td><%= f.text_area :outras_academicas, :rows => "10" , :cols => "70" %></td>
     </tr>
-    <tr><td colspan="2"><br/><h2>Experiência Profissional</h2></td></tr>
+    <tr>
+      <td><%= f.text_area :outras_academicas, :rows => "20" , :cols => "80" %></td>
+    </tr>
+  </table>
+  <br/>
+  <h2>Experiência Profissional</h2>
+  <table>
     <tr>
       <td><%= f.label "Relacionar empregos e funções já exercidas nos quais desenvolveu atividades relacionadas com suas
 aspirações futuras em termos do programa pretendido" %></td>
-      <td><%= f.text_area :empregos_passados, :rows => "10" , :cols => "70" %></td>
     </tr>
     <tr>
-      <td><%= f.label "Atividades atuais (se exerce alguma atividade remunerada, indicar empregador e cargo)" %></td>
-      <td><%= f.text_area :empregos_atuais, :rows => "10" , :cols => "70" %></td>
+      <td><%= f.text_area :empregos_passados, :rows => "20" , :cols => "80" %></td>
+    </tr>
+    <tr>
+      <td><br/><%= f.label "Atividades atuais (se exerce alguma atividade remunerada, indicar empregador e cargo)" %></td>
+    </tr>
+    <tr>
+      <td><%= f.text_area :empregos_atuais, :rows => "20" , :cols => "80" %></td>
     </tr>
   </table>
+  <br/>
   <%= f.submit 'Continuar' %>
 
 <% end %>
