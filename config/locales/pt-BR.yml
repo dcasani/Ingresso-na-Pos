@@ -1,19 +1,39 @@
 pt-BR:
   activerecord:
+    attributes:
+      user:
+        password: "Senha"
+        password_confirmation: "Confirmação da senha"
+        email: "E-mail"
+        username: "Nome de usuário"
+        formacao_superior_graduacao: "Formação Superior - Graduação"
     errors:
       template:
         header: ""
         body: "Por favor, corrija os seguintes erros:"
-
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "está em branco ou tem menos caracteres que o mínimo"
+              confirmation: "fornecida e confirmação de senha não são iguais"
+            password_confirmation:
+              too_short: "está em branco ou tem menos caracteres que o mínimo"
+            email:
+                taken: "Já existe um usuário cadastrado com esse e-mail, por favor, escolha outro."
+                too_short: "Está em branco ou é muito curto"
+            username:
+                taken: "Será seu e-mail, por isso o e-mail deve ser único."
+                too_short: "Está em branco ou contém menos caracteres que o mínimo"
 
   # Authlogic
   authlogic:
     error_messages:
       login_blank: "não pode ficar em branco"
       login_not_found: "não é válido"
-      login_invalid: "deve usar somente letras, números, espaços e .-_@ por favor."
+      login_invalid: "deve usar somente letras, números, espaços e .-_@"
       consecutive_failed_logins_limit_exceeded: "Consecutivos logins que falharam limite excedido, a conta está desativada."
-      email_invalid: "deve ser semelhante a um endereço de email."
+      email_invalid: "está em um formato inválido"
       password_blank: "não pode ficar em branco"
       password_invalid: "incorreta"
       not_active: "Sua conta não está ativa"
