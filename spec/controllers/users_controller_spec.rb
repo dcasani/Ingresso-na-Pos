@@ -15,66 +15,23 @@ describe UsersController do
     }.merge attributes
   end
 
-  #
-  # INDEX
-  #
-  context "GET index" do
-    it "should list current users (not available in final version)" do
-      pending
-    end
+  def valid_new_user_attributes(attributes={})
+    {
+      :username => "novo@teste.com.br",
+      :password => "novo",
+      :formacao_superior_graduacao => "Bacharelado em Ciência da Computação",
+    }.merge attributes
   end
 
-
-  #
-  # WITH LOGGING
-  #
-  context "When user LOGGED IN: " do
-
-    before :each do
-      @user = User.find_by_id(1)
-      login_as_user :teste
-    end
-
-    #
-    # CREATE
-    #
-    context "POST create" do
-      it "should not create a user" do
-        pending
-      end
-    end
-
-    #
-    # NEW
-    #
-    context "GET new" do
-      it "should not be sucessful" do
-        pending
-      end
-    end
-
-    #
-    # DESTROY
-    #
-    context "DELETE destroy" do
-      it "should not remove user" do
-        pending
-      end
-    end
-
-    #
-    # SHOW
-    #
-    context "GET show" do
-      it "should show user attributes given an id" do
-        get :show, :id => '1'
-        assigns[:user].should == users(:teste)
-      end
-    end
+  def valid_user_admin_attributes(attributes={})
+    {
+      :nome_completo => "Admin",
+      :username => "admin@teste.com.br",
+      :password => "admin",
+      :formacao_superior_graduacao => "Bacharelado em Ciência da Computação",
+    }.merge attributes
   end
-   
 
-    
   #
   # WITHOUT LOGGING
   #
@@ -85,22 +42,34 @@ describe UsersController do
     #
     context "POST create" do
 
-      it "should create a user given valid attributes" do
-        post :create, :user => valid_user_attributes
-        user = User.find_by_username("teste@teste.com.br")
-        user.should_not be_nil
-        #flash[:message].should == "Usuário criado com sucesso!"
-        #response.should redirect_to( new_subscription_url)
+      after(:each) do
+        @user = User.find_by_username("novo@teste.com.br")
+        if(@user)
+          @user.destroy
+        end
       end
 
-      it "should not create a user given invalid username" do
+      it "Deve criar um usuário se não há nenhum logado." do
+        pending
+        post :create, :user => valid_new_user_attributes
+        @user = User.find_by_username("novo@teste.com.br")
+        @user.should_not be_nil
+      end
+
+      it "Deve redirecionar para uma nova inscrição após a criação do usuário." do
+        pending
+        post :create, valid_new_user_attributes
+        response.should redirect_to(new_subscription_url)
+      end
+
+      it "Não deve criar um usuário com parâmetros inválidos" do
         post :create, :user => valid_user_attributes(:username => nil)
         User.find_by_email('teste@teste.com').should be_nil
         flash[:error].should == "Usuário não criado."
         response.should render_template(:new)
       end
 
-      it "should not create a user given empty username" do
+      it "Não deve criar um usuário sem login" do
         post :create, :user => valid_user_attributes(:username => "")
         User.find_by_email('teste@teste.com').should be_nil
         flash[:error].should == "Usuário não criado."
@@ -131,19 +100,12 @@ describe UsersController do
     #
     context "DELETE destroy" do
       it "should remove user (should change for final version)" do
-        pending
-        #        # Create a user
-        #        @user = mock_user
-        #        User.should_receive(:find).and_return(@user)
-        #        # Save new user id
-        #        @id = @user.id
-        #        # Destroy user
-        #        @user.should_receive(:destroy)
-        #        delete :destroy, @user.id
-        #
-        #        # Check wheter the user was successfuly destroyed
-        #        (User.find_by_id(@id)).should be_nil
-        #        response.should redirect_to(users_url)
+        @user = User.find_by_username("claudia@ime.usp.br")
+        delete :destroy, :id => @user.id
+
+        # Check wheter the user was successfuly destroyed
+        User.find_by_username("claudia@ime.usp.br").should be_nil
+        response.should redirect_to(users_url)
       end
     end
 
@@ -153,9 +115,89 @@ describe UsersController do
     context "GET show" do
       it "should not show user info" do
         get :show, :id => "1"
-        assigns[:user].should != users(:teste)
+        response.should redirect_to(root_url)
       end
     end
   end
+
+  #
+  # WITH LOGGING
+  #
+  context "When user LOGGED IN: " do
+
+    before :each do
+      login_as_user :teste
+    end
+
+    #
+    # CREATE
+    #
+    context "POST create" do
+      after(:each) do
+        @user = User.find_by_username("teste2@teste.com.br")
+        if(@user)
+          @user.destroy
+        end
+      end
+
+      
+
+      it "Não deve criar um usuário se há algum logado e não é o administrador" do
+        post :create, valid_new_user_attributes
+        @new_user = User.find_by_username("teste2@teste.com.br")
+        
+        @new_user.should be_nil
+      end
+    end
+
+    #
+    # NEW
+    #
+    context "GET new" do
+      it "should not be sucessful" do
+        pending
+      end
+    end
+
+    #
+    # DESTROY
+    #
+    context "DELETE destroy" do
+      it "should not remove user" do
+        pending
+      end
+    end
+
+    #
+    # SHOW
+    #
+    context "GET show" do
+      it "should show user attributes given an id" do
+        pending
+        get :show, :id => "2"
+        assigns[:user].should == users(:teste)
+      end
+    end
+  end
+   
+
+    
+  
+
+
+  #
+  # WITH ADMIN LOGGING
+  #
+  context "When ADMIN IS LOGGED IN: " do
+
+    before :all do
+      @user = User.find_by_id(3)
+      login_as_user :admin
+    end
+
+
+  end
+
+
 end
 

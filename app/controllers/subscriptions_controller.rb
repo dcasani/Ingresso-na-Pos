@@ -4,9 +4,6 @@ class SubscriptionsController < ApplicationController
   def index
     @user = current_user
     @subscriptions = @user.subscriptions
-    @subscriptions.each do |subscription|
-      @course = Course.find_by_id(subscription.curso_id)
-    end
   end
 
   # GET /subscriptions/1
@@ -135,7 +132,7 @@ class SubscriptionsController < ApplicationController
           :area => params[:area_select], :subarea => params[:subarea_select]})
       @subscription.curso_id = @course.id
       if @subscription.update_attributes(params[:subscription])
-        redirect_to user_subscription_url(@user, @subscription)
+        redirect_to user_subscriptions_url(current_user)
       else
         @course_areas = Course.find(:all, :group => 'area')
         @course = Course.first;

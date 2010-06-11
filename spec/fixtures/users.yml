@@ -20,3 +20,12 @@ claudia:
   created_at: 30/12/2009
   updated_at: 01/01/2010
   id: 2
+
+admin:
+  nome_completo: "Admin"
+  username: admin@ime.com.br
+  password_salt: <%= salt = Authlogic::Random.hex_token %>
+  crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("teste" + salt) %>
+  persistence_token: <%= Authlogic::Random.hex_token %>
+  formacao_superior_graduacao: "Bacharelado em Ciência da Computação"
+  id: 3
