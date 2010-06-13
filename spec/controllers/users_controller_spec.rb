@@ -37,45 +37,6 @@ describe UsersController do
   #
   context "When user NOT LOGGED IN: " do
 
-    #
-    # CREATE
-    #
-    context "POST create" do
-
-      after(:each) do
-        @user = User.find_by_username("novo@teste.com.br")
-        if(@user)
-          @user.destroy
-        end
-      end
-
-      it "Deve criar um usuário se não há nenhum logado." do
-        pending
-        post :create, :user => valid_new_user_attributes
-        @user = User.find_by_username("novo@teste.com.br")
-        @user.should_not be_nil
-      end
-
-      it "Deve redirecionar para uma nova inscrição após a criação do usuário." do
-        pending
-        post :create, valid_new_user_attributes
-        response.should redirect_to(new_subscription_url)
-      end
-
-      it "Não deve criar um usuário com parâmetros inválidos" do
-        post :create, :user => valid_user_attributes(:username => nil)
-        User.find_by_email('teste@teste.com').should be_nil
-        flash[:error].should == "Usuário não criado."
-        response.should render_template(:new)
-      end
-
-      it "Não deve criar um usuário sem login" do
-        post :create, :user => valid_user_attributes(:username => "")
-        User.find_by_email('teste@teste.com').should be_nil
-        flash[:error].should == "Usuário não criado."
-        response.should render_template(:new)
-      end
-    end
 
     #
     # NEW
@@ -94,6 +55,68 @@ describe UsersController do
         assigns[:user].should == mock_user
       end
     end
+
+    #
+    # CREATE
+    #
+    context "POST create" do
+
+      after(:each) do
+        @user = User.find_by_username("novo@teste.com.br")
+        if(@user)
+          @user.destroy
+        end
+      end
+      
+
+      it "Deve criar um usuário se não há nenhum logado." do
+        @user = mock_user()
+        @user = valid_new_user_attributes
+        User.should_receive(:new).and_return(@user)
+        @user.should_receive(:save).and_return(true)
+        @user.should_receive(:email).and_return("novo@teste.com.br")
+        @user.should_receive(:username=)
+        post :create
+        @user.should_not be_nil
+      end
+
+      it "Deve redirecionar para uma nova inscrição após a criação do usuário." do
+        @user = mock_user()
+        @user = valid_new_user_attributes
+        User.should_receive(:new).and_return(@user)
+        @user.should_receive(:save).and_return(true)
+        @user.should_receive(:email).and_return("novo@teste.com.br")
+        @user.should_receive(:username=)
+        post :create
+        response.should redirect_to(new_subscription_url)
+      end
+
+      it "Não deve criar um usuário com parâmetros inválidos" do
+        post :create, :user => valid_user_attributes(:username => nil)
+        User.find_by_email('teste@teste.com').should be_nil
+        flash[:error].should == "Usuário não criado."
+        response.should render_template(:new)
+      end
+
+      it "Não deve criar um usuário sem login" do
+        post :create, :user => valid_user_attributes(:username => "")
+        User.find_by_email('teste@teste.com').should be_nil
+        flash[:error].should == "Usuário não criado."
+        response.should render_template(:new)
+      end
+    end
+
+   #
+   # INDEX
+   #
+   context "GET index" do
+      it "Deve logar como administrador para listar os usuarios" do
+       get :index
+       flash[:message].should == 'É preciso logar como administrador para verificar a lista de usuários.'
+       response.should redirect_to(root_url)
+      end
+
+   end
 
     #
     # DESTROY
@@ -126,7 +149,9 @@ describe UsersController do
   context "When user LOGGED IN: " do
 
     before :each do
-      login_as_user :teste
+       activate_authlogic
+       @user = User.find_by_id(1)
+       login_as_user :teste
     end
 
     #
@@ -144,10 +169,17 @@ describe UsersController do
 
       it "Não deve criar um usuário se há algum logado e não é o administrador" do
         post :create, valid_new_user_attributes
-        @new_user = User.find_by_username("teste2@teste.com.br")
-        
+        @new_user = User.find_by_username("teste2@teste.com.br")       
         @new_user.should be_nil
       end
+
+      it "Deve redirecionar para a página principal"do
+        post :create, valid_new_user_attributes
+        @new_user = User.find_by_username("teste2@teste.com.br")
+        flash[:error].should == 'É necessário deslogar para criar um novo usuário.'
+        response.should redirect_to root_url
+      end
+
     end
 
     #
@@ -156,8 +188,30 @@ describe UsersController do
     context "GET new" do
       it "should not be sucessful" do
         pending
+        get :new
+        response.should_not be_success
       end
     end
+
+
+   #
+   # INDEX
+   #
+   context "GET index" do
+      it "O admin deve listar os usuarios" do
+       @user = User.find_by_username("admin@ime.com.br")
+       login_as_user :admin
+       get :index
+       response.should be_success
+      end
+
+      it "Usuarios que não sejam o admin nao podem listas os demais" do
+       get :index
+       flash[:message].should == 'Apenas os administradores podem verificar a lista de usuários.'
+       response.should redirect_to(user_path(@user))
+      end
+
+   end
 
     #
     # DESTROY
@@ -173,10 +227,16 @@ describe UsersController do
     #
     context "GET show" do
       it "should show user attributes given an id" do
-        pending
-        get :show, :id => "2"
+        get :show, :id => "1"
         assigns[:user].should == users(:teste)
       end
+
+      it "Um usuario nao deve poder verificar dados de outros usuarios" do
+        get :show, :id => "2"
+        flash[:message].should == 'Apenas o administrador pode verificar dados de outros usuários.'
+        response.should redirect_to(user_path(@user))
+      end
+
     end
   end
    

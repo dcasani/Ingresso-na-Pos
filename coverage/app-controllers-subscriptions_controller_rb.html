@@ -30,15 +30,15 @@
             <td class="left_align"><a href="app-controllers-subscriptions_controller_rb.html">app/controllers/subscriptions_controller.rb</a></td>
             <td class='right_align'><tt>206</tt></td>
             <td class='right_align'><tt>140</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>56.80%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>41.75%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:57px"></div>
-            <div class="uncovered" style="width:43px"></div>
+            <div class="covered" style="width:42px"></div>
+            <div class="uncovered" style="width:58px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>50.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>39.29%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:50px"></div>
-            <div class="uncovered" style="width:50px"></div>
+            <div class="covered" style="width:39px"></div>
+            <div class="uncovered" style="width:61px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -692,139 +692,139 @@
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line107">107</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line108">108</a>       # Usuário logado</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line109">109</a>     else</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line110">110</a> </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line111">111</a>       @user = current_user</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line112">112</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line113">113</a>       # Gera nova inscrição</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line114">114</a>       @subscription = @user.subscriptions.build(params[:subscription])</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line115">115</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line116">116</a>       # identifica o curso selecionado</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line117">117</a>       @course = Course.find(:first, :conditions =&gt; {:nivel =&gt; params[:nivel_select],</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line118">118</a>           :area =&gt; params[:area_select], :subarea =&gt; params[:subarea_select]})</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line119">119</a> </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line120">120</a>       @saved = false</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line121">121</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line122">122</a>       # se o curso não está no banco, volte para a tela de criação</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line123">123</a>       if(@course)</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line124">124</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line125">125</a>         # associe a inscrição ao curso</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line126">126</a>         @subscription.curso_id = @course.id</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line127">127</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line128">128</a>         # Salve a inscrição</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line129">129</a>         if @subscription.save</pre></td>
           </tr>
         
@@ -854,49 +854,49 @@
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line134">134</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line135">135</a>       # Se a inscrição não foi salva, volte á tela de criação</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line136">136</a>       if !@saved</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line137">137</a>         flash[:notice] = &quot;Ocorreu um erro ao tentar salvar sua inscrição. Por favor tente novamente.&quot;</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line138">138</a>         redirect_to new_subscription_url</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line139">139</a>       end</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line140">140</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line141">141</a>   end</pre></td>
           </tr>
         
@@ -1293,7 +1293,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Sun Jun 13 12:14:45 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sun Jun 13 13:20:33 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
