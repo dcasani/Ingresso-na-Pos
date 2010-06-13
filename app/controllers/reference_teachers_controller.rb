@@ -33,7 +33,19 @@ class ReferenceTeachersController < ApplicationController
   def create
     @subscription = Subscription.find(params[:subscription_id])
     @reference_teacher = @subscription.reference_teachers.build(params[:reference_teacher])
-    if @subscription.save
+    #salva o professor que recomendará
+    if @reference_teacher.save
+      #usa o id do professor salvo para gerar o hash para proteção do link de submissão da carta
+      @hashcode = Digest::MD5.hexdigest((@reference_teacher.id + rand(255)).to_s)
+      @rt = ReferenceTeacher.find_by_hashcode(@hashcode)
+      while(@rt) #verifica se o hash não é existente já (ok, muito improvável...mas não queremos que o sistema quebre) para outro professor
+        @hashcode = Digest::MD5.hexdigest((@reference_teacher.id + rand(255)).to_s)
+        @rt = ReferenceTeacher.find_by_hashcode(@hashcode)
+        ReferenceTeacher.find_by_hashcode(@hash)
+      end
+      #atribui o código de hash ao professor salvo
+      @reference_teacher.hashcode = @hashcode
+      @reference_teacher.save
       redirect_to subscription_reference_teachers_url(@subscription)
     else
       render :action => "new"
@@ -46,14 +58,15 @@ class ReferenceTeachersController < ApplicationController
     @student = params[:student]
     @subscription = params[:subscription]
     @language =  params[:language]
+    @hashcode = params[:hashcode]
     if @language == "Português"
-      if Notifier.deliver_notification(@destination,@teacher,@student)
+      if Notifier.deliver_notification(@destination,@teacher,@student,@hashcode)
         @message = "Sucesso no envio! UUUUbaaaaaa!"
       else
         @message = "Falha no Envio... :("
       end
     else if @language == "Inglês"
-        if Notifier.deliver_notificationenglish(@destination,@teacher,@student)
+        if Notifier.deliver_notificationenglish(@destination,@teacher,@student,@hashcode)
           @message = "Sucesso no envio! UUUUbaaaaaa!"
         else
           @message = "Falha no Envio... :("
@@ -89,4 +102,19 @@ class ReferenceTeachersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def process_letter
+    @hash = params[:id]
+    @teacher = ReferenceTeacher.find_by_hashcode(@hash)
+    if !@teacher.nil?
+      @teacher_id =  @teacher.id
+      @subscription_id = @teacher.subscription_id
+      @subscription = Subscription.find_by_id(@subscription_id)
+      @user = @subscription.user_id
+      render :inline => "Hash encontrado!<br/>Usuário: "+@user.to_s+"<br/>Inscrição: "+@subscription_id.to_s+"<br/>Professor: "+@teacher_id.to_s
+    else
+      render :inline => "Url não encontrada!"
+    end
+  end
+
 end

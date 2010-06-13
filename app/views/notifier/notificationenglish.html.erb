@@ -7,7 +7,7 @@
           <tr>
             <td>
               <p>Hi <%= @teacher %>,</p>
-              <p> The student <%= @student %> deseja que você submeta uma carta. Façá isso por aqui (link)</p>
+              <p> The student <%= @student %> deseja que você submeta uma carta. Faça isso por <%=  link_to "aqui", "http://localhost:3000/letter/"+@hashcode%> </p>
               <p>Thank you,</p>
               <p>Sistema de Ingresso na Pós Graduação - IME-USP</p>
             </td>
