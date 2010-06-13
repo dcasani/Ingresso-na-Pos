@@ -6,7 +6,7 @@
     <th>Instituicao</th>
     <th>Email</th>
     <th>Idioma</th>
-    <th colspan="2">Opcoes</th>
+    <th colspan="3">Opções</th>
   </tr>
 
 <% @reference_teachers.each do |reference_teacher| %>
@@ -15,6 +15,7 @@
     <td><%=h reference_teacher.instituicao %></td>
     <td><%=h reference_teacher.email %></td>
     <td><%=h reference_teacher.lingua %></td>
+    <td><%= link_to 'Enviar Solicitação de Envio de Carta', :action => :send_mail, :subscription => @subscription_id, :teacher =>  reference_teacher.nome, :email => reference_teacher.email, :language => reference_teacher.lingua, :student => @user.nome_completo %></td>
     <td><%= link_to 'Editar', edit_subscription_reference_teacher_path(@subscription, reference_teacher) %></td>
     <td><%= link_to 'Deletar', subscription_reference_teacher_path(@subscription, reference_teacher), :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
@@ -24,4 +25,4 @@
 <br />
 <%= link_to 'Adicionar novo professor', new_subscription_reference_teacher_path(@subscription) %>
 <br />
-<%= link_to 'Concluir', user_subscriptions_path(@user) %>
+<%= link_to 'Voltar para Inscrição', edit_user_subscription_path(@user,@subscription) %>

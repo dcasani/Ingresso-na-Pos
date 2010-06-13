@@ -3,6 +3,7 @@ class ReferenceTeachersController < ApplicationController
   # GET /reference_teachers.xml
   def index
     @subscription = Subscription.find(params[:subscription_id])
+    @subscription_id = params[:subscription_id]
     @reference_teachers = @subscription.reference_teachers
     @user = current_user
   end
@@ -19,7 +20,7 @@ class ReferenceTeachersController < ApplicationController
   def new
     @subscription = Subscription.find(params[:subscription_id])
     @reference_teacher = @subscription.reference_teachers.build
- end
+  end
 
   # GET /reference_teachers/1/edit
   def edit
@@ -37,6 +38,29 @@ class ReferenceTeachersController < ApplicationController
     else
       render :action => "new"
     end
+  end
+
+  def send_mail
+    @destination = params[:email]
+    @teacher = params[:teacher]
+    @student = params[:student]
+    @subscription = params[:subscription]
+    @language =  params[:language]
+    if @language == "Português"
+      if Notifier.deliver_notification(@destination,@teacher,@student)
+        @message = "Sucesso no envio! UUUUbaaaaaa!"
+      else
+        @message = "Falha no Envio... :("
+      end
+    else if @language == "Inglês"
+        if Notifier.deliver_notificationenglish(@destination,@teacher,@student)
+          @message = "Sucesso no envio! UUUUbaaaaaa!"
+        else
+          @message = "Falha no Envio... :("
+        end
+      end
+    end
+    render :mail_result
   end
 
   # PUT /reference_teachers/1

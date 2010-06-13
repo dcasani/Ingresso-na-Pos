@@ -32,3 +32,15 @@ table#subscriptions td, table#subscriptions th, table#teachers td, table#teacher
 table#subscriptions, table#teachers{
     border-collapse: collapse;
 }
+
+h2{
+    font-size: 14px;
+}
+
+h1 {
+    font-size:18px;
+}
+
+#login, #login a{
+    font-family: geneva, arial;
+}

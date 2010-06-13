@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-users_controller_rb.html">app/controllers/users_controller.rb</a></td>
-            <td class='right_align'><tt>136</tt></td>
-            <td class='right_align'><tt>77</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>57.35%</tt></div>
+            <td class='right_align'><tt>130</tt></td>
+            <td class='right_align'><tt>83</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>47.69%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:57px"></div>
-            <div class="uncovered" style="width:43px"></div>
+            <div class="covered" style="width:48px"></div>
+            <div class="uncovered" style="width:52px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>38.96%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>34.94%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:39px"></div>
-            <div class="uncovered" style="width:61px"></div>
+            <div class="covered" style="width:35px"></div>
+            <div class="uncovered" style="width:65px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -207,7 +207,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line26">26</a>     # Necessário deslogar</pre></td>
+            <td><pre><a name="line26">26</a>       # Necessário deslogar</pre></td>
           </tr>
         
           
@@ -387,7 +387,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line56">56</a>       # Não exiba os dados</pre></td>
+            <td><pre><a name="line56">56</a>         # Não exiba os dados</pre></td>
           </tr>
         
           
@@ -572,308 +572,272 @@
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line87">87</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line88">88</a>     # Verifica se há um usuário logado</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line89">89</a> #    if(!current_user)</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line89">89</a>     if(!current_user)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line90">90</a>       flash[:message] = 'É preciso logar como administrador para verificar dados de usuários.'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line91">91</a>       redirect_to root_url</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line92">92</a>     else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line93">93</a>       # Usuário logado</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line94">94</a>       @user = current_user</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line95">95</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line96">96</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line90">90</a> #      flash[:message] = 'É preciso logar como administrador para verificar dados de usuários.'</pre></td>
+            <td><pre><a name="line97">97</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line91">91</a> #      redirect_to root_url</pre></td>
+            <td><pre><a name="line98">98</a>   #</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line92">92</a> #    else</pre></td>
+            <td><pre><a name="line99">99</a>   # Atualização de dados: UPDATE</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line93">93</a> #      # Usuário logado</pre></td>
+            <td><pre><a name="line100">100</a>   #</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line94">94</a> #      @user = current_user</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line101">101</a>   def update</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line95">95</a> #</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line102">102</a>     @user = current_user</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line96">96</a> #      # Dados a serem exibidos</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line97">97</a> #      @user_to_show = User.find(params[:id])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line98">98</a> #</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line99">99</a> #      # O usuário requerente é o administrador ou o esmo usuário dos dados requisitados</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line100">100</a> #      if(@user.nome_completo == &quot;Admin&quot; || @user.id == @user_to_show.id)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line101">101</a> #        @user = current_user</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line102">102</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line103">103</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line104">104</a>   #</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line104">104</a>     respond_to do |format|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line105">105</a>       #utiliza email como login</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line106">106</a>       @user.username = @user.email</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line107">107</a>       if @user.update_attributes(params[:user])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line108">108</a>         flash[:notice] = 'Usuário alterado com sucesso!'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line109">109</a>         format.html { redirect_to(user_subscriptions_url(current_user)) }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line110">110</a>         format.xml  { head :ok }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line111">111</a>       else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line112">112</a>         format.html { render :action =&gt; &quot;edit&quot; }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line113">113</a>         format.xml  { render :xml =&gt; @user.errors, :status =&gt; :unprocessable_entity }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line114">114</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line115">115</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line116">116</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line105">105</a>   # Atualização de dados: UPDATE</pre></td>
+            <td><pre><a name="line117">117</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line106">106</a>   #</pre></td>
+            <td><pre><a name="line118">118</a>   #</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line119">119</a>   # Remoção: DESTROY</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line120">120</a>   #</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line107">107</a>   def update</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line108">108</a>     @user = current_user</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line109">109</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line110">110</a>     respond_to do |format|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line111">111</a>       #utiliza email como login</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line112">112</a>       @user.username = @user.email</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line113">113</a>       if @user.update_attributes(params[:user])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line114">114</a>         flash[:notice] = 'Usuário alterado com sucesso!'</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line115">115</a>         format.html { redirect_to(@user) }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line116">116</a>         format.xml  { head :ok }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line117">117</a>       else</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line118">118</a>         format.html { render :action =&gt; &quot;edit&quot; }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line119">119</a>         format.xml  { render :xml =&gt; @user.errors, :status =&gt; :unprocessable_entity }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line120">120</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line121">121</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line122">122</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line123">123</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line124">124</a>   #</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line125">125</a>   # Remoção: DESTROY</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line126">126</a>   #</pre></td>
+            <td><pre><a name="line121">121</a>   def destroy</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line127">127</a>   def destroy</pre></td>
+            <td><pre><a name="line122">122</a>     @user = User.find(params[:id])</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line128">128</a>     @user = User.find(params[:id])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line129">129</a>     @user.destroy</pre></td>
+            <td><pre><a name="line123">123</a>     @user.destroy</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line130">130</a> </pre></td>
+            <td><pre><a name="line124">124</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line131">131</a>     respond_to do |format|</pre></td>
+            <td><pre><a name="line125">125</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line132">132</a>       format.html { redirect_to(users_url) }</pre></td>
+            <td><pre><a name="line126">126</a>       format.html { redirect_to(users_url) }</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line133">133</a>       format.xml  { head :ok }</pre></td>
+            <td><pre><a name="line127">127</a>       format.xml  { head :ok }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line134">134</a>     end</pre></td>
+            <td><pre><a name="line128">128</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line135">135</a>   end</pre></td>
+            <td><pre><a name="line129">129</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line136">136</a> end</pre></td>
+            <td><pre><a name="line130">130</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Fri Jun 11 16:26:51 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sun Jun 13 11:33:56 -0300 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
