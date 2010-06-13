@@ -128,7 +128,7 @@ class SubscriptionsController < ApplicationController
         # Salve a inscrição
         if @subscription.save
           @saved = true
-          redirect_to new_subscription_reference_teacher_url(@subscription)
+          redirect_to new_subscription_reference_teacher_path(@subscription)
         end
       end
 

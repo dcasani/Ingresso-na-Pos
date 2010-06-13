@@ -34,12 +34,22 @@ describe SubscriptionsController do
     {
       :username => "teste@teste.com.br",
       :password => "teste",
-      :formacao_superior_graduacao => "Bacharelado em Ciência da Computação",
+      :formacao_superior_graduacao => "Bacharelado em Ciência da Computação"
     }.merge attributes
   end
 
    def valid_subscription_attributes(attributes={})
      {
+      :outros_programas => 'lala',
+      :orientador => 'professor',
+      :bolsa_fomento => 'lala',
+      :bolsa_ime => 'true' ,
+      :bolsas_anteriores => 'lala' ,
+      :dados_carta_recomendacao => 'lala' ,
+      :trabalhar_se_aceito => 'false' ,
+      :resumo_dissertacao_mestrado => 'nao tenho' ,
+      :observacoes => 'bla',
+       :curso_id => '1',
        :inicio_pretendido => 'agosto',
        :propositos => 'bla bla bla'
      }.merge attributes
@@ -52,9 +62,18 @@ describe SubscriptionsController do
     }.merge attributes
   end
 
+  def valid_course_attributes(attributes={})
+    {
+      :id => '1',
+      :area => 'Computação',
+      :nivel => 'Mestrado',
+      :subarea => 'Bioinformática'
+    }.merge attributes
+  end
+
    context "when logged in" do
-     before {activate_authlogic}
      before :each do
+       activate_authlogic
        @user = User.find_by_id(1)
        login_as_user :teste
      end
@@ -80,18 +99,25 @@ describe SubscriptionsController do
 
      context "POST create" do
 
+      before :each do
+        @subscriptions = mock_subscription
+        @course = Course.find_by_id(1)
+        Course.should_receive(:find).with(any_args()).and_return(@course)
+        #Subscription.should_receive(:build).and_return(@subscriptions)
+        #@subscription = mock_subscription
+      end
+
       it "A criação de um subscription deve ter sucesso" do
-       pending
-       @subscription = mock_subscription
-       @subscription = valid_subscription_attributes
-       Subscription.should_receive(:build).and_return(@subscription)
-       @course = Course.find_by_id(1)
-       Course.should_receive(:find).and_return(@course)
-       @course.should_receive(:id).and_return(@course.id)
-       @subscription.should_receive(:save).and_return(true)
-       post :create
-       #response.should redirect_to(new_subscription_reference_teacher_url(@subscription.id))
-       response.should render_template(:new)
+        pending
+        @subscription = valid_subscription_attributes
+        Subscription.should_receive(:build).and_return(@subscription)
+        @subscription.should_receive(:save).and_return(true)
+        post :create
+        response.should redirect_to(new_subscription_reference_teacher_path(@subscription))
+      end
+
+      it "A criação de uma subscription sem os campos obrigatorios nao deve ter sucesso" do
+      pending
       end
 
      end
@@ -122,14 +148,12 @@ describe SubscriptionsController do
          get :edit
          response.should_not be_success
        end
-       
-       it "Deve ser redirecionado para pagina de login" do
-         get :edit
-         response.should redirect_to(root_url)
-       end
 
-
-     end
+      it "Deve ser redirecionado para pagina de login" do
+        get :edit
+        response.should redirect_to(root_url)
+      end
+    end
 
     context "POST create" do
       it "Deve ser redirecionado para pagina de login" do
@@ -138,10 +162,7 @@ describe SubscriptionsController do
       end
     end
 
-     end
-
-
-
+  end
 
   #Delete this example and add some real ones
   it "should use SubscriptionsController" do
