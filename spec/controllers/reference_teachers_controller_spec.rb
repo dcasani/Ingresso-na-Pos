@@ -156,7 +156,7 @@ describe ReferenceTeachersController do
 
  context "POST update" do
   before :each do
-    @subscription = mock_subscription
+     @subscription = mock_subscription
      Subscription.should_receive(:find).and_return(@subscription)
      @reference_teachers = mock_reference_teacher
      @subscription.should_receive(:reference_teachers).and_return(@reference_teachers)
