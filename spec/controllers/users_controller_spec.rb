@@ -119,6 +119,27 @@ describe UsersController do
    end
 
     #
+    # EDIT
+    #
+    context "POST edit" do
+      it "" do
+        post :edit
+        flash[:message].should == 'É preciso logar como administrador para verificar dados de usuários.'
+        response.should redirect_to(root_url)
+      end
+    end
+
+    #
+    # UPDATE
+    #
+    context "POST update" do
+      it "" do
+        post :update
+        response.should be_success
+      end
+    end
+
+    #
     # DESTROY
     #
     context "DELETE destroy" do
@@ -131,6 +152,7 @@ describe UsersController do
         response.should redirect_to(users_url)
       end
     end
+
 
     #
     # SHOW
@@ -150,8 +172,8 @@ describe UsersController do
 
     before :each do
        activate_authlogic
-       @user = User.find_by_id(1)
-       login_as_user :teste
+       @user = User.find_by_id(2)
+       login_as_user :claudia
     end
 
     #
@@ -210,8 +232,39 @@ describe UsersController do
        flash[:message].should == 'Apenas os administradores podem verificar a lista de usuários.'
        response.should redirect_to(user_path(@user))
       end
-
    end
+
+     #
+    # EDIT
+    #
+    context "POST edit" do
+      it "Usuário logado pode se editar" do
+        post :edit
+        response.should be_success
+      end
+    end
+
+    #
+    # UPDATE
+    #
+    context "POST update" do
+
+      it "Usuário logado pode atualizar seus dados validos" do
+        pending
+        @user = mock_user
+        tanana.should_receive(:current_user).and_return(@user)
+        @update_attributes = valid_update_attributes
+        @user.should_receive(:update_attributes).and_return(true)
+        post :update, @update_attributes
+#        flash[:notice].should == 'Usuário alterado com sucesso!'
+      end
+
+      it "Usuario logado não pode atualizar dados nao validos" do
+        post :update, :user => valid_user_attributes(:username => "")
+        response.should render_template(:edit)
+      end
+
+    end
 
     #
     # DESTROY
@@ -227,12 +280,12 @@ describe UsersController do
     #
     context "GET show" do
       it "should show user attributes given an id" do
-        get :show, :id => "1"
-        assigns[:user].should == users(:teste)
+        get :show, :id => "2"
+        assigns[:user].should == users(:claudia)
       end
 
       it "Um usuario nao deve poder verificar dados de outros usuarios" do
-        get :show, :id => "2"
+        get :show, :id => "1"
         flash[:message].should == 'Apenas o administrador pode verificar dados de outros usuários.'
         response.should redirect_to(user_path(@user))
       end

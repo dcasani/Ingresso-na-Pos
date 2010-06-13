@@ -72,9 +72,9 @@ end
     controller.stub!(:current_user).and_return nil
   end
 
-  def current_user(stubs = {})
-    @current_user ||= mock_model(User, stubs)
-  end
+#  def current_user(stubs = {})
+#    @current_user ||= mock_model(User, stubs)
+#  end
 
   def current_user_session(stubs = {}, user_stubs = {})
     @current_user_session ||= mock_model(UserSession, {:user => current_user(user_stubs)}.merge(stubs))

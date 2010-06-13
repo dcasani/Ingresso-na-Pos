@@ -99,18 +99,21 @@ class UsersController < ApplicationController
   # Atualização de dados: UPDATE
   #
   def update
-    @user = current_user
 
-    respond_to do |format|
-      #utiliza email como login
-      @user.username = @user.email
-      if @user.update_attributes(params[:user])
-        flash[:notice] = 'Usuário alterado com sucesso!'
-        format.html { redirect_to(user_subscriptions_url(current_user)) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+    if(current_user)
+
+      @user = current_user
+      respond_to do |format|
+        #utiliza email como login
+        @user.username = @user.email
+        if @user.update_attributes(params[:user])
+          flash[:notice] = 'Usuário alterado com sucesso!'
+          format.html { redirect_to(user_subscriptions_url(current_user)) }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end

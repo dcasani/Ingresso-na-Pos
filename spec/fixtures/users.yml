@@ -16,6 +16,8 @@ claudia:
   persistence_token: <%= Authlogic::Random.hex_token %>
   nome_completo: "Claudia Melo"
   identidade: 123456
+  data_de_nascimento: 26/10/89
+  email: claudia@ime.usp.br
   formacao_superior_graduacao: "Bacharelado em Ciência da Computação"
   created_at: 30/12/2009
   updated_at: 01/01/2010
