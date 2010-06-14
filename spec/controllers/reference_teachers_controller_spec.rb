@@ -122,43 +122,58 @@ describe ReferenceTeachersController do
    end
 
    it "A criação de um reference_teacher deve ter sucesso" do
-     pending
-     @subscription.should_receive(:find).and_return(true)
      @reference_teacher = valid_reference_teacher_attributes
      @reference_teachers.should_receive(:build).and_return(@reference_teacher)
-     @reference_teacher.should_receive(:save).and_return(true)
+     @reference_teacher.should_receive(:save).twice.and_return(true)
+     @rt = ReferenceTeacher.find_by_hashcode(Digest::MD5.hexdigest((:reference_teacher_id.to_int + rand(255)).to_s))
+     ReferenceTeacher.should_receive(:find_by_hashcode).and_return(@rt)
+     @reference_teacher.should_receive(:hashcode=)
+     post :create
+     response.should redirect_to(subscription_reference_teachers_url(@subscription))
+   end
 
-     @reference_teacher.should_receive(:save).and_return(true)
+   it "A criação de um reference_teacher deve ter sucesso" do
+     @reference_teacher = valid_reference_teacher_attributes
+     @reference_teachers.should_receive(:build).and_return(@reference_teacher)
+     @reference_teacher.should_receive(:save).twice.and_return(true)
+     @rteacher = mock_reference_teacher
+     ReferenceTeacher.should_receive(:find_by_hashcode).once.and_return(@rteacher)
+     ReferenceTeacher.should_receive(:find_by_hashcode).and_return(nil)
+     ReferenceTeacher.should_receive(:find_by_hashcode).once.and_return(@rteacher)
+     @reference_teacher.should_receive(:hashcode=)
      post :create
      response.should redirect_to(subscription_reference_teachers_url(@subscription))
    end
 
    it "A criação de um reference_teacher sem o campo nome não deve ter sucesso" do
-     pending
      @reference_teacher = invalid_reference_teacher_attributes
      @reference_teachers.should_receive(:build).and_return(@reference_teacher)
-     @reference_teachers.should_receive(:save).and_return(false)
+     @reference_teacher.should_receive(:save).and_return(false)
      post :create
      response.should render_template(:new)
    end
 
    it "should create a reference_teacher given valid attributes"do
-     pending
      @reference_teacher = valid_reference_teacher_attributes
      @reference_teachers.should_receive(:build).and_return(@reference_teacher)
-     @reference_teachers.should_receive(:save).and_return(true)
+    @reference_teacher.should_receive(:save).twice.and_return(true)
+     @rt = ReferenceTeacher.find_by_hashcode(Digest::MD5.hexdigest((:reference_teacher_id.to_int + rand(255)).to_s))
+     ReferenceTeacher.should_receive(:find_by_hashcode).and_return(@rt)
+     @reference_teacher.should_receive(:hashcode=)
      post :create
      assigns[:reference_teacher].should == @reference_teacher
    end
-
-   it "reference_teacher não deve ser nulo" do
-     pending
-     @reference_teacher = valid_reference_teacher_attributes
-     @reference_teachers.should_receive(:build).and_return(@reference_teacher)
-     @reference_teachers.should_receive(:save).and_return(true)
-     post :create
-     @reference_teacher.should_not be_nil
-   end
+   
+    it "reference_teacher não deve ser nulo" do
+      @reference_teacher = valid_reference_teacher_attributes
+      @reference_teachers.should_receive(:build).and_return(@reference_teacher)
+      @reference_teacher.should_receive(:save).twice.and_return(true)
+      @rt = ReferenceTeacher.find_by_hashcode(Digest::MD5.hexdigest((:reference_teacher_id.to_int + rand(255)).to_s))
+      ReferenceTeacher.should_receive(:find_by_hashcode).and_return(@rt)
+      @reference_teacher.should_receive(:hashcode=)
+      post :create
+      @reference_teacher.should_not be_nil
+    end
    
  end
 
@@ -208,6 +223,68 @@ describe ReferenceTeachersController do
      response.should redirect_to(subscription_reference_teachers_url(@subscription))
    end
  end
+
+ context "POST process_letter" do
+
+    it "" do
+      @teacher = mock_reference_teacher
+      @teacher = valid_reference_teacher_attributes
+      ReferenceTeacher.should_receive(:find_by_hashcode).and_return(@teacher)
+      @subscription = mock_subscription
+      @teacher.should_receive(:subscription_id).and_return(@subscription.id)
+      Subscription.should_receive(:find_by_id).and_return(@subscription)
+      @user = mock_user
+      @subscription.should_receive(:user_id).and_return(@user.id)
+      post :process_letter
+      response.should be_success
+    end
+
+    it "" do
+    post :process_letter
+    #response.should_receive(:render).with(:inline).and_return("Url não encontrada")
+    response.should be_success
+    end
+
+ end
+
+  context "send_mail" do
+
+    it "" do
+      post :send_mail
+      response.should be_success
+    end
+
+    it "" do
+      Notifier.should_receive(:deliver_notification).and_return(true)
+      post :send_mail, :language => "Português"
+      #@message.should == "Sucesso no envio! UUUUbaaaaaa!"
+      response.should be_success
+    end
+    
+    it "" do
+      Notifier.should_receive(:deliver_notification).and_return(false)
+      post :send_mail, :language => "Português"
+      #@message.should == "Sucesso no envio! UUUUbaaaaaa!"
+      response.should be_success
+    end
+
+    it "" do
+      Notifier.should_receive(:deliver_notificationenglish).and_return(true)
+      post :send_mail, :language => "Inglês"
+      #@message.should == "Sucesso no envio! UUUUbaaaaaa!"
+      response.should be_success
+    end
+
+     it "" do
+      Notifier.should_receive(:deliver_notificationenglish).and_return(false)
+      post :send_mail, :language => "Inglês"
+      #@message.should == "Sucesso no envio! UUUUbaaaaaa!"
+      response.should be_success
+    end
+
+  end
+
+
 
 
   it "Deve ser possivel criar um professor recomendante" do

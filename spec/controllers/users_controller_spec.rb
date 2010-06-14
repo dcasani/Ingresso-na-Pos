@@ -32,6 +32,18 @@ describe UsersController do
     }.merge attributes
   end
 
+  def valid_update_attributes(attributes={})
+    {
+        :username => "claudia@ime.usp.br",
+        :password => "abcdef",
+        :nome_completo => "Claudia Melo",
+        :identidade => "1234567",
+        :data_de_nascimento => "26/10/89",
+        :email => "claudia@ime.usp.br",
+        :formacao_superior_graduacao => "Bacharelado em Ciência da Computação"
+    }.merge attributes
+  end
+
   #
   # WITHOUT LOGGING
   #
@@ -251,12 +263,14 @@ describe UsersController do
 
       it "Usuário logado pode atualizar seus dados validos" do
         pending
-        @user = mock_user
-        tanana.should_receive(:current_user).and_return(@user)
-        @update_attributes = valid_update_attributes
-        @user.should_receive(:update_attributes).and_return(true)
-        post :update, @update_attributes
-#        flash[:notice].should == 'Usuário alterado com sucesso!'
+        #@user = mock_user
+        #@user.should_receive(:email).and_return("claudia@ime.usp.br")
+        #tanana.should_receive(:current_user).and_return(@user)
+        #@user = valid_update_attributes
+        #@user.should_receive(:update_attributes).and_return(true)
+        post :update#, :user => valid_update_attributes
+        #flash[:notice].should == 'Usuário alterado com sucesso!'
+        response.should redirect_to(user_subscriptions_url(@user))
       end
 
       it "Usuario logado não pode atualizar dados nao validos" do

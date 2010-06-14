@@ -36,10 +36,10 @@ class ReferenceTeachersController < ApplicationController
     #salva o professor que recomendará
     if @reference_teacher.save
       #usa o id do professor salvo para gerar o hash para proteção do link de submissão da carta
-      @hashcode = Digest::MD5.hexdigest((@reference_teacher.id + rand(255)).to_s)
+      @hashcode = Digest::MD5.hexdigest((:reference_teacher_id.to_int + rand(255)).to_s)
       @rt = ReferenceTeacher.find_by_hashcode(@hashcode)
-      while(@rt) #verifica se o hash não é existente já (ok, muito improvável...mas não queremos que o sistema quebre) para outro professor
-        @hashcode = Digest::MD5.hexdigest((@reference_teacher.id + rand(255)).to_s)
+      while(@rt != nil) #verifica se o hash não é existente já (ok, muito improvável...mas não queremos que o sistema quebre) para outro professor
+        @hashcode = Digest::MD5.hexdigest((:reference_teacher_id.to_int + rand(255)).to_s)
         @rt = ReferenceTeacher.find_by_hashcode(@hashcode)
         ReferenceTeacher.find_by_hashcode(@hash)
       end
