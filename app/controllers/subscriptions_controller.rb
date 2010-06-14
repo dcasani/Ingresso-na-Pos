@@ -128,14 +128,22 @@ class SubscriptionsController < ApplicationController
         # Salve a inscrição
         if @subscription.save
           @saved = true
-          redirect_to new_subscription_reference_teacher_path(@subscription)
+          if !params[:reference_teachers].nil?
+            redirect_to new_subscription_reference_teacher_url(@subscription)
+          else if !params[:create].nil?
+              redirect_to user_subscriptions_url(@user)
+            else if !params[:end].nil?
+                redirect_to user_subscriptions_url(@user)
+              end
+            end
+          end
         end
-      end
 
-      # Se a inscrição não foi salva, volte á tela de criação
-      if !@saved
-        flash[:notice] = "Ocorreu um erro ao tentar salvar sua inscrição. Por favor tente novamente."
-        redirect_to new_subscription_url
+        # Se a inscrição não foi salva, volte à tela de criação
+        if !@saved
+          flash[:notice] = "Ocorreu um erro ao tentar salvar sua inscrição. Por favor tente novamente."
+          redirect_to new_subscription_url
+        end
       end
     end
   end
@@ -174,8 +182,18 @@ class SubscriptionsController < ApplicationController
 
         # Atualize os dados da inscrição
         if @subscription.update_attributes(params[:subscription])
-          redirect_to user_subscriptions_url(current_user)
-          # Se a atulização não for bem sucedida, volte à tela de edição
+
+          if !params[:reference_teachers].nil?
+            redirect_to subscription_reference_teachers_url(@subscription)
+          else if !params[:update].nil?
+              redirect_to user_subscriptions_url(current_user)
+            else if !params[:end].nil?
+                redirect_to user_subscriptions_url(current_user)
+              end
+            end
+          end
+
+
         else
           @course_areas = Course.find(:all, :group => 'area')
           @course = Course.first;
