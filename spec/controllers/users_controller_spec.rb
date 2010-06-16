@@ -267,8 +267,8 @@ describe UsersController do
         #@user.should_receive(:email).and_return("claudia@ime.usp.br")
         #tanana.should_receive(:current_user).and_return(@user)
         #@user = valid_update_attributes
-        #@user.should_receive(:update_attributes).and_return(true)
-        post :update#, :user => valid_update_attributes
+        User.should_receive(:update_attributes).and_return(true)
+        post :update, :user => valid_update_attributes
         #flash[:notice].should == 'Usuário alterado com sucesso!'
         response.should redirect_to(user_subscriptions_url(@user))
       end

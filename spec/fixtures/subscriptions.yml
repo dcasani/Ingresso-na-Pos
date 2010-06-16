@@ -5,6 +5,11 @@
    propositos: Preciso fazer mestrado senão meu pai me mata
    inicio_pretendido: agosto
    curso_id: 1
-#
-# two:
-#   column: value
+   user_id: 1
+ two:
+   id: 2
+   propositos: Preciso fazer mestrado senão meu pai me mata
+   inicio_pretendido: agosto
+   curso_id: 8
+   user_id: 1
+
