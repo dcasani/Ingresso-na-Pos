@@ -148,6 +148,35 @@ describe SubscriptionsController do
     end
 
     #
+    # course_subareas
+    #
+    context "course_subareas" do
+
+      it "" do
+        @subscription = mock_subscription
+        post :course_subareas, :area => "Computação"
+        response.should be_success
+      end
+    end
+
+    #
+    #starting_months
+    #
+    context "starting_months" do
+
+      it "Deve aceitar o nivel mestrado" do
+        post :starting_months, :nivel => "Mestrado"
+        response.should be_success
+      end
+
+      it "Deve aceitar o nivel doutorado" do
+        post :starting_months, :nivel => "Doutorado"
+        response.should be_success
+      end
+    end
+
+
+    #
     # edit
     #
     context "GET edit" do
