@@ -155,7 +155,8 @@ aspirações futuras em termos do programa pretendido" %></td>
     </tr>
   </table>
   <br/>
-  <%= f.submit 'Continuar' %>
+  <%= f.submit 'Salvar', :id => "create", :name => "create" %>
 
 <% end %>
-
+<br/>
+<%= button_to "Cancelar", :back,  :confirm => "Esta certo que deseja cancelar seu cadastro?", :method => :get %>
