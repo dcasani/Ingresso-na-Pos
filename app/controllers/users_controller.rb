@@ -4,7 +4,17 @@ class UsersController < ApplicationController
   # Novo usuário: NEW
   #
   def new
-    @user = User.new
+    # Verifica se não há um usuário logado ou se este é o Administrador
+    if(!current_user || current_user.nome_completo == "Admin")
+      # Novo usu'ario
+      @user = User.new
+      # Necessário deslogar
+    else
+      # Mensagem de erro
+      flash[:error] = 'É necessário deslogar para criar um novo usuário.'
+      # redireciona para a p'agina inicial
+      redirect_to root_url
+    end
   end
 
   #
@@ -87,7 +97,7 @@ class UsersController < ApplicationController
 
     # Verifica se há um usuário logado
     if(!current_user)
-      flash[:message] = 'É preciso logar como administrador para verificar dados de usuários.'
+      flash[:message] = 'É preciso logar como administrador para editar dados de outros usuários.'
       redirect_to root_url
     else
       # Usuário logado
@@ -100,8 +110,10 @@ class UsersController < ApplicationController
   #
   def update
 
-    if(current_user)
-
+    if(!current_user)
+      flash[:message] = 'É preciso logar como administrador para editar dados de outros usuários.'
+      redirect_to root_url
+    else
       @user = current_user
       respond_to do |format|
         #utiliza email como login
@@ -122,12 +134,18 @@ class UsersController < ApplicationController
   # Remoção: DESTROY
   #
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+    # Verifica se o usuario logado é o Administrador
+    if(current_user && current_user.nome_completo == "Admin")
+      @user = User.find(params[:id])
+      @user.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
+      respond_to do |format|
+        format.html { redirect_to(users_url) }
+        format.xml  { head :ok }
+      end
+    else
+      flash[:message] = 'É preciso logar como administrador para remover um usario.'
+      redirect_to root_url
     end
   end
 end
