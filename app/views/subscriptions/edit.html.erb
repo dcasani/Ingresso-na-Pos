@@ -185,9 +185,13 @@ Campos obrigatórios estão demarcados por <span style="color:red">*</span>
   </table>
   <br/>
   <%= f.submit 'Adicionar/Editar Recomendações', :id => "reference_teachers", :name => "reference_teachers" %> <%= f.submit 'Salvar', :id => "update", :name => "update" %> <%= f.submit 'Finalizar*', :id => "end", :name => "end" %>
-  <br/><br/>
-  <hr/>
-  <p>* <b>Importante:</b> Após finalizar sua inscrição você não poderá mais editá-la e ela será submetida à análise da Comissão de Admissão. Se você preferir, pode finalizar a inscrição em momento posterior.</p>
-  <hr/>
 <% end %>
+<br/>
+<%= button_to "Cancelar", :subscriptions,  :confirm => "Esta certo que deseja cancelar esta inscrição?", :method => :get %>
+<br/>
+<hr/>
+<p>* <b>Importante:</b> Após finalizar sua inscrição você não poderá mais editá-la e ela será submetida à análise da Comissão de Admissão. Se você preferir, pode finalizar a inscrição em momento posterior.</p>
+<hr/>
+
+
 
