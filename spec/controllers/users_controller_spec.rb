@@ -35,13 +35,13 @@ describe UsersController do
 
   def valid_update_attributes(attributes={})
     {
-        :username => "claudia@ime.usp.br",
-        :password => "abcdef",
-        :nome_completo => "Claudia Melo",
-        :identidade => "1234567",
-        :data_de_nascimento => "26/10/89",
-        :email => "claudia@ime.usp.br",
-        :formacao_superior_graduacao => "Bacharelado em Ciência da Computação"
+      :username => "claudia@ime.usp.br",
+      :password => "abcdef",
+      :nome_completo => "Claudia Melo",
+      :identidade => "1234567",
+      :data_de_nascimento => "26/10/89",
+      :email => "claudia@ime.usp.br",
+      :formacao_superior_graduacao => "Bacharelado em Ciência da Computação"
     }.merge attributes
   end
 
@@ -119,25 +119,35 @@ describe UsersController do
       end
     end
 
-   #
-   # INDEX
-   #
-   context "GET index" do
+    #
+    # INDEX
+    #
+    context "GET index" do
       it "Deve logar como administrador para listar os usuarios" do
-       get :index
-       flash[:message].should == 'É preciso logar como administrador para verificar a lista de usuários.'
-       response.should redirect_to(root_url)
+        get :index
+        flash[:message].should == 'É preciso logar como administrador para verificar a lista de usuários.'
+        response.should redirect_to(root_url)
       end
 
-   end
+    end
+
+    #
+    # SHOW
+    #
+    context "GET show" do
+      it "Deve redirecionar para a pagina inicial" do
+        get :show, :id => "1"
+        response.should redirect_to(root_url)
+      end
+    end
 
     #
     # EDIT
     #
     context "POST edit" do
-      it "" do
+      it "Nao deve permitir a edicao de usuarios" do
         post :edit
-        flash[:message].should == 'É preciso logar como administrador para verificar dados de usuários.'
+        flash[:message].should == 'É preciso logar como administrador para editar dados de outros usuários.'
         response.should redirect_to(root_url)
       end
     end
@@ -146,131 +156,46 @@ describe UsersController do
     # UPDATE
     #
     context "POST update" do
-      it "" do
+      it "Nao deve atualizar os dados do usuario" do
         post :update
-        response.should be_success
-      end
-    end
-   end
-
-    #
-    # CREATE
-    #
-    context "POST create" do
-
-      after(:each) do
-        @user = User.find_by_username("novo@teste.com.br")
-        if(@user)
-          @user.destroy
-        end
-      end
-      
-
-      it "Deve criar um usuário se não há nenhum logado." do
-        @user = mock_user()
-        @user = valid_new_user_attributes
-        User.should_receive(:new).and_return(@user)
-        @user.should_receive(:save).and_return(true)
-        @user.should_receive(:email).and_return("novo@teste.com.br")
-        @user.should_receive(:username=)
-        post :create
-        @user.should_not be_nil
-      end
-
-      it "Deve redirecionar para uma nova inscrição após a criação do usuário." do
-        @user = mock_user()
-        @user = valid_new_user_attributes
-        User.should_receive(:new).and_return(@user)
-        @user.should_receive(:save).and_return(true)
-        @user.should_receive(:email).and_return("novo@teste.com.br")
-        @user.should_receive(:username=)
-        post :create
-        response.should redirect_to(new_subscription_url)
-      end
-
-      it "Não deve criar um usuário com parâmetros inválidos" do
-        post :create, :user => valid_user_attributes(:username => nil)
-        User.find_by_email('teste@teste.com').should be_nil
-        flash[:error].should == "Usuário não criado."
-        response.should render_template(:new)
-      end
-
-      it "Não deve criar um usuário sem login" do
-        post :create, :user => valid_user_attributes(:username => "")
-        User.find_by_email('teste@teste.com').should be_nil
-        flash[:error].should == "Usuário não criado."
-        response.should render_template(:new)
-      end
-    end
-
-   #
-   # INDEX
-   #
-   context "GET index" do
-      it "Deve logar como administrador para listar os usuarios" do
-       get :index
-       flash[:message].should == 'É preciso logar como administrador para verificar a lista de usuários.'
-       response.should redirect_to(root_url)
-      end
-
-   end
-
-    #
-    # EDIT
-    #
-    context "POST edit" do
-      it "" do
-        post :edit
-        flash[:message].should == 'É preciso logar como administrador para verificar dados de usuários.'
-        response.should redirect_to(root_url)
-      end
-    end
-
-    #
-    # UPDATE
-    #
-    context "POST update" do
-      it "" do
-        post :update
-        response.should be_success
+        response.should_not be_success
       end
     end
 
     #
     # DESTROY
     #
-    context "DELETE destroy" do
-      it "should remove user (should change for final version)" do
-        @user = User.find_by_username("claudia@ime.usp.br")
-        delete :destroy, :id => @user.id
-
-        # Check wheter the user was successfuly destroyed
-        User.find_by_username("claudia@ime.usp.br").should be_nil
-        response.should redirect_to(users_url)
+    context "POST destroy" do
+      it "Nao deve remover o usuario" do
+        post :destroy, id => "2"
+        @user = User.find_by_id("2")
+        @user.should_not be_nil
       end
-    end
 
+      it "Nao deve ter sucesso" do
+        post :destroy, id => "2"
+        response.should_not be_success
+      end
 
-    #
-    # SHOW
-    #
-    context "GET show" do
-      it "should not show user info" do
-        get :show, :id => "1"
+      it "Deve redirecionar para a pagina inicial" do
+        post :destroy, id => "2"
+        flash[:message].should == 'É preciso logar como administrador para remover um usario.'
         response.should redirect_to(root_url)
       end
     end
+
   end
 
+  
   #
   # WITH LOGGING
   #
   context "When user LOGGED IN: " do
 
     before :each do
-       activate_authlogic
-       @user = User.find_by_id(2)
-       login_as_user :claudia
+      activate_authlogic
+      @user = User.find_by_id(2)
+      login_as_user :claudia
     end
 
     #
@@ -287,18 +212,11 @@ describe UsersController do
       it "Não deve criar um usuário se há algum logado e não é o administrador" do
         post :create, valid_new_user_attributes
         @new_user = User.find_by_username("teste2@teste.com.br")
-
-      
-
-      it "Não deve criar um usuário se há algum logado e não é o administrador" do
-        post :create, valid_new_user_attributes
-        @new_user = User.find_by_username("teste2@teste.com.br")       
         @new_user.should be_nil
       end
 
       it "Deve redirecionar para a página principal"do
         post :create, valid_new_user_attributes
-        @new_user = User.find_by_username("teste2@teste.com.br")
         flash[:error].should == 'É necessário deslogar para criar um novo usuário.'
         response.should redirect_to root_url
       end
@@ -309,72 +227,33 @@ describe UsersController do
     # NEW
     #
     context "GET new" do
-      it "should not be sucessful" do
-        pending
+      it "Nao deve criar um novo usuario" do
         get :new
         response.should_not be_success
       end
+
+      it "Deve redirecionar para a pagina inicial" do
+        get :new
+        response.should redirect_to root_url
+      end
     end
 
 
-   #
-   # INDEX
-   #
-   context "GET index" do
-      it "O admin deve listar os usuarios" do
-       @user = User.find_by_username("admin@ime.com.br")
-       login_as_user :admin
-       get :index
-       response.should be_success
-      end
-
-      it "Usuarios que não sejam o admin nao podem listas os demais" do
-       get :index
-       flash[:message].should == 'Apenas os administradores podem verificar a lista de usuários.'
-       response.should redirect_to(user_path(@user))
-      end
-   end
-
-     #
-    # EDIT
     #
-    context "POST edit" do
-      it "Usuário logado pode se editar" do
-        post :edit
+    # INDEX
+    #
+    context "GET index" do
+      it "O admin deve listar os usuarios" do
+        @user = User.find_by_username("admin@ime.com.br")
+        login_as_user :admin
+        get :index
         response.should be_success
       end
-    end
 
-    #
-    # UPDATE
-    #
-    context "POST update" do
-
-      it "Usuário logado pode atualizar seus dados validos" do
-        pending
-        #@user = mock_user
-        #@user.should_receive(:email).and_return("claudia@ime.usp.br")
-        #tanana.should_receive(:current_user).and_return(@user)
-        #@user = valid_update_attributes
-        User.should_receive(:update_attributes).and_return(true)
-        post :update#, :user => valid_update_attributes
-        flash[:message].should == 'Usuário alterado com sucesso!'
-        #response.should redirect_to(user_subscriptions_url(@user))
-      end
-
-      it "Usuario logado não pode atualizar dados nao validos" do
-        post :update, :user => valid_user_attributes(:username => "")
-        response.should render_template(:edit)
-      end
-
-    end
-
-    #
-    # DESTROY
-    #
-    context "DELETE destroy" do
-      it "should not remove user" do
-        pending
+      it "Usuarios que não sejam o admin nao podem listar os demais" do
+        get :index
+        flash[:message].should == 'Apenas os administradores podem verificar a lista de usuários.'
+        response.should redirect_to(user_path(@user))
       end
     end
 
@@ -394,6 +273,62 @@ describe UsersController do
       end
 
     end
+
+
+    #
+    # EDIT
+    #
+    context "POST edit" do
+      it "Usuário logado pode se editar" do
+        post :edit
+        response.should be_success
+      end
+    end
+
+    #
+    # UPDATE
+    #
+    context "POST update" do
+
+      it "Usuário logado pode atualizar seus dados validos" do
+        post :update, :user => valid_update_attributes(:nome_completo => "Claudia de Macieiras Melo")
+        response.should be_success
+      end
+
+      it "Apos atualizacao com sucesso, deve redirecionar para as inscricoes" do
+        pending
+        User.should_receive(:update_attributes).and_return(true)
+        post :update, :user => valid_update_attributes(:nome_completo => "Claudia de Bananeiras Melo")
+        #flash[:message].should == 'Usuário alterado com sucesso!'
+        response.should redirect_to(user_subscriptions_url(@user))
+      end
+
+      it "Usuario logado não pode atualizar dados nao validos" do
+        post :update, :user => valid_user_attributes(:username => "")
+        response.should render_template(:edit)
+      end
+
+    end
+
+    #
+    # DESTROY
+    #
+    context "DELETE destroy" do
+      it "Nao deve remover o usuario" do
+        post :destroy, :id => "2"
+        @user = User.find_by_id("2")
+        @user.should_not be_nil
+      end
+
+      it "Deve redirecionar para a pagina inicial" do
+        post :destroy, :id => "2"
+        flash[:message] = 'É preciso logar como administrador para remover um usario.'
+        response.should redirect_to root_url
+      end
+
+    end
+
+
   end
  
   #
@@ -401,12 +336,32 @@ describe UsersController do
   #
   context "When ADMIN IS LOGGED IN: " do
 
-    before :all do
-      @user = User.find_by_id(3)
+    before :each do
+      activate_authlogic
+      @user_admin = User.find_by_id(3)
       login_as_user :admin
     end
 
+    #
+    # DESTROY
+    #
+    context "DELETE destroy" do
+      it "Deve remover o usuario" do
+        post :destroy, :id => "2"
+        @user = User.find_by_id("2")
+        @user.should be_nil
+      end
+
+      it "Deve redirecionar para a lista de usuarios" do
+        post :destroy, :id => "2"
+        response.should redirect_to(users_url)
+      end
+
+    end
 
   end
 
+
+
 end
+
