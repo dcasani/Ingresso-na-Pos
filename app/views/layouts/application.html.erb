@@ -39,7 +39,7 @@
 
   <div id="login">
     <% if current_user %>
-      <span>Bem-vindo <strong><%= current_user.nome_completo%></strong>!</span> |
+      <span>Bem-vindo(a) <strong><%= current_user.nome_completo%></strong>!</span> |
       <%= link_to "Alterar dados pessoais", edit_user_path(:current) %> |
       <%= link_to "Sair", logout_path %>
     <% else %>
