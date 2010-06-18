@@ -105,7 +105,7 @@ class UsersController < ApplicationController
       @user = current_user
       respond_to do |format|
         #utiliza email como login
-        @user.username = @user.email
+        #@user.username = @user.email
         if @user.update_attributes(params[:user])
           flash[:message] = 'Usuário alterado com sucesso!'
           format.html { redirect_to(user_subscriptions_url(current_user)) }

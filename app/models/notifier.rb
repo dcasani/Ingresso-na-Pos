@@ -1,4 +1,5 @@
 class Notifier < ActionMailer::Base
+  
   def notification(destination,teacher,student,hashcode)
     recipients destination
     from  "Pós Graduação - IME-USP <ingressonapos@gmail.com>"

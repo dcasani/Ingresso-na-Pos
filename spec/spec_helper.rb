@@ -5,11 +5,13 @@ require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environ
 require 'spec/autorun'
 require 'spec/rails'
 require 'authlogic/test_case'
+
 include Authlogic::TestCase
 
 activate_authlogic
 
 ApplicationController.send(:public, :current_user, :current_user_session)
+ActionMailer::Base.delivery_method = :test
 
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'

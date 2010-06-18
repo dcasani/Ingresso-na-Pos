@@ -9,8 +9,9 @@ describe UsersController do
 
   def valid_user_attributes(attributes={})
     {
+      :nome_completo => "Testando o teste",
       :username => "teste@teste.com.br",
-      :password => "teste",
+      :password => "testando",
       :formacao_superior_graduacao => "Bacharelado em Ciência da Computação",
     }.merge attributes
   end
@@ -268,9 +269,9 @@ describe UsersController do
         #tanana.should_receive(:current_user).and_return(@user)
         #@user = valid_update_attributes
         User.should_receive(:update_attributes).and_return(true)
-        post :update, :user => valid_update_attributes
-        #flash[:notice].should == 'Usuário alterado com sucesso!'
-        response.should redirect_to(user_subscriptions_url(@user))
+        post :update#, :user => valid_update_attributes
+        flash[:message].should == 'Usuário alterado com sucesso!'
+        #response.should redirect_to(user_subscriptions_url(@user))
       end
 
       it "Usuario logado não pode atualizar dados nao validos" do
