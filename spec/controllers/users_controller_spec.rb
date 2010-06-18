@@ -151,90 +151,6 @@ describe UsersController do
         response.should be_success
       end
     end
-   end
-
-    #
-    # CREATE
-    #
-    context "POST create" do
-
-      after(:each) do
-        @user = User.find_by_username("novo@teste.com.br")
-        if(@user)
-          @user.destroy
-        end
-      end
-      
-
-      it "Deve criar um usuário se não há nenhum logado." do
-        @user = mock_user()
-        @user = valid_new_user_attributes
-        User.should_receive(:new).and_return(@user)
-        @user.should_receive(:save).and_return(true)
-        @user.should_receive(:email).and_return("novo@teste.com.br")
-        @user.should_receive(:username=)
-        post :create
-        @user.should_not be_nil
-      end
-
-      it "Deve redirecionar para uma nova inscrição após a criação do usuário." do
-        @user = mock_user()
-        @user = valid_new_user_attributes
-        User.should_receive(:new).and_return(@user)
-        @user.should_receive(:save).and_return(true)
-        @user.should_receive(:email).and_return("novo@teste.com.br")
-        @user.should_receive(:username=)
-        post :create
-        response.should redirect_to(new_subscription_url)
-      end
-
-      it "Não deve criar um usuário com parâmetros inválidos" do
-        post :create, :user => valid_user_attributes(:username => nil)
-        User.find_by_email('teste@teste.com').should be_nil
-        flash[:error].should == "Usuário não criado."
-        response.should render_template(:new)
-      end
-
-      it "Não deve criar um usuário sem login" do
-        post :create, :user => valid_user_attributes(:username => "")
-        User.find_by_email('teste@teste.com').should be_nil
-        flash[:error].should == "Usuário não criado."
-        response.should render_template(:new)
-      end
-    end
-
-   #
-   # INDEX
-   #
-   context "GET index" do
-      it "Deve logar como administrador para listar os usuarios" do
-       get :index
-       flash[:message].should == 'É preciso logar como administrador para verificar a lista de usuários.'
-       response.should redirect_to(root_url)
-      end
-
-   end
-
-    #
-    # EDIT
-    #
-    context "POST edit" do
-      it "" do
-        post :edit
-        flash[:message].should == 'É preciso logar como administrador para verificar dados de usuários.'
-        response.should redirect_to(root_url)
-      end
-    end
-
-    #
-    # UPDATE
-    #
-    context "POST update" do
-      it "" do
-        post :update
-        response.should be_success
-      end
-    end
 
     #
     # DESTROY
@@ -284,15 +200,11 @@ describe UsersController do
         end
       end
 
+
+
       it "Não deve criar um usuário se há algum logado e não é o administrador" do
         post :create, valid_new_user_attributes
         @new_user = User.find_by_username("teste2@teste.com.br")
-
-      
-
-      it "Não deve criar um usuário se há algum logado e não é o administrador" do
-        post :create, valid_new_user_attributes
-        @new_user = User.find_by_username("teste2@teste.com.br")       
         @new_user.should be_nil
       end
 
@@ -395,7 +307,12 @@ describe UsersController do
 
     end
   end
- 
+
+
+
+
+
+
   #
   # WITH ADMIN LOGGING
   #
@@ -408,5 +325,6 @@ describe UsersController do
 
 
   end
+
 
 end
