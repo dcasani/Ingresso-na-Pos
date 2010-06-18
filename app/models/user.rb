@@ -67,11 +67,11 @@ class User < ActiveRecord::Base
           controle << fator.to_s
         end
       elsif cpf_string.size > 0
-        errors.add(:cpf, "CPF inválido: dígitos faltando.")
+        errors.add(:cpf, "inválido: dígitos faltando.")
       end
 
       if (controle != digito)
-        errors.add(:cpf, "CPF inválido: dígito verificador não confere.")
+        errors.add(:cpf, "inválido: dígito verificador não confere.")
       end
     end
   end

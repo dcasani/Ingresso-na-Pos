@@ -44,3 +44,5 @@ h1 {
 #login, #login a{
     font-family: geneva, arial;
 }
+
+.errorExplanation { color: red }

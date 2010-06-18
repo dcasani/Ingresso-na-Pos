@@ -7,7 +7,11 @@ Campos obrigatórios estão demarcados por <span style="color:red">*</span>
 </p>
 
 <% form_for [@user,@subscription], :html => {:multipart => true} do |f| %>
+<p class="erro">
+    Em vermelho
   <%= error_messages_for :subscription, :header_message => "Erros de preenchimento encontrados", :message => "Por favor, corrija os seguintes erros para continuar:" %>
+</p>
+
 <h2>Área Pretendida</h2>
   <table>
     <tr>

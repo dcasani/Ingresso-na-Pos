@@ -130,7 +130,6 @@ describe UsersController do
       end
 
     end
-
     #
     # SHOW
     #
@@ -186,7 +185,6 @@ describe UsersController do
 
   end
 
-  
   #
   # WITH LOGGING
   #
@@ -237,7 +235,6 @@ describe UsersController do
         response.should redirect_to root_url
       end
     end
-
 
     #
     # INDEX
@@ -325,13 +322,10 @@ describe UsersController do
         flash[:message] = 'É preciso logar como administrador para remover um usario.'
         response.should redirect_to root_url
       end
-
     end
-
-
   end
- 
-  #
+
+   #
   # WITH ADMIN LOGGING
   #
   context "When ADMIN IS LOGGED IN: " do
@@ -361,7 +355,9 @@ describe UsersController do
 
   end
 
-
-
 end
+
+
+
+
 

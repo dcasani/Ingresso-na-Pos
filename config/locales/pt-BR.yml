@@ -21,10 +21,10 @@ pt-BR:
               too_short: "está em branco ou tem menos caracteres que o mínimo"
             email:
                 taken: "Já existe um usuário cadastrado com esse e-mail, por favor, escolha outro."
-                too_short: "Está em branco ou é muito curto"
+                too_short: "está em branco ou é muito curto"
             username:
-                taken: "Será seu e-mail, por isso o e-mail deve ser único."
-                too_short: "Está em branco ou contém menos caracteres que o mínimo"
+                taken: "será seu e-mail, por isso o e-mail deve ser único."
+                too_short: "está em branco ou contém menos caracteres que o mínimo"
 
   # Authlogic
   authlogic:

@@ -2,12 +2,14 @@
 
 <%= flash_helper %>
 
-<br/>
+<p>
 Campos obrigatórios estão demarcados por <span style="color:red">*</span>
-<br/>
+</p>
 
 <% form_for [@user,@subscription], :html => {:multipart => true} do |f| %>
-  <td><%= error_messages_for :subscription, :header_message => "Erros de preenchimento encontrados", :message => "Por favor, corrija os seguintes erros para continuar:" %></td>
+  <td>
+    <%= error_messages_for :subscription, :header_message => "Erros de preenchimento encontrados", :message => "Por favor, corrija os seguintes erros para continuar:" %>
+  </td> 
   <table>
     <tr>
       <td><span style="color:red">*</span><label for="nivel_select">Curso</label></td>

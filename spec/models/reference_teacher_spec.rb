@@ -72,6 +72,9 @@ describe ReferenceTeacher do
       @reference_teacher = ReferenceTeacher.new(:email => 'abc@abc.com')
       @reference_teacher.should have(:no).errors_on(:email)
 
+      @reference_teacher = ReferenceTeacher.new(:email => 'claudia.hotpop@gmail.com')
+      @reference_teacher.should have(:no).errors_on(:email)
+
     end
   end
 
