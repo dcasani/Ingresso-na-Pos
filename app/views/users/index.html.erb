@@ -1,75 +1,22 @@
-<h1>Listing users</h1>
+<h3>Lista de usuários</h3>
 
-<table>
+<table border="0">
   <tr>
-    <th>Nome completo</th>
-    <th>Data de nascimento</th>
-    <th>Estado civil</th>
-    <th>Identidade</th>
-    <th>Tipo</th>
-    <th>Cpf</th>
-    <th>Nacionalidade</th>
-    <th>Logradouro permanente</th>
-    <th>Numero permanente</th>
-    <th>Cidade permanente</th>
-    <th>Estado permanente</th>
-    <th>Pais permanente</th>
-    <th>Cep permanente</th>
-    <th>Telefone permanente</th>
-    <th>Logradouro correspondencia</th>
-    <th>Numero correspondencia</th>
-    <th>Cidade correspondencia</th>
-    <th>Estado correspondencia</th>
-    <th>Pais correspondencia</th>
-    <th>Cep correspondencia</th>
-    <th>Telefone correspondencia</th>
-    <th>Celular correspondencia</th>
+    <th>Nome completo </th>
     <th>Email</th>
-    <th>Formacao superior graduacao</th>
-    <th>Formacao superior pos</th>
-    <th>Outras academicas</th>
-    <th>Empregos passados</th>
-    <th>Empregos atuais</th>
   </tr>
-
 <% @users.each do |user| %>
   <tr>
-    <td><%=h user.nome_completo %></td>
-    <td><%=h user.data_de_nascimento %></td>
-    <td><%=h user.estado_civil %></td>
-    <td><%=h user.identidade %></td>
-    <td><%=h user.tipo %></td>
-    <td><%=h user.cpf %></td>
-    <td><%=h user.nacionalidade %></td>
-    <td><%=h user.logradouro_permanente %></td>
-    <td><%=h user.numero_permanente %></td>
-    <td><%=h user.cidade_permanente %></td>
-    <td><%=h user.estado_permanente %></td>
-    <td><%=h user.pais_permanente %></td>
-    <td><%=h user.cep_permanente %></td>
-    <td><%=h user.telefone_permanente %></td>
-    <td><%=h user.logradouro_correspondencia %></td>
-    <td><%=h user.numero_correspondencia %></td>
-    <td><%=h user.cidade_correspondencia %></td>
-    <td><%=h user.estado_correspondencia %></td>
-    <td><%=h user.pais_correspondencia %></td>
-    <td><%=h user.cep_correspondencia %></td>
-    <td><%=h user.telefone_correspondencia %></td>
-    <td><%=h user.celular_correspondencia %></td>
-    <td><%=h user.email %></td>
-    <td><%=h user.formacao_superior_graduacao %></td>
-    <td><%=h user.formacao_superior_pos %></td>
-    <td><%=h user.outras_academicas %></td>
-    <td><%=h user.empregos_passados %></td>
-    <td><%=h user.empregos_atuais %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h user.nome_completo %> </td>
+    <td>| <%=h user.email %></td>
+    <td>| <%= link_to 'Ver', user %></td>
+    <td><%= link_to 'Editar', edit_user_path(user) %></td>
+    <td><%= link_to 'Remover', user, :confirm => 'Tem certeza que deseja remover o usuário '+user.nome_completo+'?' , :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New user', new_user_path %>
+<%= link_to 'Cadastrar novo usuário', new_user_path %>
 

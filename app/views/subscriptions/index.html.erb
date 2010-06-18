@@ -7,25 +7,19 @@
     <th>Curso</th>
     <th colspan="4">Opções</th>
   </tr>
-  <%
-  @i = 0
-  @subscriptions.each do |subscription| 
-  @course = Course.find_by_id(subscription.curso_id)%>
+  <%  @i = 0
+      @subscriptions.each do |subscription|
+      @course = Course.find_by_id(subscription.curso_id) %>
     <tr>
       <td><%=h subscription.updated_at.strftime("%d/%m/%Y") %></td>
-      <td><%=h @courses[@i].nivel %></td>
-      <td><%=h @courses[@i].area %></td>
       <td><%=h @course.nivel %></td>
       <td><%=h @course.area %></td>
       <td><%= link_to 'Mostrar', user_subscription_path(@user,subscription) %></td>
       <td><%= link_to 'Editar', edit_user_subscription_path(@user,subscription) %></td>
-      <td><%= link_to 'Editar professores', subscription_reference_teachers_path(subscription) %></td>
-      <td><%= link_to 'Deletar', user_subscription_path(@user,subscription), :confirm => 'Tem certeza?', :method => :delete %></td>
+      <td><%= link_to 'Recomendações', subscription_reference_teachers_path(subscription) %></td>
+      <td><%= link_to 'Remover', user_subscription_path(@user,subscription), :confirm => 'Tem certeza?', :method => :delete %></td>
     </tr>
-    <%   @i+=1
-
-  end
-%>
+    <% @i+=1 end %>
 
 </table>
 

@@ -1,209 +1,59 @@
-<h1>Parabéns! Você concluiu o seu processo de inscrição com sucesso!</h1>
-<h2>Seus detalhes podem ser visualizados abaixo.</h2>
-<h4>Caso precise alterá-los em algum momento, basta logar-se novamente e fazer as modificações necessárias.</h4>
-
-
-<p>
-  <b>Nome completo:</b>
-  <%=h @user.nome_completo %>
-</p>
-
-<p>
-  <b>Data de nascimento:</b>
-  <%=h @user.data_de_nascimento %>
-</p>
-
-<p>
-  <b>Estado civil:</b>
-  <%=h @user.estado_civil %>
-</p>
-
-<p>
-  <b>Identidade:</b>
-  <%=h @user.identidade %>
-</p>
-
-<p>
-  <b>Tipo:</b>
-  <%=h @user.tipo %>
-</p>
-
-<p>
-  <b>Cpf:</b>
-  <%=h @user.cpf %>
-</p>
-
-<p>
-  <b>Nacionalidade:</b>
-  <%=h @user.nacionalidade %>
-</p>
-
-<p>
-  <b>Logradouro permanente:</b>
-  <%=h @user.logradouro_permanente %>
-</p>
-
-<p>
-  <b>Numero permanente:</b>
-  <%=h @user.numero_permanente %>
-</p>
-
-<p>
-  <b>Cidade permanente:</b>
-  <%=h @user.cidade_permanente %>
-</p>
-
-<p>
-  <b>Estado permanente:</b>
-  <%=h @user.estado_permanente %>
-</p>
-
-<p>
-  <b>Pais permanente:</b>
-  <%=h @user.pais_permanente %>
-</p>
-
-<p>
-  <b>Cep permanente:</b>
-  <%=h @user.cep_permanente %>
-</p>
-
-<p>
-  <b>Telefone permanente:</b>
-  <%=h @user.telefone_permanente %>
-</p>
-
-<p>
-  <b>Logradouro correspondencia:</b>
-  <%=h @user.logradouro_correspondencia %>
-</p>
-
-<p>
-  <b>Numero correspondencia:</b>
-  <%=h @user.numero_correspondencia %>
-</p>
-
-<p>
-  <b>Cidade correspondencia:</b>
-  <%=h @user.cidade_correspondencia %>
-</p>
-
-<p>
-  <b>Estado correspondencia:</b>
-  <%=h @user.estado_correspondencia %>
-</p>
-
-<p>
-  <b>Pais correspondencia:</b>
-  <%=h @user.pais_correspondencia %>
-</p>
-
-<p>
-  <b>Cep correspondencia:</b>
-  <%=h @user.cep_correspondencia %>
-</p>
-
-<p>
-  <b>Telefone correspondencia:</b>
-  <%=h @user.telefone_correspondencia %>
-</p>
-
-<p>
-  <b>Celular correspondencia:</b>
-  <%=h @user.celular_correspondencia %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%=h @user.email %>
-</p>
-
-<p>
-  <b>Formacao superior graduacao:</b>
-  <%=h @user.formacao_superior_graduacao %>
-</p>
-
-<p>
-  <b>Formacao superior pos:</b>
-  <%=h @user.formacao_superior_pos %>
-</p>
-
-<p>
-  <b>Outras academicas:</b>
-  <%=h @user.outras_academicas %>
-</p>
-
-<p>
-  <b>Empregos passados:</b>
-  <%=h @user.empregos_passados %>
-</p>
-
-<p>
-  <b>Empregos atuais:</b>
-  <%=h @user.empregos_atuais %>
-</p>
-
-<p>
-  <b>Inicio pretendido:</b>
-  <%=h @subscription.inicio_pretendido %>
-</p>
-
-<p>
-  <b>Outros programas:</b>
-  <%=h @subscription.outros_programas %>
-</p>
-
-<p>
-  <b>Orientador:</b>
-  <%=h @subscription.orientador %>
-</p>
-
-<p>
-  <b>Bolsa fomento:</b>
-  <%=h @subscription.bolsa_fomento %>
-</p>
-
-<p>
-  <b>Bolsa ime:</b>
-  <%=h @subscription.bolsa_ime %>
-</p>
-
-<p>
-  <b>Bolsas anteriores:</b>
-  <%=h @subscription.bolsas_anteriores %>
-</p>
-
-<p>
-  <b>Dados professores recomendantes:</b> <ul>
+<h3>Curso de <%=h @course.nivel %> em <%=h @course.area %></h3>
+<br/>
+<table>
+  <tr>
+    <td><b>Área:</b></td>
+    <td><%=h @course.subarea %></td>
+  </tr>
+    <tr>
+    <td><b>Inicio pretendido:</b></td>
+    <td><%=h @subscription.inicio_pretendido %></td>
+  </tr>
+    <tr>
+    <td><b>Outros programas:</b></td>
+    <td><%=h @subscription.outros_programas %></td>
+  </tr>
+    <tr>
+    <td><b>Orientador:</b></td>
+    <td><%=h @subscription.orientador %></td>
+  </tr>
+</table>
+<br/>
+<h3>Bolsa</h3>
+<table>
+  <tr>
+    <td><b>Fomento:</b></td>
+    <td><%=h @subscription.bolsa_fomento %></td>
+  </tr>
+    <tr>
+    <td><b>IME:</b></td>
+    <td><%=h @subscription.bolsa_ime %></td>
+  </tr>
+    <tr>
+    <td><b>Anteriores:</b></td>
+    <td><%=h @subscription.bolsas_anteriores %></td>
+  </tr>
+</table>
+<br/>
+<h3>Recomendações</h3>
+<ul>
   <%  @teachers.each do |teacher| %>
     <li><%= teacher.nome + ", " + teacher.instituicao + ", " + teacher.email %></li>
   <% end %>
 </ul>
-</p>
-
-<p>
-  <b>Trabalhar se aceito:</b>
+<br/>
+<h3>Trabalhar se aceito</h3>
   <%=h @subscription.trabalhar_se_aceito %>
-</p>
-
-<p>
-  <b>Resumo dissertacao mestrado:</b>
+<br/>
+<h3>Resumo dissertacao mestrado</h3>
   <%=h @subscription.resumo_dissertacao_mestrado %>
-</p>
-
-<p>
-  <b>Propositos:</b>
+<br/>
+<h3>Propósitos</h3>
   <%=h @subscription.propositos %>
-</p>
-
-<p>
-  <b>Observacoes:</b>
+<br/>
+<h3>Observações</h3>
   <%=h @subscription.observacoes %>
-</p>
+<br/>
 
-<p>
-  <b>Curso:</b>
-  <%=h @subscription.curso_id %>
-</p>
-
-<%= link_to 'Edit', edit_user_subscription_path(@user,@subscription) %>
+<%= link_to 'Início', user_subscriptions_path(@user) %> |
+<%= link_to 'Editar', edit_user_subscription_path(@user,@subscription) %>

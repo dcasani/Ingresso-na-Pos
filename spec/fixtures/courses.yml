@@ -7,11 +7,13 @@
 #   column: value
 
 computacao1:
+ id: 1
  area: Computação
  nivel: Mestrado
  subarea: Bioinformática
 
 computacao2:
+ id: 2
  area: Computação
  nivel: Mestrado
  subarea: Criptologia
@@ -42,6 +44,7 @@ computacao7:
  subarea: Visão Computacional e Processamento de Imagens
 
 computacao8:
+ id: 8
  area: Computação
  nivel: Doutorado
  subarea: Bioinformática

@@ -5,11 +5,13 @@ require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environ
 require 'spec/autorun'
 require 'spec/rails'
 require 'authlogic/test_case'
+
 include Authlogic::TestCase
 
 activate_authlogic
 
 ApplicationController.send(:public, :current_user, :current_user_session)
+ActionMailer::Base.delivery_method = :test
 
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'
@@ -72,9 +74,9 @@ end
     controller.stub!(:current_user).and_return nil
   end
 
-  def current_user(stubs = {})
-    @current_user ||= mock_model(User, stubs)
-  end
+#  def current_user(stubs = {})
+#    @current_user ||= mock_model(User, stubs)
+#  end
 
   def current_user_session(stubs = {}, user_stubs = {})
     @current_user_session ||= mock_model(UserSession, {:user => current_user(user_stubs)}.merge(stubs))

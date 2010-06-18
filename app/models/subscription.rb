@@ -9,13 +9,13 @@ class Subscription < ActiveRecord::Base
   has_attached_file :poscomp, :url => "/arquivos/poscomp/:id/:basename.:extension"
 
   validates_presence_of :propositos, :inicio_pretendido,
-                        :message => ": Preencher campo obrigatório"
+                        :message => ": preencher campo obrigatório"
 
   validates_format_of :inicio_pretendido,
-                      :with => /\A[ a-zA-Zá-úÁ-ÚçÇ]*\Z/ , :message => ": Usar somente letras"
+                      :with => /\A[ a-zA-Zá-úÁ-ÚçÇ]*\Z/ , :message => ": usar somente letras"
 
   validates_format_of :orientador,
-                      :with => /\A[ a-zA-Zá-úÁ-ÚçÇ\.-]*\Z/, :message => ": Usar somente letras e espaços"
+                      :with => /\A[ a-zA-Zá-úÁ-ÚçÇ\.-]*\Z/, :message => ": usar somente letras e espaços"
 
 
 

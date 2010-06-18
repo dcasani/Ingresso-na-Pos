@@ -1,11 +1,17 @@
-<h1>Inscrição na Pós-Graduação</h1>
+<h1>Nova inscrição</h1>
+
+<%= flash_helper %>
+
+<p>
+Campos obrigatórios estão demarcados por <span style="color:red">*</span>
+</p>
 
 <% form_for [@user,@subscription], :html => {:multipart => true} do |f| %>
-  <td><%= error_messages_for :subscription, :header_message => "Erros de preenchimento encontrados", :message => "Por favor, corrija os seguintes erros para continuar:" %></td>
+  <%= error_messages_for :subscription, :header_message => "Erros de preenchimento encontrados", :message => "Por favor, corrija os seguintes erros para continuar:" %>
+<h2>Área Pretendida</h2>
   <table>
-    <tr><td colspan="2"><br/><h2>Curso</h2></td></tr>
     <tr>
-      <td><label for="nivel_select">Nível</label></td>
+      <td><span style="color:red">*</span><label for="nivel_select">Curso</label></td>
       <td>
         <select name="nivel_select" id="nivel_select">
           <%
@@ -26,7 +32,7 @@
       </td>
     </tr>
     <tr>
-      <td><label for="area_select">Área</label></td>
+      <td><span style="color:red">*</span><label for="area_select">Programa</label></td>
       <td>
         <select name="area_select" id="area_select">
           <%
@@ -44,7 +50,7 @@
       </td>
     </tr>
     <tr>
-      <td><label for="subarea_select">Sub-área</label></td>
+      <td><span style="color:red">*</span><label for="subarea_select">Área</label></td>
       <td>
         <select name="subarea_select" id="subarea_select">
           <%
@@ -57,53 +63,70 @@
 
           %>
             <option <%= @select %>><%= course.subarea %></option>
-            <%   @select = ""
+            <% @select = ""
           end %>
         </select>
         <%= observe_field("area_select", :frequency => 1, :url => { :action => :course_subareas }, :update => "subarea_select", :with => "'area='+Form.Element.serialize('area_select')" ) %>
       </td>
     </tr>
     <tr>
-      <td><%= f.label "Início pretendido" %></td>
+      <td><span style="color:red">*</span><%= f.label "Início pretendido" %></td>
       <td>
         <select name="subscription[inicio_pretendido]" id="subscription_inicio_pretendido">
           <% @selected = ""
-          @st_months.each do |month|  %>
-            <% if  @month_selected == month
+          @st_months.each do |month| %>
+            <% if @month_selected == month
               @selected = "selected"
-            end          %>
-            <option <%= @selected  %>><%= month  %></option>
+            end %>
+            <option <%= @selected %>><%= month %></option>
             <% @selected = ""
-          end  %>
+          end %>
         </select>
         <%= observe_field("nivel_select", :frequency => 1, :url => { :action => :starting_months }, :update => "subscription_inicio_pretendido", :with => "'nivel='+Form.Element.serialize('nivel_select')" ) %>
       </td>
     </tr>
+  </table>
+  <br/>
+  <table>
     <tr>
       <td><label for="subscription_outros_programas">Está pleiteando inscrição em outros programas de pós-graduação? (Relacionar o(s) nome(s) da(s)
           instituição(ões) e do(s) respectivo(s) programa(s).)</label></td>
+    </tr>
+    <tr>
       <td><%= f.text_area :outros_programas, :rows => "10" , :cols => "70" %></td>
     </tr>
     <tr>
       <td><label for="subscription_orientador">Já entrou em contato com algum docente deste Instituto com vistas à sua orientação? (Caso sim, indicar o
           nome do docente.)</label></td>
+    </tr>
+    <tr>
       <td><%= f.text_field :orientador, :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
-    <tr><td colspan="2"><br/><h2>Bolsas</h2></td></tr>
+  </table>
+  <br/>
+  <h2>Bolsas</h2>
+  <table>
     <tr>
       <td><label for="subscription_bolsa_fomento">Está solicitando a concessão de uma bolsa a alguma agência de fomento (FAPESP,...)? Caso sim, qual?</label></td>
+    </tr>
+    <tr>
       <td><%= f.text_field :bolsa_fomento, :rows => "10" , :cols => "70", :onkeypress => "return event.keyCode!=13" %></td>
     </tr>
     <tr>
-      <td><label for="subscription_bolsa_ime">Está solicitando a concessão de uma bolsa do IME-USP?</label></td>
-      <td><%= f.check_box :bolsa_ime %></td>
+      <td><br/><label for="subscription_bolsa_ime">Está solicitando a concessão de uma bolsa do IME-USP?</label></td>
     </tr>
     <tr>
-      <td><%= f.label "Bolsas obtidas anteriormente (tipo de bolsa, instituição que a concedeu, duração, finalidade, orientador, etc.)" %></td>
+      <td><%= f.check_box :bolsa_ime %> Sim</td>
+    </tr>
+    <tr>
+      <td><br/><%= f.label "Bolsas obtidas anteriormente (tipo de bolsa, instituição que a concedeu, duração, finalidade, orientador, etc.)" %></td>
+    </tr>
+    <tr>
       <td><%= f.text_area :bolsas_anteriores, :rows => "10" , :cols => "70" %></td>
-    </tr>    
-
-    <tr><td colspan="2"><br/><h2>Upload de arquivos solicitados:</h2></td></tr>
+    </tr>
+  </table>
+  <h2>Upload de arquivos solicitados:</h2>
+  <table>
     <tr>
       <td><%= f.label "Diploma" %></td>
       <td><%= f.file_field :diploma  %></td>
@@ -116,30 +139,53 @@
       <td><label for="subscription_poscomp">Resultado do Poscomp (se Pós-Graduação em Ciência da Computação)</label></td>
       <td><%= f.file_field :poscomp  %></td>
     </tr>
-
-
-    <tr><td colspan="2"><br/><h2>Trabalho</h2></td></tr>
+  </table>
+  <h2>Trabalho</h2>
+  <table>
     <tr>
       <td><label for="subscription_trabalhar_se_aceito">Sendo aceito para o programa, pretende continuar exercendo as atividades exercidas atualmente?</label></td>
-      <td><%= f.check_box :trabalhar_se_aceito%></td>
     </tr>
-    <tr><td colspan="2"><br/><h2>Dissertação de Mestrado</h2></td></tr>
+    <tr>
+      <td><%= f.check_box :trabalhar_se_aceito%> Sim</td>
+    </tr>
+  </table>
+  <br/>
+  <h2>Dissertação de Mestrado</h2>
+  <table>
     <tr>
       <td><%= f.label "Indicar brevemente os principais resultados e as referências bibliográficas mais importantes" %></td>
+    </tr>
+    <tr>
       <td><%= f.text_area :resumo_dissertacao_mestrado, :rows => "10" , :cols => "70" %></td>
     </tr>
-    <tr><td colspan="2"><br/><h2>Exposição de Propósitos</h2></td></tr>
+  </table>
+  <br/>
+  <h2><span style="color:red">*</span>Exposição de Propósitos</h2>
+  <table>
     <tr>
       <td><%= f.label "Descrever de modo sucinto os motivos acadêmicos da solicitação, inclusive as perspectivas com relação ao
   programa e as áreas de maior interesse"%></td>
+    </tr>
+    <tr>
       <td><%= f.text_area :propositos, :rows => "10" , :cols => "70" %></td>
     </tr>
-    <tr><td colspan="2"><br/><h2>Observações</h2></td></tr>
+</table>
+  <br/>
+  <h2>Observações</h2>
+  <table>
     <tr>
       <td><%= f.label "Informações adicionais que considera relevantes para o julgamento de sua solicitação" %></td>
+    </tr>
+        <tr>
       <td><%= f.text_area :observacoes, :rows => "10" , :cols => "70" %></td>
     </tr>
-  </table>  
-  <%= f.submit 'Continuar' %>
+
+  </table>
+  <br/>
+  <%= f.submit 'Adicionar recomendações', :id => "reference_teachers", :name => "reference_teachers" %> <%= f.submit 'Salvar', :id => "create", :name => "create" %> <%= f.submit 'Finalizar*', :id => "end", :name => "end" %>
+  <br/><br/>  
+  <hr/>
+  <p>* <b>Importante:</b> Após finalizar sua inscrição você não poderá mais editá-la e ela será submetida à análise da Comissão de Admissão. Se você preferir, pode finalizar a inscrição em momento posterior.</p>
+  <hr/>
 <% end %>
 
