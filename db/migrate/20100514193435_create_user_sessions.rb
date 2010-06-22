@@ -3,7 +3,6 @@ class CreateUserSessions < ActiveRecord::Migration
     create_table :user_sessions do |t|
       t.string :username
       t.string :password
-
       t.timestamps
     end
   end

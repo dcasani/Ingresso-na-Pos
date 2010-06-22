@@ -2,7 +2,7 @@ class Notifier < ActionMailer::Base
   
   def notification(destination,teacher,student,hashcode)
     recipients destination
-    from  "Pós Graduação - IME-USP <ingressonapos@gmail.com>"
+    from  "ingressonapos@gmail.com"
     subject "Solicitação de Carta de Recomendação"
     body :teacher => teacher, :student => student, :hashcode => hashcode
     content_type "text/html"
@@ -10,7 +10,7 @@ class Notifier < ActionMailer::Base
 
   def notificationenglish(destination,teacher,student,hashcode)
     recipients destination
-    from  "Pós Graduação - IME-USP <ingressonapos@gmail.com>"
+    from  "ingressonapos@gmail.com"
     subject "Solicitation"
     body :teacher => teacher, :student => student, :hashcode => hashcode
     content_type "text/html"
