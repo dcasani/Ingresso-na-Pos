@@ -115,17 +115,14 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
       @user = current_user
-      respond_to do |format|
-        #utiliza email como login
-        #@user.username = @user.email
-        if @user.update_attributes(params[:user])
-          flash[:message] = 'Usuário alterado com sucesso!'
-          format.html { redirect_to(user_subscriptions_url(current_user)) }
-          format.xml  { head :ok }
-        else
-          format.html { render :action => "edit" }
-          format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-        end
+      #@user = @user.update_attibutes(params[:user])
+      #utiliza email como login
+      #@user.username = @user.email
+      if @user.update_attributes(params[:user])
+        flash[:message] = 'Usuário alterado com sucesso!'
+        redirect_to(user_subscriptions_url(@user))
+      else
+        render :action => "edit"
       end
     end
   end

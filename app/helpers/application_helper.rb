@@ -3,7 +3,7 @@ module ApplicationHelper
 
   def flash_helper
 
-    f_names = [:notice, :warning, :message]
+    f_names = [:notice, :warning, :message, :error]
     fl = ''
 
     for name in f_names

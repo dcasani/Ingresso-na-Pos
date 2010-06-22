@@ -35,12 +35,9 @@ describe UsersController do
 
   def valid_update_attributes(attributes={})
     {
-      :username => "claudia@ime.usp.br",
-      :password => "abcdef",
-      :nome_completo => "Claudia Melo",
-      :identidade => "1234567",
+      :nome_completo => "Claudia Bananal Melo",
+      :identidade => "123456",
       :data_de_nascimento => "26/10/89",
-      :email => "claudia@ime.usp.br",
       :formacao_superior_graduacao => "Bacharelado em Ciência da Computação"
     }.merge attributes
   end
@@ -194,6 +191,7 @@ describe UsersController do
       activate_authlogic
       @user = User.find_by_id(2)
       login_as_user :claudia
+      #@user = current_user_session
     end
 
     #
@@ -280,6 +278,11 @@ describe UsersController do
         post :edit
         response.should be_success
       end
+
+       it "Deve redirecionar para a pagina do user" do
+        post :edit
+        response.should be_success
+      end
     end
 
     #
@@ -287,18 +290,22 @@ describe UsersController do
     #
     context "POST update" do
 
+      it "Apos atualizacao com sucesso, deve redirecionar para as inscricoes" do
+        pending
+       # @user.update_attributes(valid_update_attributes)
+        post :update, valid_update_attributes
+        #@user = User.find_by_id(2)
+        (@user.nome_completo).should == "Claudia Bananal Melo"
+        #flash[:message].should == 'Usuário alterado com sucesso!'
+        #response.should redirect_to(user_subscriptions_url(@user))
+      end
+
       it "Usuário logado pode atualizar seus dados validos" do
         post :update, :user => valid_update_attributes(:nome_completo => "Claudia de Macieiras Melo")
         response.should be_success
       end
 
-      it "Apos atualizacao com sucesso, deve redirecionar para as inscricoes" do
-        pending
-        User.should_receive(:update_attributes).and_return(true)
-        post :update, :user => valid_update_attributes(:nome_completo => "Claudia de Bananeiras Melo")
-        #flash[:message].should == 'Usuário alterado com sucesso!'
-        response.should redirect_to(user_subscriptions_url(@user))
-      end
+      
 
       it "Usuario logado não pode atualizar dados nao validos" do
         post :update, :user => valid_user_attributes(:username => "")

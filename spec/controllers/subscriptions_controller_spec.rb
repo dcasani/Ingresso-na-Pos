@@ -145,6 +145,7 @@ describe SubscriptionsController do
         get :new
         response.should be_success
       end
+
     end
 
     #
@@ -207,6 +208,17 @@ describe SubscriptionsController do
         post :create, :subscription => invalid_subscription_attributes
         response.should_not be_success
       end
+
+      it "A criação de uma subscription sem os campos obrigatorios deve exibir mensagem de erro" do
+        post :create, :subscription => invalid_subscription_attributes
+        flash[:notice].should == "Ocorreu um erro ao tentar salvar sua inscrição. Por favor tente novamente."
+      end
+
+       it "A criação de uma subscription sem os campos obrigatorios deve redirecionar de forma correta" do
+        post :create, :subscription => invalid_subscription_attributes
+        response.should redirect_to(new_subscription_url)
+      end
+
 
       it "A criação de um subscription deve ter sucesso com reference_teacher" do
         post :create, :subscription => valid_subscription_attributes, :reference_teachers => mock_reference_teacher
@@ -313,7 +325,7 @@ describe SubscriptionsController do
 
     context "GET new" do
 
-      it "A criaçao de uma nova subscription não deve ter sucesso" do
+       it "A criaçao de uma nova subscription não deve ter sucesso" do
         @subscriptions = mock_subscription
         get :new
         response.should_not be_success
