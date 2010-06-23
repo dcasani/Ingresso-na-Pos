@@ -10,9 +10,9 @@ module ApplicationHelper
       if flash[name]
         fl = fl + "<div class=\"notice\">#{flash[name]}</div>"
       end
-    flash[name] = nil;
-  end
-  return fl
+      flash[name] = nil;
+    end
+    return fl
 end
 
 

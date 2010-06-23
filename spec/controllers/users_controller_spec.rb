@@ -35,6 +35,7 @@ describe UsersController do
 
   def valid_update_attributes(attributes={})
     {
+      :email => "claudia@ime.usp.br",
       :nome_completo => "Claudia Bananal Melo",
       :identidade => "123456",
       :data_de_nascimento => "26/10/89",
@@ -72,7 +73,7 @@ describe UsersController do
     context "POST create" do
 
       after(:each) do
-        @user = User.find_by_username("novo@teste.com.br")
+        @user = User.find_by_email("novo@teste.com.br")
         if(@user)
           @user.destroy
         end
@@ -189,9 +190,9 @@ describe UsersController do
 
     before :each do
       activate_authlogic
-      @user = User.find_by_id(2)
+      #@user = User.find_by_id(2)
       login_as_user :claudia
-      #@user = current_user_session
+      @user = current_user
     end
 
     #
@@ -238,13 +239,7 @@ describe UsersController do
     # INDEX
     #
     context "GET index" do
-      it "O admin deve listar os usuarios" do
-        @user = User.find_by_username("admin@ime.com.br")
-        login_as_user :admin
-        get :index
-        response.should be_success
-      end
-
+     
       it "Usuarios que não sejam o admin nao podem listar os demais" do
         get :index
         flash[:message].should == 'Apenas os administradores podem verificar a lista de usuários.'
@@ -291,13 +286,20 @@ describe UsersController do
     context "POST update" do
 
       it "Apos atualizacao com sucesso, deve redirecionar para as inscricoes" do
-        pending
-       # @user.update_attributes(valid_update_attributes)
-        post :update, valid_update_attributes
-        #@user = User.find_by_id(2)
+        @user.should_receive(:update_attributes).and_return(true)
+        post :update, :user => valid_update_attributes
+        response.should redirect_to(user_subscriptions_url(@user))
+      end
+
+      it "Apos atualizacao com sucesso, deve redirecionar para as inscricoes" do
+        @user.should_receive(:update_attributes).and_return(true)
+        post :update, :user => valid_update_attributes
+        flash[:message].should == 'Usuário alterado com sucesso!'
+      end
+
+      it "Tentativa de cobrir tudo" do
+        post :update, :user => valid_update_attributes
         (@user.nome_completo).should == "Claudia Bananal Melo"
-        #flash[:message].should == 'Usuário alterado com sucesso!'
-        #response.should redirect_to(user_subscriptions_url(@user))
       end
 
       it "Usuário logado pode atualizar seus dados validos" do
@@ -341,6 +343,17 @@ describe UsersController do
       activate_authlogic
       @user_admin = User.find_by_id(3)
       login_as_user :admin
+    end
+
+    #
+    # INDEX
+    #
+    
+    it "O admin deve listar os usuarios" do
+      @user = User.find_by_username("admin@ime.com.br")
+      login_as_user :admin
+      get :index
+      response.should be_success
     end
 
     #

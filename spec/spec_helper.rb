@@ -64,7 +64,7 @@ end
   def login_as_user username
     # define user and session
     UserSession.create(users(username))
-    #@current_user = mock_model(User, :username => user)
+    #@current_user = mock_model(User, username)
     #@current_session = mock_model(UserSession)
 
     #controller.stub!(:current_user).and_return @current_user
@@ -76,7 +76,7 @@ end
   end
 
   def current_user(stubs = {})
-    @current_user ||= mock_model(User, stubs)
+    controller.current_user
   end
 
   def current_user_session(stubs = {}, user_stubs = {})
