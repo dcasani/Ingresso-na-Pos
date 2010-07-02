@@ -44,7 +44,7 @@ class SubscriptionsController < ApplicationController
     #verificar se existe session
     if @user != nil
       @subscription = @user.subscriptions.build
-      @course_areas = Course.find(:all, :group => 'area')
+      @course_areas = Course.find_by_sql("SELECT DISTINCT courses.area FROM courses")
       #@course = Course.find_by_id(@subscription.curso_id)
       @course = Course.first
       @course_subareas = Course.find(:all, :conditions => { :area => @course.area }, :group => 'subarea' )
